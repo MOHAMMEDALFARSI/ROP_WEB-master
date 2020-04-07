@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b9c5c5ff040c4054b071a3b85b29752c" Name="Diagram1">
+        <EntityTypeShape EntityType="ROP_WEBModel.FAQCategory" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROP_WEBModel.FAQMain" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROP_WEBModel.NewsCategory" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROP_WEBModel.NewsImage" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROP_WEBModel.NewsMain" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROP_WEBModel.SERVICE" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROP_WEBModel.SERVICE_CAT" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROP_WEBModel.SERVICE_PROVIDER" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROP_WEBModel.SERVICE_STATUS" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ROP_WEBModel.Article" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ROP_WEBModel.FK_CategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="ROP_WEBModel.FK_nCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="ROP_WEBModel.FK_NewsIDImg" ManuallyRouted="false" />
+        <AssociationConnector Association="ROP_WEBModel.FK_scat" />
+        <AssociationConnector Association="ROP_WEBModel.FK_serstatus" />
+        <AssociationConnector Association="ROP_WEBModel.FK_sprov" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

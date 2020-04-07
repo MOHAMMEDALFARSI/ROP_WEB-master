@@ -1,0 +1,83 @@
+﻿
+
+
+@section PageTitle {
+    @Resource.footer4
+}
+@section arurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view="disclaimer",cont="Home"}  )">
+        <i class="fa fa-globe"></i> عربي
+    </a>
+}
+
+@section enurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "en-US",view="disclaimer",cont="Home" } )">
+        <i class="fa fa-globe"></i> En
+    </a>
+}
+@using ROP_WEB.Res
+
+
+<div class="container TopicStyle">
+    <div class="row">
+
+        <div class="col breadcrumbstyle" style="padding:0">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
+
+                    <li class="breadcrumb-item active">@Resource.footer4 </li>
+                    <li class="readspeakercls">
+                        <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                                <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
+                                <span class="rsbtn_right rsimg rsplay rspart"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container topiccontiner">
+
+        <div class="row">
+
+            <div class="col-md-4 d-none d-sm-block">
+                <ul class="list-group">
+                    <li class="list-group-item"> <a href="#">@Resource.footer1  </a></li>
+                    <li class="list-group-item"> <a href="#">@Resource.footer2  </a></li>
+                    <li class="list-group-item "><a href="#">@Resource.footer3 </a></li>
+                    <li class="list-group-item activelist"><a href="#">@Resource.footer4 </a></li>
+                    <li class="list-group-item "><a href="#">@Resource.footer6 </a></li>
+
+
+                </ul>
+
+            </div>
+            <div class="col-md-8">
+
+                <div class="jumbotron">
+                    <h3>  @Resource.footer4 </h3>
+                    <p>
+
+                        شرطة عمان السلطانية لا تألوا جهدا في ضمان أن ما يحتويه هذا الموقع الإلكتروني من معلومات صحيحة وتخضع للتحديث بشكل مستمر وإن كافة ما يحتويه هذا الموقع الإلكتروني هو لغرض توفير المعلومات فقط لا يمكن تحميل شرطة عمان السلطانية ومسؤوليها وموظفيها، والمرتبطين معها في مجال الأعمال، المسؤولية في حال حدوث أي أضرار أو خسائر، سواء أكان ذلك بطريقة مباشرة أو غير مباشرة، أو كنتيجة لسلسلة من الأحداث أو نشأ نتيجة لإستخدام هذا الموقع الإلكتروني أو أي من محتوياته.
+
+                        تملك شرطة عمان السلطانية الحق في تعديل وتغيير أي جزء من محتويات هذا الموقع بغير إشعار سابق.
+                    </p>
+
+
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

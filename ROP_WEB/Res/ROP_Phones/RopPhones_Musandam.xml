@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>Musandam Governorate Police HQ</StationEn>
+    <StationAr>قيادة شرطة محافظة مسندم</StationAr>
+    <StationPhone>26730299</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>2</StationId>
+    <StationEn>Khasab Police Station</StationEn>
+    <StationAr>مركز شرطة خصب</StationAr>
+    <StationPhone>26731502</StationPhone>
+  </Station>
+  
+  
+
+  <Station>
+    <StationId>3</StationId>
+    <StationEn>Bukha Police Station</StationEn>
+    <StationAr>مركز شرطة بخا</StationAr>
+    <StationPhone>26828399</StationPhone>
+  </Station>
+  
+
+  <Station>
+    <StationId>4</StationId>
+    <StationEn>Diba Police Station</StationEn>
+    <StationAr>مركز شرطة دباء</StationAr>
+    <StationPhone>26836999</StationPhone>
+  </Station>
+  
+
+  <Station>
+    <StationId>5</StationId>
+    <StationEn>Al Darah Border Post</StationEn>
+    <StationAr>منفذ الدارة</StationAr>
+    <StationPhone>26734325</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>6</StationId>
+    <StationEn>Madha Police Station</StationEn>
+    <StationAr>مخفر شرطة مدحاء</StationAr>
+    <StationPhone>26739075</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>7</StationId>
+    <StationEn>Kumzar Post</StationEn>
+    <StationAr>نقطة كمزار</StationAr>
+    <StationPhone>26733002</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>8</StationId>
+    <StationEn>Lima Post</StationEn>
+    <StationAr>نقطة ليماء</StationAr>
+    <StationPhone>26735113</StationPhone>
+  </Station>
+  
+
+</RegionStation>

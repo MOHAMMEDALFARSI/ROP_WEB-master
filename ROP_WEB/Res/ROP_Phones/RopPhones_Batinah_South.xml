@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>Al-Batinah South Governorate HQ</StationEn>
+    <StationAr>قيادة شرطة محافظة جنوب الباطنة</StationAr>
+    <StationPhone>26875099</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>2</StationId>
+    <StationEn>Al-Awabi Police Station</StationEn>
+    <StationAr>ممركز شرطة العوابي</StationAr>
+    <StationPhone>26767002</StationPhone>
+  </Station>
+
+<Station>
+    <StationId>3</StationId>
+    <StationEn>A’Rustaq Police Station</StationEn>
+    <StationAr>مركز شرطة الرستاق</StationAr>
+    <StationPhone>26876999</StationPhone>
+  </Station>
+  
+<Station>
+    <StationId>4</StationId>
+    <StationEn>Al Musann'a Police Station</StationEn>
+    <StationAr>مركز شرطة المصنعة</StationAr>
+    <StationPhone>26868855</StationPhone>
+  </Station>
+  
+<Station>
+    <StationId>5</StationId>
+    <StationEn>Barka Police Station</StationEn>
+    <StationAr>مركز شرطة بركاء</StationAr>
+    <StationPhone>26882099</StationPhone>
+  </Station>
+  
+</RegionStation>

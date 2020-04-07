@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>Al Buraimi Police Headquarters</StationEn>
+    <StationAr>قيادة شرطة محافظة البريمي</StationAr>
+    <StationPhone>25650099</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>2</StationId>
+    <StationEn>Hafeet Police Station</StationEn>
+    <StationAr>مركز شرطة حفيت</StationAr>
+    <StationPhone>25662299</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>3</StationId>
+    <StationEn>Hafeet Border Post</StationEn>
+    <StationAr>منفذ حفيت</StationAr>
+    <StationPhone>25662009</StationPhone>
+  </Station>
+  
+
+  <Station>
+    <StationId>4</StationId>
+    <StationEn>Al Buraimi Police Station</StationEn>
+    <StationAr>مركز شرطة البريمي</StationAr>
+    <StationPhone>25652998</StationPhone>
+  </Station>
+  
+
+  <Station>
+    <StationId>5</StationId>
+    <StationEn>Wadi al Jizzi Border Post</StationEn>
+    <StationAr>منفذ وادي الجزي</StationAr>
+    <StationPhone>25659310</StationPhone>
+  </Station>
+  
+
+  <Station>
+    <StationId>6</StationId>
+    <StationEn>Wadi al Jizzi Police Station</StationEn>
+    <StationAr>مركز شرطة وادي الجزي</StationAr>
+    <StationPhone>25668057</StationPhone>
+  </Station>
+  
+
+  <Station>
+    <StationId>7</StationId>
+    <StationEn>Mahadha Police Station</StationEn>
+    <StationAr>مركز شرطة محضه</StationAr>
+    <StationPhone>25667099</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>8</StationId>
+    <StationEn>A'Rawdha Police Post</StationEn>
+    <StationAr>مركز شرطة الروضة</StationAr>
+    <StationPhone>25665309</StationPhone>
+  </Station>
+ 
+  <Station>
+    <StationId>9</StationId>
+    <StationEn>Wadi Sa' Police Post</StationEn>
+    <StationAr>مركز شرطة وادي صاع</StationAr>
+    <StationPhone>25659016</StationPhone>
+  </Station>
+
+  
+</RegionStation>

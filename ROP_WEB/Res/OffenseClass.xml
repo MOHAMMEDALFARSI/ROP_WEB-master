@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Offenses>
+  <Offense>
+    <OffenseId>1</OffenseId>
+    <OffenseClassAr>السرعة</OffenseClassAr>
+    <OffenseClassEn>speed</OffenseClassEn>
+    <OffenseDescAr>تجاوز الحد الاقصى للسرعة عن  35 كلم</OffenseDescAr>
+    <OffenseDescEn>Overcome speed limit morethan 35 km </OffenseDescEn>
+    <OffensePoints>2</OffensePoints>
+    <OffenseAmount>10</OffenseAmount>
+  </Offense>
+
+  <Offense>
+    <OffenseId>2</OffenseId>
+    <OffenseClassAr>السرعة</OffenseClassAr>
+    <OffenseClassEn>stop</OffenseClassEn>
+    <OffenseDescAr>تجاوز الحد الاقصى للسرعة</OffenseDescAr>
+    <OffenseDescEn>Overcome speed limit </OffenseDescEn>
+    <OffensePoints>2</OffensePoints>
+    <OffenseAmount>10</OffenseAmount>
+  </Offense>
+  
+</Offenses>

@@ -1,0 +1,645 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="about" xml:space="preserve">
+    <value>About Police</value>
+  </data>
+  <data name="about1" xml:space="preserve">
+    <value>Genreral Info</value>
+  </data>
+  <data name="about2" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="achivment" xml:space="preserve">
+    <value>Achievements</value>
+  </data>
+  <data name="alig" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="alig2" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="AlWustaGovernoratePoliceHeadquarter" xml:space="preserve">
+    <value>Al Wusta Governorate Police Headquarter</value>
+  </data>
+  <data name="bootstrap" xml:space="preserve">
+    <value>bootstrap.min.css</value>
+  </data>
+  <data name="clickhere" xml:space="preserve">
+    <value>click here</value>
+  </data>
+  <data name="common" xml:space="preserve">
+    <value>Common Services</value>
+  </data>
+  <data name="companyserv" xml:space="preserve">
+    <value>Companies services</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="contactus" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="contactuspage" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="contribute" xml:space="preserve">
+    <value>Contribute with Us</value>
+  </data>
+  <data name="copyright" xml:space="preserve">
+    <value>Royal Oman Police - Directorate of Public Relation</value>
+  </data>
+  <data name="css" xml:space="preserve">
+    <value>main_styles.css</value>
+  </data>
+  <data name="custom" xml:space="preserve">
+    <value>Customs Service</value>
+  </data>
+  <data name="DhofarGovernoratePoliceHeadquarter" xml:space="preserve">
+    <value>Dhofar Governorate Police Headquarter</value>
+  </data>
+  <data name="dlil" xml:space="preserve">
+    <value>Safty tips</value>
+  </data>
+  <data name="downlaod" xml:space="preserve">
+    <value>Downlaod</value>
+  </data>
+  <data name="dpr" xml:space="preserve">
+    <value>- Directorate of Public Relation</value>
+  </data>
+  <data name="electroniccertificate" xml:space="preserve">
+    <value>Police Clearance Certificate Validity</value>
+  </data>
+  <data name="emergnc" xml:space="preserve">
+    <value>Emergency Contact</value>
+  </data>
+  <data name="emergncy" xml:space="preserve">
+    <value>Emergency Numbers</value>
+  </data>
+  <data name="evisa" xml:space="preserve">
+    <value>Electronic-Visa</value>
+  </data>
+  <data name="faq" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="fineamount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="fineclass" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="finedesc" xml:space="preserve">
+    <value>Fine Description</value>
+  </data>
+  <data name="finepoint" xml:space="preserve">
+    <value>Points</value>
+  </data>
+  <data name="footer1" xml:space="preserve">
+    <value>Terms&amp;Conditions</value>
+  </data>
+  <data name="footer2" xml:space="preserve">
+    <value>Copyright</value>
+  </data>
+  <data name="footer3" xml:space="preserve">
+    <value>Polices</value>
+  </data>
+  <data name="footer4" xml:space="preserve">
+    <value>Disclaimer</value>
+  </data>
+  <data name="footer5" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="footer6" xml:space="preserve">
+    <value>Sitemap</value>
+  </data>
+  <data name="footertitile" xml:space="preserve">
+    <value>Royal Oman Police</value>
+  </data>
+  <data name="GeneralDirectorate" xml:space="preserve">
+    <value>General Directorate</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="importantlinks" xml:space="preserve">
+    <value>Important Links</value>
+  </data>
+  <data name="lawname" xml:space="preserve">
+    <value>Law Name</value>
+  </data>
+  <data name="lawnote" xml:space="preserve">
+    <value>All the Rules and Laws are in arabic language.</value>
+  </data>
+  <data name="lawnumber" xml:space="preserve">
+    <value>number</value>
+  </data>
+  <data name="laws" xml:space="preserve">
+    <value>Rules &amp; Law</value>
+  </data>
+  <data name="lawtxt" xml:space="preserve">
+    <value>You can downlaod Related Royal Oman Police Rules and Laws PDFs here.</value>
+  </data>
+  <data name="listen" xml:space="preserve">
+    <value>Listen</value>
+  </data>
+  <data name="listen2" xml:space="preserve">
+    <value>Listen this page by ReadSpeaker</value>
+  </data>
+  <data name="listen3lang" xml:space="preserve">
+    <value>en_uk</value>
+  </data>
+  <data name="locationh" xml:space="preserve">
+    <value>Police Stations Locations</value>
+  </data>
+  <data name="Locations" xml:space="preserve">
+    <value>Locations Directory</value>
+  </data>
+  <data name="logo" xml:space="preserve">
+    <value>logo.png</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="md1" xml:space="preserve">
+    <value>ROP News</value>
+  </data>
+  <data name="md2" xml:space="preserve">
+    <value>Articles</value>
+  </data>
+  <data name="md3" xml:space="preserve">
+    <value>Photo Gallery</value>
+  </data>
+  <data name="md4" xml:space="preserve">
+    <value>ROP Magazine</value>
+  </data>
+  <data name="md5" xml:space="preserve">
+    <value>Announcment</value>
+  </data>
+  <data name="md6" xml:space="preserve">
+    <value>A'Shurti Assagheer</value>
+  </data>
+  <data name="md7" xml:space="preserve">
+    <value>Radio Episodes</value>
+  </data>
+  <data name="md8event" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="md9" xml:space="preserve">
+    <value>Employment Announcment</value>
+  </data>
+  <data name="media" xml:space="preserve">
+    <value>Media Center</value>
+  </data>
+  <data name="mgzntxt" xml:space="preserve">
+    <value>Versions of magazine</value>
+  </data>
+  <data name="missiontext" xml:space="preserve">
+    <value />
+  </data>
+  <data name="missiontext2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="moreads" xml:space="preserve">
+    <value>More Ads</value>
+  </data>
+  <data name="morenews" xml:space="preserve">
+    <value>More News</value>
+  </data>
+  <data name="MusandamGovernoratePoliceHeadquarter" xml:space="preserve">
+    <value>Musandam Governorate Police Headquarter</value>
+  </data>
+  <data name="MuscatGovernoratePoliceHeadquarter" xml:space="preserve">
+    <value>Muscat Governorate Police Headquarter</value>
+  </data>
+  <data name="newh" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="noresult" xml:space="preserve">
+    <value>No Result !!</value>
+  </data>
+  <data name="opendata" xml:space="preserve">
+    <value>Open Data</value>
+  </data>
+  <data name="othercon" xml:space="preserve">
+    <value>Other Contact</value>
+  </data>
+  <data name="personalserv" xml:space="preserve">
+    <value>Personals Services</value>
+  </data>
+  <data name="photoselect" xml:space="preserve">
+    <value>Select Department</value>
+  </data>
+  <data name="PoliceSpecialized" xml:space="preserve">
+    <value>Police Specialized Commands</value>
+  </data>
+  <data name="premail" xml:space="preserve">
+    <value>Email: info@rop.gov.om</value>
+  </data>
+  <data name="previousissues" xml:space="preserve">
+    <value>Previous Issues</value>
+  </data>
+  <data name="puplicserv" xml:space="preserve">
+    <value>Puplic sector Services</value>
+  </data>
+  <data name="qaboossaid" xml:space="preserve">
+    <value />
+  </data>
+  <data name="readmore" xml:space="preserve">
+    <value>Read More</value>
+  </data>
+  <data name="RegionalPoliceHeadquarters" xml:space="preserve">
+    <value>Regional Police Headquarters</value>
+  </data>
+  <data name="reprtblck" xml:space="preserve">
+    <value>Reporting Blackmailing</value>
+  </data>
+  <data name="right" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="rightleft" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="rlinksh" xml:space="preserve">
+    <value>Related Links</value>
+  </data>
+  <data name="ropmsg" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ropmsg2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ropphones" xml:space="preserve">
+    <value>ROP Phone Directory</value>
+  </data>
+  <data name="ropserv" xml:space="preserve">
+    <value>Royal Oman Police Services</value>
+  </data>
+  <data name="saftyCompt" xml:space="preserve">
+    <value>Traffic Safety Competion</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="searchin" xml:space="preserve">
+    <value>Search In ..</value>
+  </data>
+  <data name="searchkey" xml:space="preserve">
+    <value>Search Key</value>
+  </data>
+  <data name="services" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="servicesfees" xml:space="preserve">
+    <value>Services Fees</value>
+  </data>
+  <data name="slider1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="slider2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="slider3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="slider4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="smsserv" xml:space="preserve">
+    <value>SMS Notification Service</value>
+  </data>
+  <data name="socialh" xml:space="preserve">
+    <value>Social Media</value>
+  </data>
+  <data name="SpecializedDirectorates" xml:space="preserve">
+    <value>Specialized Directorates</value>
+  </data>
+  <data name="stat" xml:space="preserve">
+    <value>Statistic</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="survey" xml:space="preserve">
+    <value>Survey</value>
+  </data>
+  <data name="tabcom" xml:space="preserve">
+    <value>COMMON SERVICES</value>
+  </data>
+  <data name="tabcom1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcom2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcom3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcom4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcom5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcomdet1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcomdet2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcomdet3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcomdet4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcomdet5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabour" xml:space="preserve">
+    <value>CATEGROY</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Royal Oman Police - Home</value>
+  </data>
+  <data name="trafficfines" xml:space="preserve">
+    <value>Traffic Fines Payment</value>
+  </data>
+  <data name="trafficfinespoint" xml:space="preserve">
+    <value>Traffic Fines Point</value>
+  </data>
+  <data name="twitter" xml:space="preserve">
+    <value>twitter</value>
+  </data>
+  <data name="updatecivil" xml:space="preserve">
+    <value>Update Civil status personal information</value>
+  </data>
+  <data name="vehicleregistration" xml:space="preserve">
+    <value>Vehicle Registration Renewal</value>
+  </data>
+  <data name="visa" xml:space="preserve">
+    <value>Online Visa Application Service</value>
+  </data>
+  <data name="visastatus" xml:space="preserve">
+    <value>Visa Status</value>
+  </data>
+  <data name="v_m" xml:space="preserve">
+    <value>Mission&amp;Vision</value>
+  </data>
+  <data name="worktime" xml:space="preserve">
+    <value>Work Times</value>
+  </data>
+  <data name="youtube" xml:space="preserve">
+    <value>youtube</value>
+  </data>
+  <data name="aren" xml:space="preserve">
+    <value>En</value>
+  </data>
+  <data name="ADahirah" xml:space="preserve">
+    <value>A'Dahirah Governorate Police Headquarter</value>
+  </data>
+  <data name="ADakiliyah" xml:space="preserve">
+    <value>A'Dakiliyah Governorate Police Headquarter</value>
+  </data>
+  <data name="AirportSecurity" xml:space="preserve">
+    <value>Directorate General of Airport Security</value>
+  </data>
+  <data name="AlBatinah" xml:space="preserve">
+    <value>Al Batinah Governorate North Police Headquarter</value>
+  </data>
+  <data name="AlBatinah1" xml:space="preserve">
+    <value>Al Batinah Governorate South Police Headquarter</value>
+  </data>
+  <data name="AlBuraimi" xml:space="preserve">
+    <value>Al Buraimi Governorate Police Headquarter</value>
+  </data>
+  <data name="AlWusta" xml:space="preserve">
+    <value>Al Wusta Governorate Police Headquarter</value>
+  </data>
+  <data name="Ambulance" xml:space="preserve">
+    <value>Ambulance Division</value>
+  </data>
+  <data name="ASharqiyah" xml:space="preserve">
+    <value>A'Sharqiyah Governorate North Police Headquarter</value>
+  </data>
+  <data name="ASharqiyahG" xml:space="preserve">
+    <value>A'Sharqiyah Governorate South Police Headquarter</value>
+  </data>
+  <data name="CivilDefense" xml:space="preserve">
+    <value>Directorate General of Civil Defense</value>
+  </data>
+  <data name="CivilStatus" xml:space="preserve">
+    <value>Directorate General of Civil Status</value>
+  </data>
+  <data name="CombattingDrugs" xml:space="preserve">
+    <value>Directorate General of Combatting Drugs &amp;Psychotropic Substances</value>
+  </data>
+  <data name="Communication" xml:space="preserve">
+    <value>Directorate of Communication</value>
+  </data>
+  <data name="Customs" xml:space="preserve">
+    <value>Directorate General of Customs</value>
+  </data>
+  <data name="DevelopmentandScrutiny" xml:space="preserve">
+    <value>Directorate General of Development and Scrutiny</value>
+  </data>
+  <data name="Dhofar" xml:space="preserve">
+    <value>Dhofar Governorate Police Headquarter</value>
+  </data>
+  <data name="FinancialAffairs" xml:space="preserve">
+    <value>Directorate General of Financial Affairs</value>
+  </data>
+  <data name="FinancialInquiries" xml:space="preserve">
+    <value>Financial Inquiries Division</value>
+  </data>
+  <data name="GeneralofPrisons" xml:space="preserve">
+    <value>Directorate General of Prisons</value>
+  </data>
+  <data name="HumanResources" xml:space="preserve">
+    <value>Directorate General of Human Resources</value>
+  </data>
+  <data name="InformationTechnology" xml:space="preserve">
+    <value>Directorate General of Information Technology</value>
+  </data>
+  <data name="InquiriesandCriminalInvestigations" xml:space="preserve">
+    <value>Directorate Genera of Inquiries and Criminal Investigations</value>
+  </data>
+  <data name="JuvenilePolice" xml:space="preserve">
+    <value>Juvenile Police Division</value>
+  </data>
+  <data name="LegalAffairs" xml:space="preserve">
+    <value>Directorate of Legal Affairs</value>
+  </data>
+  <data name="logistic" xml:space="preserve">
+    <value>tt</value>
+  </data>
+  <data name="MedicalServices" xml:space="preserve">
+    <value>Directorate General of Medical Services</value>
+  </data>
+  <data name="Mounted" xml:space="preserve">
+    <value>Mounted Police Division</value>
+  </data>
+  <data name="Musandam" xml:space="preserve">
+    <value>Musandam Governorate Police Headquarter</value>
+  </data>
+  <data name="Muscat" xml:space="preserve">
+    <value>Muscat Governorate Police Headquarter</value>
+  </data>
+  <data name="NationalCommittee" xml:space="preserve">
+    <value>The Executive Office of the National Committee for Civil Defence</value>
+  </data>
+  <data name="officerinst" xml:space="preserve">
+    <value>officerinst</value>
+  </data>
+  <data name="Operations" xml:space="preserve">
+    <value>Directorate General of Operations</value>
+  </data>
+  <data name="PassportandResidences" xml:space="preserve">
+    <value>Directorate General of Passport and Residences</value>
+  </data>
+  <data name="PoliceAviation" xml:space="preserve">
+    <value>Directorate General of Police Aviation</value>
+  </data>
+  <data name="PoliceClubs" xml:space="preserve">
+    <value>Directorate of Police Clubs</value>
+  </data>
+  <data name="PoliceMusic" xml:space="preserve">
+    <value>Directorate of Police Music</value>
+  </data>
+  <data name="PoliceSportsAssociation" xml:space="preserve">
+    <value>Royal Oman Police Sports Association</value>
+  </data>
+  <data name="ProjectsandMaintenance" xml:space="preserve">
+    <value>Directorate General of Projects and Maintenance</value>
+  </data>
+  <data name="PublicRelation" xml:space="preserve">
+    <value>Directorate of Public Relation</value>
+  </data>
+  <data name="SpecialSecurity" xml:space="preserve">
+    <value>Special Security Police Division</value>
+  </data>
+  <data name="telcom" xml:space="preserve">
+    <value>tt</value>
+  </data>
+  <data name="Traffic" xml:space="preserve">
+    <value>Directorate General of Traffic</value>
+  </data>
+  <data name="Transport" xml:space="preserve">
+    <value>Directorate General of Transport</value>
+  </data>
+</root>

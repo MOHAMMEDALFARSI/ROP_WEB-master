@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D015454E-7FCA-42C1-8E71-6122C585DB1D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ROP_WEB</RootNamespace>
+    <AssemblyName>ROP_WEB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44393</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connected Services\ServiceReference1\ROP_WEB.ServiceReference1.SLIDER.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\ServiceReference1\ROP_WEB.ServiceReference1.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReference1\Service11.disco" />
+    <Content Include="Content\icons\fonts\untitled-font-6.svg" />
+    <Content Include="Content\icons\styles.css" />
+    <Content Include="Content\images\check.png" />
+    <Content Include="Content\images\Eoman.png" />
+    <Content Include="Content\images\footer.jpg" />
+    <Content Include="Content\images\footer_border.png" />
+    <Content Include="Content\images\home_slider_1.jpg" />
+    <Content Include="Content\images\home_slider_2.jpg" />
+    <Content Include="Content\images\home_sslider_1.jpg" />
+    <Content Include="Content\images\index.png" />
+    <Content Include="Content\images\ISS.png" />
+    <Content Include="Content\images\kidsmagazine_54.jpg" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logoAR.png" />
+    <Content Include="Content\images\NCCD.png" />
+    <Content Include="Content\images\nccht.png" />
+    <Content Include="Content\images\newbg.png" />
+    <Content Include="Content\images\news0.jpg" />
+    <Content Include="Content\images\news1.jpg" />
+    <Content Include="Content\images\rl1.PNG" />
+    <Content Include="Content\images\ropca.png" />
+    <Content Include="Content\images\RopIDshape.png" />
+    <Content Include="Content\images\texed ISS.png" />
+    <Content Include="Content\images\Traffic.png" />
+    <Content Include="Content\images\Untitled-1.png" />
+    <Content Include="Content\images\vector-img.png" />
+    <Content Include="Content\images\x %282%29.jpg" />
+    <Content Include="Content\js\custom.js" />
+    <Content Include="Content\js\jquery-3.2.1.min.js" />
+    <Content Include="Content\js\wow.min.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\plugins\easing\easing.js" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Content\plugins\gallery.css" />
+    <Content Include="Content\plugins\gallery.js" />
+    <Content Include="Content\plugins\greensock\animation.gsap.min.js" />
+    <Content Include="Content\plugins\greensock\ScrollToPlugin.min.js" />
+    <Content Include="Content\plugins\greensock\TimelineMax.min.js" />
+    <Content Include="Content\plugins\greensock\TweenMax.min.js" />
+    <Content Include="Content\plugins\Isotope\isotope.pkgd.min.js" />
+    <Content Include="Content\plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
+    <Content Include="Content\plugins\OwlCarousel2-2.2.1\animate.css" />
+    <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
+    <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.carousel.js" />
+    <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.carousel.min.css" />
+    <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.carousel.min.js" />
+    <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
+    <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.theme.default.min.css" />
+    <Content Include="Content\plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
+    <Content Include="Content\plugins\parallax-js-master\parallax.min.js" />
+    <Content Include="Content\plugins\scrollmagic\ScrollMagic.min.js" />
+    <Content Include="Content\styles\audio.css" />
+    <Content Include="Content\styles\bootstrap4\bootstrap.min.css" />
+    <Content Include="Content\styles\bootstrap4\bootstrap.min.js" />
+    <Content Include="Content\styles\bootstrap4\bootstrap.minAR.css" />
+    <Content Include="Content\styles\bootstrap4\popper.js" />
+    <Content Include="Content\styles\bootstrapst.css" />
+    <Content Include="Content\styles\images\check.png" />
+    <Content Include="Content\styles\main_styles.css" />
+    <Content Include="Content\styles\main_stylesAR.css" />
+    <Content Include="Content\styles\responsive.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Res\ROP_Phones\RopPhones_Batinah_North.xml" />
+    <Content Include="Res\ROP_Phones\RopPhones_Batinah_South.xml" />
+    <Content Include="Res\ROP_Phones\RopPhones_Buraimi.xml" />
+    <Content Include="Res\ROP_Phones\RopPhones_Dahirah.xml" />
+    <Content Include="Res\ROP_Phones\RopPhones_Dakiliyah.xml" />
+    <Content Include="Res\ROP_Phones\RopPhones_Dhofar.xml" />
+    <Content Include="Res\ROP_Phones\RopPhones_MCT.xml" />
+    <Content Include="Res\ROP_Phones\RopPhones_Musandam.xml" />
+    <Content Include="Res\ROP_Phones\RopPhones_Sharqiyah_North.xml" />
+    <Content Include="Res\ROP_Phones\RopPhones_Sharqiyah_South.xml" />
+    <Content Include="Res\ROP_Phones\RopPhones_Wusta.xml" />
+    <Content Include="Res\Slider.xml" />
+    <Content Include="Res\Ads.xml" />
+    <Content Include="Res\OffenseClass.xml" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Content\plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Content\styles\breadcrumb.scss" />
+    <Content Include="Content\icons\fonts\untitled-font-6.eot" />
+    <Content Include="Content\icons\fonts\untitled-font-6.ttf" />
+    <Content Include="Content\icons\fonts\untitled-font-6.woff" />
+    <Content Include="app.config" />
+    <None Include="Connected Services\ServiceReference1\Service11.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service131.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service132.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\Kufi.woff2" />
+    <None Include="Properties\PublishProfiles\RopWebsite.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AboutROPController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MediaController.cs" />
+    <Compile Include="Controllers\OpenDataController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ad.cs" />
+    <Compile Include="Models\Article.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FAQCategory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FAQMain.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsCategory.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsImage.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NewsMain.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Offense.cs" />
+    <Compile Include="Models\SERVICE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SERVICE_CAT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SERVICE_PROVIDER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SERVICE_STATUS.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Station.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Res\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\AboutROP\GeneralInfo.cshtml" />
+    <Content Include="Views\AboutROP\Organization.cshtml" />
+    <Content Include="Views\OpenData\Roplaws.cshtml" />
+    <Content Include="Views\OpenData\TrafficFines.cshtml" />
+    <Content Include="Views\AboutROP\Achivachievements.cshtml" />
+    <Content Include="Views\OpenData\Saftytips.cshtml" />
+    <Content Include="Views\Services\PersonalServices.cshtml" />
+    <Content Include="Views\Services\ServicesDetails.cshtml" />
+    <Content Include="Views\Media\News.cshtml" />
+    <Content Include="Views\Media\NewsDetails.cshtml" />
+    <Content Include="Views\Media\PhotosAlbum.cshtml" />
+    <Content Include="Views\Contact\ropphones.cshtml" />
+    <Content Include="Views\Media\Articles.cshtml" />
+    <Content Include="Views\Media\Ads.cshtml" />
+    <Content Include="Views\Media\AlainaAssahira.cshtml" />
+    <Content Include="Views\AboutROP\Vision_Mission.cshtml" />
+    <Content Include="Views\Contact\ContactUs.cshtml" />
+    <Content Include="Views\Contact\workTimes.cshtml" />
+    <Content Include="Views\Contact\FAQ.cshtml" />
+    <Content Include="Views\Contact\Survey.cshtml" />
+    <Content Include="Views\Services\GovServices.cshtml" />
+    <Content Include="Views\Services\CompaniesServices.cshtml" />
+    <Content Include="Views\Media\Ropmagazine.cshtml" />
+    <Content Include="Views\Media\Events.cshtml" />
+    <Content Include="Views\Media\KidsMagazin.cshtml" />
+    <Content Include="Views\Media\EmploymentAds.cshtml" />
+    <Content Include="Views\Home\terms.cshtml" />
+    <Content Include="Views\Home\copyright.cshtml" />
+    <Content Include="Views\Home\polices.cshtml" />
+    <Content Include="Views\Home\disclaimer.cshtml" />
+    <Content Include="Views\Home\Sitemap.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\OpenData\Statistics.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\ad\" />
+    <Folder Include="Res\Album\" />
+    <Folder Include="ROP_Content\Audios\" />
+    <Folder Include="ROP_Content\Imgs\" />
+    <Folder Include="ROP_Content\pdfs\" />
+    <Folder Include="ROP_Content\Videos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Res\Resource.ar.resx" />
+    <EmbeddedResource Include="Res\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50743</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44393/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <servers defaultServer="SelfHostServer">
+            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:50743/" workingDir="" />
+          </servers>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

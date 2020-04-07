@@ -1,0 +1,131 @@
+﻿
+@section PageTitle {
+    @Resource.trafficfinespoint
+}
+@section arurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view="TrafficFines",cont="OpenData"}  )">
+        <i class="fa fa-globe"></i> عربي
+    </a>
+}
+
+@section enurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "en-US",view="TrafficFines",cont="OpenData" } )">
+        <i class="fa fa-globe"></i> En
+    </a>
+}
+@using ROP_WEB.Res
+
+
+
+@model PagedList.IPagedList<ROP_WEB.Models.Offense>
+@using PagedList.Mvc;
+
+<div class="container TopicStyle">
+    <div class="row">
+
+        <div class="col breadcrumbstyle" style="padding:0">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
+                    <li class="breadcrumb-item">@Resource.opendata</li>
+                    <li class="breadcrumb-item active">@Resource.trafficfinespoint  </li>
+                    <li class="readspeakercls">
+                        <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                                <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
+                                <span class="rsbtn_right rsimg rsplay rspart"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container topiccontiner">
+
+        <div class="row">
+
+            <div class="col-md-4 d-none d-sm-block">
+                <ul class="list-group">
+                    <li class="list-group-item"> <a href="#">@Resource.laws  </a></li>
+                    <li class="list-group-item activelist"><a href="#">@Resource.trafficfinespoint </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.servicesfees </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.stat </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.dlil </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.Locations </a></li>
+
+                </ul>
+
+            </div>
+            <div class="col-md-8">
+
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
+                    <h3>  @Resource.trafficfinespoint </h3>
+                    <p>
+
+                        يمكنك تصفح المخالفات المرورية ومعرفة نقاطها و الغرامات المترتبة عليها.
+                    </p>
+                    @*<div class="dropdownlist">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            التصنيف
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">السرعة</a>
+                            <a class="dropdown-item" href="#">السرعة</a>
+                            <a class="dropdown-item" href="#">السرعة</a>
+
+                        </div>
+                    </div>*@
+                    <table class="table table-bordered table-hover table-responsive-lg">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.ActionLink("ID", "TrafficFines",
+                                            new { sortOrder = "OffenseId", CurrentSort = ViewBag.CurrentSort })
+                                </th>
+                                <th>@Resource.finedesc</th>
+                                <th>@Resource.finepoint</th>
+                                <th>@Resource.fineamount</th>
+                                <th>@Resource.fineclass</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td> @Html.DisplayFor(modelItem => item.OffenseId) </td>
+                                    <td>@item.OffenseDescAr</td>
+                                    <td>@item.OffensePoints</td>
+                                    <td>@item.OffenseAmount</td>
+                                    <td>@item.OffenseClassAr</td>
+                                </tr>
+                            }
+
+
+
+
+                        </tbody>
+                    </table>
+
+
+                    <ul class="pagination">
+                        @for (int i = 1; i <= Model.PageCount; i++)
+                        {
+                            <li class="@(i == Model.PageNumber ? "page-item active" : "page-item")">
+                                <a class="page-link" href="@Url.Action("TrafficFines", new { page = i })">@i</a>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

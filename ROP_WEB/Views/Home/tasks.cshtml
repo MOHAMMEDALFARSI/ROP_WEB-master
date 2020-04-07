@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = Resource.about2;
+}
+@section arurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view="tasks"}  )">
+        <i class="fa fa-globe"></i> عربـي
+    </a>
+}
+
+@section enurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "en-US",view="tasks" } )">
+        <i class="fa fa-globe"></i> English
+    </a>
+}
+@using ROP_WEB.Res
+
+
+<div class="container-fluid TopicStyle">
+    <div class="row">
+
+        <div class="col breadcrumbstyle" style="padding:0">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">@Resource.home</a></li>
+                    <li class="breadcrumb-item"><a href="#">@Resource.about</a></li>
+                    <li class="breadcrumb-item active">@Resource.about2  </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container topiccontiner">
+
+        <div class="row">
+
+            <div class="col">
+                <h3>   @Resource.tasks</h3>
+                <div class="jumbotron">
+
+                    <p>
+                        @Resource.tasks2
+                    </p>
+                    <p>
+                        @Resource.task3
+
+                    </p>
+
+                    <p>
+                        @Resource.task4
+
+                    </p>
+                    <p><b>@Resource.task5</b></p>
+                    <ul class="list-group">
+                        <li class="list-group-item">@Resource.task51</li>
+                        <li class="list-group-item">@Resource.task52</li>
+                        <li class="list-group-item">@Resource.task53</li>
+                     
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+

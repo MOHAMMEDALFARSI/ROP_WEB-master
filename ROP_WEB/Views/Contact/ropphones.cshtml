@@ -1,0 +1,327 @@
+﻿
+@section PageTitle {
+    @Resource.ropphones
+}
+@section arurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view="ropphones",cont="Contact"}  )">
+        <i class="fa fa-globe"></i> عربي
+    </a>
+}
+
+@section enurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "en-US",view="ropphones",cont="Contact"}  )">
+        <i class="fa fa-globe"></i> En
+    </a>
+}
+@using ROP_WEB.Res
+@using System.Threading;
+
+
+<div class="container TopicStyle">
+    <div class="row">
+
+        <div class="col breadcrumbstyle" style="padding:0">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
+                    <li class="breadcrumb-item"><a href="#">@Resource.contact</a></li>
+                    <li class="breadcrumb-item active">@Resource.ropphones </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container topiccontiner">
+
+        <div class="row">
+
+            <div class="col-md-4 d-none d-sm-block">
+                <ul class="list-group">
+                    <li class="list-group-item"> <a href="#">@Resource.contact  </a></li>
+                    <li class="list-group-item activelist"><a href="#">@Resource.ropphones </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.worktime </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.faq </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.survey </a></li>
+
+
+                </ul>
+
+            </div>
+            <div class="col-md-8">
+
+                <div class="jumbotron">
+                    <p>  </p>
+
+
+
+                    <div id="accordion" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <h5 class="mb-0">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        للأستفسار عن خدمات الشرطة
+                                    </a>
+                                </h5>
+                            </div>
+
+                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+
+                                <div class="card-block">
+                                    <table class="table table-bordered">
+
+                                        <tbody>
+                                            <tr>
+
+                                                <th>
+                                                    الإدارة
+                                                </th>
+                                                <th>
+                                                    رقم الهاتف
+                                                </th>
+
+                                            </tr>
+                                            <tr>
+
+                                                <td>GEnral dirictory of trafics trafics trafics</td>
+                                                <td> <a href="#">99999999</a></td>
+                                            </tr>
+                                            <tr>
+
+                                                <td> خدمات الادارة العامة للجوازات والإقامة</td>
+                                                <td> <a href="#">99999999</a></td>
+                                            </tr>
+                                            <tr>
+
+                                                <td> مكافحة الجرائم الاقتصادية (الابتزاز و الاحتيال الإلكتروني)</td>
+                                                <td> <a href="#">99999999</a></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <a onclick="getStationListdef()" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        القيادات الجغرافية
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="card-block">
+                                    <div class="form-group">
+                                        <label for="sel1">إختر المحافظة : </label>
+                                        <select class="form-control" id="RegionsDropDown" onchange = "getStationList()"  >
+                                            <option value="RopPhones_MCT">RopPhones_MCT</option>
+                                            <option value="RopPhones_Buraimi">RopPhones_Buraimi</option>
+                                            <option value="RopPhones_Dahirah">RopPhones_Dahirah</option>
+                                            <option value="RopPhones_Dakiliyah">RopPhones_Dakiliyah</option>
+                                            <option value="RopPhones_Dhofar">RopPhones_Dhofar</option>
+                                            <option value="RopPhones_MCT">RopPhones_MCT</option>
+                                            <option value="RopPhones_Musandam">RopPhones_Musandam</option>
+                                            <option value="RopPhones_Sharqiyah_North">RopPhones_Sharqiyah_North</option>
+                                            <option value="RopPhones_Sharqiyah_South">RopPhones_Sharqiyah_South</option>
+                                            <option value="RopPhones_Wusta">RopPhones_Wusta</option>
+                                        </select>
+                                    </div>
+                                    <table class="table table-bordered" id="stationstbl">
+
+                                        <tbody>
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <h5 class="mb-0">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        القيادات التخصصية
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="card-block">
+
+                                    <table class="table table-bordered">
+
+                                        <tbody>
+                                            <tr>
+                                                
+                                                <th>
+                                                    المسمى
+                                                </th>
+                                                <th>
+                                                    رقم الهاتف
+                                                </th>
+
+                                            </tr>
+                                            <tr>
+                                                
+                                                <td> aaa</td>
+                                                <td> <a href="#">999</a></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingFour">
+                                <h5 class="mb-0">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        الإدارات العامة
+                                    </a>
+                                </h5>
+                            </div>
+                            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="card-block">
+                                    <div class="form-group">
+                                        <label for="sel1">إختر الإدارة : </label>
+                                        <select class="form-control" id="sel1">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                    <table class="table table-bordered">
+
+                                        <tbody>
+                                            <tr>
+                                               
+                                                <th>
+                                                    المسمى
+                                                </th>
+                                                <th>
+                                                    رقم الهاتف
+                                                </th>
+
+                                            </tr>
+                                            <tr>
+                                               
+                                                <td> aa</td>
+                                                <td> <a href="#">999</a></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function getStationListdef() {
+
+      
+        var region = "RopPhones_MCT";
+
+
+        $.ajax
+        ({
+            url: '/Contact/GetStations',
+            type: 'POST',
+            datatype: 'application/json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                region: region
+            }),
+            success: function (result) {
+                $("#stationstbl").html("");
+                $("#stationstbl").append("<tr><th>المسمى</th> <th>رقم الهاتف</th> </tr>");
+
+                $.each($.parseJSON(result), function (i, data) {
+
+                    $("#stationstbl").append("<tr><td>" + data.StationAr + "</td><td>" + data.StationPhone + "</td></tr>");
+                })
+
+            },
+            error: function () {
+                // alert("Whooaaa! Something went wrong..")
+            },
+        });
+    }
+    function getStationList() {
+       
+
+            var region = $("#RegionsDropDown").val();
+       
+   
+        $.ajax
+        ({
+            url: '/Contact/GetStations',
+            type: 'POST',
+            datatype: 'application/json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                region:  region
+            }),
+            
+            success: function (result) {
+               $("#stationstbl").html("");
+               $("#stationstbl").append("<tr><th>المسمى</th> <th>رقم الهاتف</th> </tr>");
+
+               $.each($.parseJSON(result), function (i, data) {
+
+                    $("#stationstbl").append("<tr><td>" + data.StationAr + "</td><td>" + data.StationPhone + "</td></tr>");
+                 })
+ 
+            
+            },
+            error: function () {
+                 // alert("Whooaaa! Something went wrong..")
+             },
+        });
+    }
+</script>

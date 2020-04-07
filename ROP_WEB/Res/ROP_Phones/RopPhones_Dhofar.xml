@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>Dhofar Governorate Police HQ</StationEn>
+    <StationAr>قيادة شرطة محافظة ظفار</StationAr>
+    <StationPhone>23234599</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>2</StationId>
+    <StationEn>Salalah Police Station</StationEn>
+    <StationAr>مركز شرطة صلالة</StationAr>
+    <StationPhone>23290099</StationPhone>
+  </Station>
+
+  <Station>
+    <StationId>3</StationId>
+    <StationEn>Awqad Police Station</StationEn>
+    <StationAr>مركز شرطة عوقد</StationAr>
+    <StationPhone>23214484</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>4</StationId>
+    <StationEn>A’Saadah Police Station</StationEn>
+    <StationAr>مركز شرطة السعادة</StationAr>
+    <StationPhone>23234170</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>5</StationId>
+    <StationEn>Taqah Police Station</StationEn>
+    <StationAr>مركز شرطة طاقة</StationAr>
+    <StationPhone>23258199</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>6</StationId>
+    <StationEn>Mirbat Police Station</StationEn>
+    <StationAr>مركز شرطة مرباط</StationAr>
+    <StationPhone>23268099</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>7</StationId>
+    <StationEn>Sadah Police Station</StationEn>
+    <StationAr>مركز شرطة سدح</StationAr>
+    <StationPhone>23277099</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>8</StationId>
+    <StationEn>Wadi Hareet Police Station</StationEn>
+    <StationAr>مخفر شرطة وادي حريط</StationAr>
+    <StationPhone>23282199</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>9</StationId>
+    <StationEn>Tawi Ateer Police Station</StationEn>
+    <StationAr>مخفر شرطة طوي عتير</StationAr>
+    <StationPhone>23283599</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>10</StationId>
+    <StationEn>Ghado Police Station</StationEn>
+    <StationAr>مخفر شرطة غدو</StationAr>
+    <StationPhone>23281599</StationPhone>
+  </Station>
+  
+  
+    <Station>
+    <StationId>11</StationId>
+    <StationEn>Port Security Salalah Port</StationEn>
+    <StationAr>مركز شرطة أمن ميناء صلالة</StationAr>
+    <StationPhone>23219150</StationPhone>
+  </Station>
+  
+  
+  
+    <Station>
+    <StationId>12</StationId>
+    <StationEn>Arzat Police Station</StationEn>
+    <StationAr>مركز شرطة أرزات</StationAr>
+    <StationPhone>23235025</StationPhone>
+  </Station>
+  
+  
+  
+    <Station>
+    <StationId>13</StationId>
+    <StationEn>Sarfait Police Station</StationEn>
+    <StationAr>مركز شرطة صرفيت</StationAr>
+    <StationPhone>23286633</StationPhone>
+  </Station>
+  
+  
+  
+   <Station>
+    <StationId>14</StationId>
+    <StationEn>Thamrait Police Station</StationEn>
+    <StationAr>وحدة شرطة ثمريت</StationAr>
+    <StationPhone>23279099</StationPhone>
+  </Station>
+  
+  
+     <Station>
+    <StationId>15</StationId>
+    <StationEn>Al-Mazyona Police Station</StationEn>
+    <StationAr>مركز شرطة المزيونة</StationAr>
+    <StationPhone>23263877</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>16</StationId>
+    <StationEn>Shahab Asahab Police Post</StationEn>
+    <StationAr>مركز شرطة شهب أصعيب</StationAr>
+    <StationPhone>23287399</StationPhone>
+  </Station>
+  
+  
+  
+    <Station>
+    <StationId>17</StationId>
+    <StationEn>Shaleem Police Post</StationEn>
+    <StationAr>مركز شرطة شليم</StationAr>
+    <StationPhone>23200399</StationPhone>
+  </Station>
+  
+ 
+  
+</RegionStation>

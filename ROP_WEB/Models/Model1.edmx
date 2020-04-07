@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ROP_WEBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Articles">
+          <Key>
+            <PropertyRef Name="ArticleID" />
+          </Key>
+          <Property Name="ArticleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateAdded" Type="datetime" />
+          <Property Name="ArticleDate" Type="datetime" />
+          <Property Name="Title" Type="nvarchar" MaxLength="255" />
+          <Property Name="Author" Type="nvarchar" MaxLength="255" />
+          <Property Name="Synopsis" Type="nvarchar(max)" />
+          <Property Name="Details" Type="nvarchar(max)" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Language" Type="nchar" MaxLength="10" />
+          <Property Name="Archive" Type="bit" />
+        </EntityType>
+        <EntityType Name="FAQCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryE" Type="nvarchar" MaxLength="255" />
+          <Property Name="CategoryA" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="FAQMain">
+          <Key>
+            <PropertyRef Name="FAQID" />
+          </Key>
+          <Property Name="FAQID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateAdded" Type="smalldatetime" />
+          <Property Name="Language" Type="nvarchar" MaxLength="255" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="Question" Type="ntext" />
+          <Property Name="Answer" Type="ntext" />
+          <Property Name="Answered" Type="bit" />
+          <Property Name="Publish" Type="bit" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="ContactInfo" Type="ntext" />
+          <Property Name="ReferenceNo" Type="nvarchar" MaxLength="200" />
+          <Property Name="MailSent" Type="bit" />
+        </EntityType>
+        <EntityType Name="NewsCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="CategoryE" Type="nvarchar(max)" />
+          <Property Name="CategoryA" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NewsImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Filename" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ContentType" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Image" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Imagesize" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NewsID" Type="bigint" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewsMain">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="NewsDate" Type="smalldatetime" />
+          <Property Name="ExpiryDate" Type="smalldatetime" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Synopsis" Type="nvarchar(max)" />
+          <Property Name="Detail" Type="nvarchar(max)" />
+          <Property Name="Show" Type="bit" />
+          <Property Name="Archive" Type="bit" />
+          <Property Name="Language" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="SERVICE">
+          <Key>
+            <PropertyRef Name="Service_Id" />
+          </Key>
+          <Property Name="Service_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Service_Name_Ar" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Service_Name_En" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Service_Desc_Ar" Type="nvarchar(max)" />
+          <Property Name="Service_Desc_En" Type="nvarchar(max)" />
+          <Property Name="Service_procedure_Ar" Type="nvarchar(max)" />
+          <Property Name="Service_procedure_En" Type="nvarchar(max)" />
+          <Property Name="Service_Fees_Ar" Type="nvarchar(max)" />
+          <Property Name="Service_Fees_En" Type="nvarchar(max)" />
+          <Property Name="Service_Channel_Ar" Type="nvarchar(max)" />
+          <Property Name="Service_Channel_En" Type="nvarchar(max)" />
+          <Property Name="Service_Terms_Ar" Type="nvarchar(max)" />
+          <Property Name="Service_Terms_En" Type="nvarchar(max)" />
+          <Property Name="Service_Req_Doc_Ar" Type="nvarchar(max)" />
+          <Property Name="Service_Req_Doc_En" Type="nvarchar(max)" />
+          <Property Name="Service_Cat_Id" Type="int" Nullable="false" />
+          <Property Name="Service_Doc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Service_Provider_Id" Type="int" Nullable="false" />
+          <Property Name="services_Status_Id" Type="int" Nullable="false" />
+          <Property Name="AddedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="SERVICE_CAT">
+          <Key>
+            <PropertyRef Name="Service_Cat_Id" />
+          </Key>
+          <Property Name="Service_Cat_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Service_Cat_Name_Ar" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Service_Cat_Name_En" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SERVICE_PROVIDER">
+          <Key>
+            <PropertyRef Name="Service_Provider_Id" />
+          </Key>
+          <Property Name="Service_Provider_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Service_Provider_Name_Ar" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Service_Provider_Name_En" Type="nvarchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SERVICE_STATUS">
+          <Key>
+            <PropertyRef Name="services_Status_Id" />
+          </Key>
+          <Property Name="services_Status_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="services_Status" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CategoryID">
+          <End Role="FAQCategory" Type="Self.FAQCategory" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FAQMain" Type="Self.FAQMain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FAQCategory">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="FAQMain">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_nCategoryID">
+          <End Role="NewsCategory" Type="Self.NewsCategory" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NewsMain" Type="Self.NewsMain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsCategory">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="NewsMain">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsIDImg">
+          <End Role="NewsMain" Type="Self.NewsMain" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NewsImage" Type="Self.NewsImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsMain">
+              <PropertyRef Name="NewsID" />
+            </Principal>
+            <Dependent Role="NewsImage">
+              <PropertyRef Name="NewsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_scat">
+          <End Role="SERVICE_CAT" Type="Self.SERVICE_CAT" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_CAT">
+              <PropertyRef Name="Service_Cat_Id" />
+            </Principal>
+            <Dependent Role="SERVICE">
+              <PropertyRef Name="Service_Cat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_serstatus">
+          <End Role="SERVICE_STATUS" Type="Self.SERVICE_STATUS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_STATUS">
+              <PropertyRef Name="services_Status_Id" />
+            </Principal>
+            <Dependent Role="SERVICE">
+              <PropertyRef Name="services_Status_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprov">
+          <End Role="SERVICE_PROVIDER" Type="Self.SERVICE_PROVIDER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_PROVIDER">
+              <PropertyRef Name="Service_Provider_Id" />
+            </Principal>
+            <Dependent Role="SERVICE">
+              <PropertyRef Name="Service_Provider_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ROP_WEBModelStoreContainer">
+          <EntitySet Name="Articles" EntityType="Self.Articles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FAQCategory" EntityType="Self.FAQCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FAQMain" EntityType="Self.FAQMain" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewsCategory" EntityType="Self.NewsCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewsImage" EntityType="Self.NewsImage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewsMain" EntityType="Self.NewsMain" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SERVICE" EntityType="Self.SERVICE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SERVICE_CAT" EntityType="Self.SERVICE_CAT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SERVICE_PROVIDER" EntityType="Self.SERVICE_PROVIDER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SERVICE_STATUS" EntityType="Self.SERVICE_STATUS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CategoryID" Association="Self.FK_CategoryID">
+            <End Role="FAQCategory" EntitySet="FAQCategory" />
+            <End Role="FAQMain" EntitySet="FAQMain" />
+          </AssociationSet>
+          <AssociationSet Name="FK_nCategoryID" Association="Self.FK_nCategoryID">
+            <End Role="NewsCategory" EntitySet="NewsCategory" />
+            <End Role="NewsMain" EntitySet="NewsMain" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsIDImg" Association="Self.FK_NewsIDImg">
+            <End Role="NewsMain" EntitySet="NewsMain" />
+            <End Role="NewsImage" EntitySet="NewsImage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_scat" Association="Self.FK_scat">
+            <End Role="SERVICE_CAT" EntitySet="SERVICE_CAT" />
+            <End Role="SERVICE" EntitySet="SERVICE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_serstatus" Association="Self.FK_serstatus">
+            <End Role="SERVICE_STATUS" EntitySet="SERVICE_STATUS" />
+            <End Role="SERVICE" EntitySet="SERVICE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprov" Association="Self.FK_sprov">
+            <End Role="SERVICE_PROVIDER" EntitySet="SERVICE_PROVIDER" />
+            <End Role="SERVICE" EntitySet="SERVICE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ROP_WEBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FAQCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FAQMains" Relationship="Self.FK_CategoryID" FromRole="FAQCategory" ToRole="FAQMain" />
+        </EntityType>
+        <EntityType Name="FAQMain">
+          <Key>
+            <PropertyRef Name="FAQID" />
+          </Key>
+          <Property Name="FAQID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateAdded" Type="DateTime" Precision="0" />
+          <Property Name="Language" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answered" Type="Boolean" />
+          <Property Name="Publish" Type="Boolean" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReferenceNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="MailSent" Type="Boolean" />
+          <NavigationProperty Name="FAQCategory" Relationship="Self.FK_CategoryID" FromRole="FAQMain" ToRole="FAQCategory" />
+        </EntityType>
+        <EntityType Name="NewsCategory">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NewsMains" Relationship="Self.FK_nCategoryID" FromRole="NewsCategory" ToRole="NewsMain" />
+        </EntityType>
+        <EntityType Name="NewsImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Filename" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ContentType" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Imagesize" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NewsID" Type="Int64" Nullable="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="NewsMain" Relationship="Self.FK_NewsIDImg" FromRole="NewsImage" ToRole="NewsMain" />
+        </EntityType>
+        <EntityType Name="NewsMain">
+          <Key>
+            <PropertyRef Name="NewsID" />
+          </Key>
+          <Property Name="NewsID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="NewsDate" Type="DateTime" Precision="0" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Synopsis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Detail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Show" Type="Boolean" />
+          <Property Name="Archive" Type="Boolean" />
+          <Property Name="Language" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NewsCategory" Relationship="Self.FK_nCategoryID" FromRole="NewsMain" ToRole="NewsCategory" />
+          <NavigationProperty Name="NewsImages" Relationship="Self.FK_NewsIDImg" FromRole="NewsMain" ToRole="NewsImage" />
+        </EntityType>
+        <EntityType Name="SERVICE">
+          <Key>
+            <PropertyRef Name="Service_Id" />
+          </Key>
+          <Property Name="Service_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Service_Name_Ar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Service_Name_En" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Service_Desc_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Desc_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_procedure_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_procedure_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Fees_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Fees_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Channel_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Channel_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Terms_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Terms_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Req_Doc_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Req_Doc_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Cat_Id" Type="Int32" Nullable="false" />
+          <Property Name="Service_Doc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Provider_Id" Type="Int32" Nullable="false" />
+          <Property Name="services_Status_Id" Type="Int32" Nullable="false" />
+          <Property Name="AddedDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="SERVICE_CAT" Relationship="ROP_WEBModel.FK_scat" FromRole="SERVICE" ToRole="SERVICE_CAT" />
+          <NavigationProperty Name="SERVICE_STATUS" Relationship="ROP_WEBModel.FK_serstatus" FromRole="SERVICE" ToRole="SERVICE_STATUS" />
+          <NavigationProperty Name="SERVICE_PROVIDER" Relationship="ROP_WEBModel.FK_sprov" FromRole="SERVICE" ToRole="SERVICE_PROVIDER" />
+        </EntityType>
+        <EntityType Name="SERVICE_CAT">
+          <Key>
+            <PropertyRef Name="Service_Cat_Id" />
+          </Key>
+          <Property Name="Service_Cat_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Service_Cat_Name_Ar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Service_Cat_Name_En" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SERVICEs" Relationship="ROP_WEBModel.FK_scat" FromRole="SERVICE_CAT" ToRole="SERVICE" />
+        </EntityType>
+        <EntityType Name="SERVICE_PROVIDER">
+          <Key>
+            <PropertyRef Name="Service_Provider_Id" />
+          </Key>
+          <Property Name="Service_Provider_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Service_Provider_Name_Ar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Service_Provider_Name_En" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SERVICEs" Relationship="ROP_WEBModel.FK_sprov" FromRole="SERVICE_PROVIDER" ToRole="SERVICE" />
+        </EntityType>
+        <EntityType Name="SERVICE_STATUS">
+          <Key>
+            <PropertyRef Name="services_Status_Id" />
+          </Key>
+          <Property Name="services_Status_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="services_Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SERVICEs" Relationship="ROP_WEBModel.FK_serstatus" FromRole="SERVICE_STATUS" ToRole="SERVICE" />
+        </EntityType>
+        <EntityType Name="Article">
+          <Key>
+            <PropertyRef Name="ArticleID" />
+          </Key>
+          <Property Name="ArticleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateAdded" Type="DateTime" Precision="3" />
+          <Property Name="ArticleDate" Type="DateTime" Precision="3" />
+          <Property Name="Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Author" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Synopsis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Language" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Archive" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK_CategoryID">
+          <End Role="FAQCategory" Type="Self.FAQCategory" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FAQMain" Type="Self.FAQMain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FAQCategory">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="FAQMain">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_nCategoryID">
+          <End Role="NewsCategory" Type="Self.NewsCategory" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NewsMain" Type="Self.NewsMain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsCategory">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="NewsMain">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NewsIDImg">
+          <End Role="NewsMain" Type="Self.NewsMain" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NewsImage" Type="Self.NewsImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NewsMain">
+              <PropertyRef Name="NewsID" />
+            </Principal>
+            <Dependent Role="NewsImage">
+              <PropertyRef Name="NewsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ROP_WEBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FAQCategories" EntityType="Self.FAQCategory" />
+          <EntitySet Name="FAQMains" EntityType="Self.FAQMain" />
+          <EntitySet Name="NewsCategories" EntityType="Self.NewsCategory" />
+          <EntitySet Name="NewsImages" EntityType="Self.NewsImage" />
+          <EntitySet Name="NewsMains" EntityType="Self.NewsMain" />
+          <EntitySet Name="SERVICEs" EntityType="Self.SERVICE" />
+          <EntitySet Name="SERVICE_CAT" EntityType="Self.SERVICE_CAT" />
+          <EntitySet Name="SERVICE_PROVIDER" EntityType="Self.SERVICE_PROVIDER" />
+          <EntitySet Name="SERVICE_STATUS" EntityType="Self.SERVICE_STATUS" />
+          <EntitySet Name="Articles" EntityType="Self.Article" />
+          <AssociationSet Name="FK_CategoryID" Association="Self.FK_CategoryID">
+            <End Role="FAQCategory" EntitySet="FAQCategories" />
+            <End Role="FAQMain" EntitySet="FAQMains" />
+          </AssociationSet>
+          <AssociationSet Name="FK_nCategoryID" Association="Self.FK_nCategoryID">
+            <End Role="NewsCategory" EntitySet="NewsCategories" />
+            <End Role="NewsMain" EntitySet="NewsMains" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NewsIDImg" Association="Self.FK_NewsIDImg">
+            <End Role="NewsMain" EntitySet="NewsMains" />
+            <End Role="NewsImage" EntitySet="NewsImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_scat" Association="ROP_WEBModel.FK_scat">
+            <End Role="SERVICE_CAT" EntitySet="SERVICE_CAT" />
+            <End Role="SERVICE" EntitySet="SERVICEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_serstatus" Association="ROP_WEBModel.FK_serstatus">
+            <End Role="SERVICE_STATUS" EntitySet="SERVICE_STATUS" />
+            <End Role="SERVICE" EntitySet="SERVICEs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_sprov" Association="ROP_WEBModel.FK_sprov">
+            <End Role="SERVICE_PROVIDER" EntitySet="SERVICE_PROVIDER" />
+            <End Role="SERVICE" EntitySet="SERVICEs" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_scat">
+          <End Type="ROP_WEBModel.SERVICE_CAT" Role="SERVICE_CAT" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ROP_WEBModel.SERVICE" Role="SERVICE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_CAT">
+              <PropertyRef Name="Service_Cat_Id" />
+            </Principal>
+            <Dependent Role="SERVICE">
+              <PropertyRef Name="Service_Cat_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_serstatus">
+          <End Type="ROP_WEBModel.SERVICE_STATUS" Role="SERVICE_STATUS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ROP_WEBModel.SERVICE" Role="SERVICE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_STATUS">
+              <PropertyRef Name="services_Status_Id" />
+            </Principal>
+            <Dependent Role="SERVICE">
+              <PropertyRef Name="services_Status_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_sprov">
+          <End Type="ROP_WEBModel.SERVICE_PROVIDER" Role="SERVICE_PROVIDER" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ROP_WEBModel.SERVICE" Role="SERVICE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_PROVIDER">
+              <PropertyRef Name="Service_Provider_Id" />
+            </Principal>
+            <Dependent Role="SERVICE">
+              <PropertyRef Name="Service_Provider_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ROP_WEBModelStoreContainer" CdmEntityContainer="ROP_WEBEntities">
+          <EntitySetMapping Name="FAQCategories">
+            <EntityTypeMapping TypeName="ROP_WEBModel.FAQCategory">
+              <MappingFragment StoreEntitySet="FAQCategory">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryE" ColumnName="CategoryE" />
+                <ScalarProperty Name="CategoryA" ColumnName="CategoryA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FAQMains">
+            <EntityTypeMapping TypeName="ROP_WEBModel.FAQMain">
+              <MappingFragment StoreEntitySet="FAQMain">
+                <ScalarProperty Name="FAQID" ColumnName="FAQID" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Answered" ColumnName="Answered" />
+                <ScalarProperty Name="Publish" ColumnName="Publish" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+                <ScalarProperty Name="ReferenceNo" ColumnName="ReferenceNo" />
+                <ScalarProperty Name="MailSent" ColumnName="MailSent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsCategories">
+            <EntityTypeMapping TypeName="ROP_WEBModel.NewsCategory">
+              <MappingFragment StoreEntitySet="NewsCategory">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryE" ColumnName="CategoryE" />
+                <ScalarProperty Name="CategoryA" ColumnName="CategoryA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsImages">
+            <EntityTypeMapping TypeName="ROP_WEBModel.NewsImage">
+              <MappingFragment StoreEntitySet="NewsImage">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Filename" ColumnName="Filename" />
+                <ScalarProperty Name="ContentType" ColumnName="ContentType" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Imagesize" ColumnName="Imagesize" />
+                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsMains">
+            <EntityTypeMapping TypeName="ROP_WEBModel.NewsMain">
+              <MappingFragment StoreEntitySet="NewsMain">
+                <ScalarProperty Name="NewsID" ColumnName="NewsID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="NewsDate" ColumnName="NewsDate" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Synopsis" ColumnName="Synopsis" />
+                <ScalarProperty Name="Detail" ColumnName="Detail" />
+                <ScalarProperty Name="Show" ColumnName="Show" />
+                <ScalarProperty Name="Archive" ColumnName="Archive" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICEs">
+            <EntityTypeMapping TypeName="ROP_WEBModel.SERVICE">
+              <MappingFragment StoreEntitySet="SERVICE">
+                <ScalarProperty Name="Service_Id" ColumnName="Service_Id" />
+                <ScalarProperty Name="Service_Name_Ar" ColumnName="Service_Name_Ar" />
+                <ScalarProperty Name="Service_Name_En" ColumnName="Service_Name_En" />
+                <ScalarProperty Name="Service_Desc_Ar" ColumnName="Service_Desc_Ar" />
+                <ScalarProperty Name="Service_Desc_En" ColumnName="Service_Desc_En" />
+                <ScalarProperty Name="Service_procedure_Ar" ColumnName="Service_procedure_Ar" />
+                <ScalarProperty Name="Service_procedure_En" ColumnName="Service_procedure_En" />
+                <ScalarProperty Name="Service_Fees_Ar" ColumnName="Service_Fees_Ar" />
+                <ScalarProperty Name="Service_Fees_En" ColumnName="Service_Fees_En" />
+                <ScalarProperty Name="Service_Channel_Ar" ColumnName="Service_Channel_Ar" />
+                <ScalarProperty Name="Service_Channel_En" ColumnName="Service_Channel_En" />
+                <ScalarProperty Name="Service_Terms_Ar" ColumnName="Service_Terms_Ar" />
+                <ScalarProperty Name="Service_Terms_En" ColumnName="Service_Terms_En" />
+                <ScalarProperty Name="Service_Req_Doc_Ar" ColumnName="Service_Req_Doc_Ar" />
+                <ScalarProperty Name="Service_Req_Doc_En" ColumnName="Service_Req_Doc_En" />
+                <ScalarProperty Name="Service_Cat_Id" ColumnName="Service_Cat_Id" />
+                <ScalarProperty Name="Service_Doc" ColumnName="Service_Doc" />
+                <ScalarProperty Name="Service_Provider_Id" ColumnName="Service_Provider_Id" />
+                <ScalarProperty Name="services_Status_Id" ColumnName="services_Status_Id" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICE_CAT">
+            <EntityTypeMapping TypeName="ROP_WEBModel.SERVICE_CAT">
+              <MappingFragment StoreEntitySet="SERVICE_CAT">
+                <ScalarProperty Name="Service_Cat_Id" ColumnName="Service_Cat_Id" />
+                <ScalarProperty Name="Service_Cat_Name_Ar" ColumnName="Service_Cat_Name_Ar" />
+                <ScalarProperty Name="Service_Cat_Name_En" ColumnName="Service_Cat_Name_En" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICE_PROVIDER">
+            <EntityTypeMapping TypeName="ROP_WEBModel.SERVICE_PROVIDER">
+              <MappingFragment StoreEntitySet="SERVICE_PROVIDER">
+                <ScalarProperty Name="Service_Provider_Id" ColumnName="Service_Provider_Id" />
+                <ScalarProperty Name="Service_Provider_Name_Ar" ColumnName="Service_Provider_Name_Ar" />
+                <ScalarProperty Name="Service_Provider_Name_En" ColumnName="Service_Provider_Name_En" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SERVICE_STATUS">
+            <EntityTypeMapping TypeName="ROP_WEBModel.SERVICE_STATUS">
+              <MappingFragment StoreEntitySet="SERVICE_STATUS">
+                <ScalarProperty Name="services_Status_Id" ColumnName="services_Status_Id" />
+                <ScalarProperty Name="services_Status" ColumnName="services_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Articles">
+            <EntityTypeMapping TypeName="ROP_WEBModel.Article">
+              <MappingFragment StoreEntitySet="Articles">
+                <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="ArticleDate" ColumnName="ArticleDate" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Synopsis" ColumnName="Synopsis" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Archive" ColumnName="Archive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

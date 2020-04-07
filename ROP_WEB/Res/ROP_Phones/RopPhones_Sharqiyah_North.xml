@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>A’Sharqia North Governorate Police HQ</StationEn>
+    <StationAr>قيادة شرطة محافظة شمال الشرقية</StationAr>
+    <StationPhone>25570099</StationPhone>
+  </Station>
+  
+  
+  <Station>
+    <StationId>2</StationId>
+    <StationEn>Ibra Police Station</StationEn>
+    <StationAr>وحدة شرطة إبراء</StationAr>
+    <StationPhone>25572282</StationPhone>
+  </Station>
+  
+  
+  <Station>
+    <StationId>3</StationId>
+    <StationEn>Al Mudhaibi Police Station</StationEn>
+    <StationAr>مركز شرطة المضيبي</StationAr>
+    <StationPhone>25578099</StationPhone>
+  </Station>
+  
+  
+  
+    <Station>
+    <StationId>4</StationId>
+    <StationEn>Badiah Police Station</StationEn>
+    <StationAr>مركز شرطة بدية</StationAr>
+    <StationPhone>25584899</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>5</StationId>
+    <StationEn>Sinaw Police Station</StationEn>
+    <StationAr>مركز شرطة سناو</StationAr>
+    <StationPhone>25524988</StationPhone>
+  </Station>
+  
+
+</RegionStation>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>Al Dakhiliya Police Headquarters</StationEn>
+    <StationAr>قيادة شرطة منطقة الداخلية</StationAr>
+    <StationPhone>25414899</StationPhone>
+  </Station>
+  
+  
+  <Station>
+    <StationId>2</StationId>
+    <StationEn>Nizwa Police Division</StationEn>
+    <StationAr>مركز شرطة نزوى</StationAr>
+    <StationPhone>25425099</StationPhone>
+  </Station>
+  
+   <Station>
+    <StationId>3</StationId>
+    <StationEn>Bahla Police Station</StationEn>
+    <StationAr>مركز شرطة بهلاء</StationAr>
+    <StationPhone>25419099</StationPhone>
+  </Station>
+
+
+   <Station>
+    <StationId>4</StationId>
+    <StationEn>Adam Police Station</StationEn>
+    <StationAr>مركز شرطة أدم</StationAr>
+    <StationPhone>25218201</StationPhone>
+  </Station>
+
+
+   <Station>
+    <StationId>5</StationId>
+    <StationEn>Samail Police Division</StationEn>
+    <StationAr>وحدة شرطة سمائل</StationAr>
+    <StationPhone>25350099</StationPhone>
+  </Station>
+
+
+  
+   <Station>
+    <StationId>6</StationId>
+    <StationEn>Izki Police Station</StationEn>
+    <StationAr>مركز شرطة إزكي</StationAr>
+    <StationPhone>25340099</StationPhone>
+  </Station>
+
+
+   <Station>
+    <StationId>7</StationId>
+    <StationEn>Bid Bid Police Station</StationEn>
+    <StationAr>مركز شرطة بدبد</StationAr>
+    <StationPhone>25360099</StationPhone>
+  </Station>
+
+ <Station>
+    <StationId>8</StationId>
+    <StationEn>Directorate of Traffic, Nizwa</StationEn>
+    <StationAr>مركز شرطة الجبل الأخضر</StationAr>
+    <StationPhone>25429417</StationPhone>
+  </Station>
+
+  
+  
+
+
+</RegionStation>

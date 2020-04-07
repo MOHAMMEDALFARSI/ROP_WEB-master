@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>Al Wosta Police Headquarters</StationEn>
+    <StationAr>قيادة شرطة محافظة الوسطى</StationAr>
+    <StationPhone>23436099</StationPhone>
+  </Station>
+  
+  
+  <Station>
+    <StationId>2</StationId>
+    <StationEn>Haima Police Station</StationEn>
+    <StationAr>مركز شرطة هيما</StationAr>
+    <StationPhone>23436091</StationPhone>
+  </Station>
+
+  <Station>
+    <StationId>3</StationId>
+    <StationEn>Addukum Police Stationn</StationEn>
+    <StationAr>ركز شرطة الدقم</StationAr>
+    <StationPhone>23410141</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>4</StationId>
+    <StationEn>Mahoot Police Station</StationEn>
+    <StationAr>مركز شرطة محوت</StationAr>
+    <StationPhone>25448380</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>5</StationId>
+    <StationEn>Al Jazim Police Station</StationEn>
+    <StationAr>مركز شرطة الجازر</StationAr>
+    <StationPhone>23410117</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>6</StationId>
+    <StationEn>Jaalouni Police Station</StationEn>
+    <StationAr>مركز شرطة جعلوني</StationAr>
+    <StationPhone>99410045</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>7</StationId>
+    <StationEn>Addukum Port Security Police Station</StationEn>
+    <StationAr>مركز شرطة أمن ميناء الدقم</StationAr>
+    <StationPhone>92538489</StationPhone>
+  </Station>
+
+
+</RegionStation>

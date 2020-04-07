@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A'Sharqiyah Governorate South Police Headquarter" xml:space="preserve">
+    <value>قيادة شرطة محافظة جنوب الشرقية</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>عن الشرطة</value>
+  </data>
+  <data name="about1" xml:space="preserve">
+    <value>معلومات عامة</value>
+  </data>
+  <data name="about2" xml:space="preserve">
+    <value>الهيكل التنظيمي</value>
+  </data>
+  <data name="achivment" xml:space="preserve">
+    <value>الجوائز والإنجازات</value>
+  </data>
+  <data name="alig" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="alig2" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="AlWustaGovernoratePoliceHeadquarter" xml:space="preserve">
+    <value>قيادة شرطة محافظة الوسطى</value>
+  </data>
+  <data name="ASharqiyah GovernorateNorthPoliceHeadquarter" xml:space="preserve">
+    <value>قيادة شرطة محافظة شمال الشرقية</value>
+  </data>
+  <data name="bootstrap" xml:space="preserve">
+    <value>bootstrap.minAR.css</value>
+  </data>
+  <data name="clickhere" xml:space="preserve">
+    <value>إضغط هنا</value>
+  </data>
+  <data name="common" xml:space="preserve">
+    <value>الخدمات الأكثر إستخداما</value>
+  </data>
+  <data name="companyserv" xml:space="preserve">
+    <value>خدمات الشركات</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="contactus" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="contactuspage" xml:space="preserve">
+    <value>إتصل بنا</value>
+  </data>
+  <data name="contribute" xml:space="preserve">
+    <value>شارك معنا</value>
+  </data>
+  <data name="copyright" xml:space="preserve">
+    <value>شرطة عمان السلطانية - إدارة العلاقات العامة</value>
+  </data>
+  <data name="css" xml:space="preserve">
+    <value>main_stylesAR.css</value>
+  </data>
+  <data name="custom" xml:space="preserve">
+    <value>الخدمات الجمركية</value>
+  </data>
+  <data name="DhofarGovernoratePoliceHeadquarter" xml:space="preserve">
+    <value>قيادة شرطة محافظة ظفار</value>
+  </data>
+  <data name="dlil" xml:space="preserve">
+    <value>دليل السلامة</value>
+  </data>
+  <data name="downlaod" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
+  <data name="dpr" xml:space="preserve">
+    <value>- إدارة العلاقات العامة</value>
+  </data>
+  <data name="Eeectroniccertificate" xml:space="preserve">
+    <value>حالة شهادة عدم المحكومية</value>
+  </data>
+  <data name="emergnc" xml:space="preserve">
+    <value>الإتصال بالطوارى</value>
+  </data>
+  <data name="emergncy" xml:space="preserve">
+    <value>أرقام الطوارئ</value>
+  </data>
+  <data name="evisa" xml:space="preserve">
+    <value>التأشيرة الإلكترونية</value>
+  </data>
+  <data name="faq" xml:space="preserve">
+    <value>سؤال وجواب</value>
+  </data>
+  <data name="fineamount" xml:space="preserve">
+    <value>قيمة المخالفة</value>
+  </data>
+  <data name="fineclass" xml:space="preserve">
+    <value>الفئة</value>
+  </data>
+  <data name="finedesc" xml:space="preserve">
+    <value>وصف المخالفة</value>
+  </data>
+  <data name="finepoint" xml:space="preserve">
+    <value>النقاط</value>
+  </data>
+  <data name="footer1" xml:space="preserve">
+    <value>الشروط والاحكام</value>
+  </data>
+  <data name="footer2" xml:space="preserve">
+    <value>حقوق الطبع</value>
+  </data>
+  <data name="footer3" xml:space="preserve">
+    <value>السياسات</value>
+  </data>
+  <data name="footer4" xml:space="preserve">
+    <value>إخلاء طرف</value>
+  </data>
+  <data name="footer5" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
+  <data name="footer6" xml:space="preserve">
+    <value>خريطة الموقع</value>
+  </data>
+  <data name="footertitile" xml:space="preserve">
+    <value>شرطة عمان السلطانية</value>
+  </data>
+  <data name="GeneralDirectorate" xml:space="preserve">
+    <value>الإدارات العامة</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>الرئيسية</value>
+  </data>
+  <data name="importantlinks" xml:space="preserve">
+    <value>وصلات تهمك</value>
+  </data>
+  <data name="lawname" xml:space="preserve">
+    <value>اسم القانون</value>
+  </data>
+  <data name="lawnote" xml:space="preserve">
+    <value>ملاحظة: جميع القوانين والتشريعات متوفرة باللغة العربية فقط</value>
+  </data>
+  <data name="lawnumber" xml:space="preserve">
+    <value>الرقم</value>
+  </data>
+  <data name="laws" xml:space="preserve">
+    <value>القوانين والتشريعات</value>
+  </data>
+  <data name="lawtxt" xml:space="preserve">
+    <value>يمكنك تصفح القوانين ذات العلاقة بجهاز شرطة عمان السلطانية ، وتحميلها بصيغة القالب الإلكتروني PDF</value>
+  </data>
+  <data name="listen" xml:space="preserve">
+    <value>إستمع</value>
+  </data>
+  <data name="listen2" xml:space="preserve">
+    <value>ReadSpeaker إستمع إلى هذه الصفحةِ مستخدماً</value>
+  </data>
+  <data name="listen3lang" xml:space="preserve">
+    <value>ar_ar</value>
+  </data>
+  <data name="locationh" xml:space="preserve">
+    <value>مواقع مراكز الشرطة</value>
+  </data>
+  <data name="Locations" xml:space="preserve">
+    <value>دليل المواقع الجغرافية</value>
+  </data>
+  <data name="logo" xml:space="preserve">
+    <value>logoAR.png</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="md1" xml:space="preserve">
+    <value>أخبار الشرطة</value>
+  </data>
+  <data name="md2" xml:space="preserve">
+    <value>المقالات</value>
+  </data>
+  <data name="md3" xml:space="preserve">
+    <value>ألبوم الصور</value>
+  </data>
+  <data name="md4" xml:space="preserve">
+    <value>مجلة العين الساهرة</value>
+  </data>
+  <data name="md5" xml:space="preserve">
+    <value>إعـــلانات</value>
+  </data>
+  <data name="md6" xml:space="preserve">
+    <value>الشرطي الصغير</value>
+  </data>
+  <data name="md7" xml:space="preserve">
+    <value>برامج إذاعية</value>
+  </data>
+  <data name="md8event" xml:space="preserve">
+    <value>فعاليات</value>
+  </data>
+  <data name="md9" xml:space="preserve">
+    <value>إعلانات الوظائف</value>
+  </data>
+  <data name="media" xml:space="preserve">
+    <value>مركز الاعلام</value>
+  </data>
+  <data name="mgzntxt" xml:space="preserve">
+    <value>إصدارات مجلة العين الساهرة</value>
+  </data>
+  <data name="missiontext" xml:space="preserve">
+    <value>الرؤية</value>
+  </data>
+  <data name="moreads" xml:space="preserve">
+    <value>المزيد من الإعلانات</value>
+  </data>
+  <data name="morenews" xml:space="preserve">
+    <value>المزيد من الأخبار</value>
+  </data>
+  <data name="MusandamGovernoratePoliceHeadquarter" xml:space="preserve">
+    <value>قيادة شرطة محافظة مسندم</value>
+  </data>
+  <data name="MuscatGovernoratePoliceHeadquarter" xml:space="preserve">
+    <value>قيادة شرطة محافظة مسقط</value>
+  </data>
+  <data name="newh" xml:space="preserve">
+    <value>الأخبار</value>
+  </data>
+  <data name="noresult" xml:space="preserve">
+    <value>لايوجد نتائج !!</value>
+  </data>
+  <data name="opendata" xml:space="preserve">
+    <value>البيانات المفتوحة</value>
+  </data>
+  <data name="othercon" xml:space="preserve">
+    <value>جهات إتصال أخرى</value>
+  </data>
+  <data name="personalserv" xml:space="preserve">
+    <value>خدمات الأفراد</value>
+  </data>
+  <data name="photoselect" xml:space="preserve">
+    <value>إختر الإدارة</value>
+  </data>
+  <data name="PoliceSpecialized" xml:space="preserve">
+    <value>الوحدات التخصصية</value>
+  </data>
+  <data name="premail" xml:space="preserve">
+    <value>البريد الإلكتروني: info@rop.gov.om</value>
+  </data>
+  <data name="previousissues" xml:space="preserve">
+    <value>أرشيف الأعداد السابقة</value>
+  </data>
+  <data name="puplicserv" xml:space="preserve">
+    <value>خدمات المؤسسات العامة</value>
+  </data>
+  <data name="qaboossaid" xml:space="preserve">
+    <value>من أقوال القائد</value>
+  </data>
+  <data name="readmore" xml:space="preserve">
+    <value>إقراء المزيد</value>
+  </data>
+  <data name="RegionalPoliceHeadquarters" xml:space="preserve">
+    <value>قيادات الشرطة الجغرافية</value>
+  </data>
+  <data name="reprtblck" xml:space="preserve">
+    <value>إبلاغ عن حالات الإبتزاز الالكتروني</value>
+  </data>
+  <data name="right" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="rightleft" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="rlinksh" xml:space="preserve">
+    <value>جهات ذات علاقة</value>
+  </data>
+  <data name="ropmsg" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="ropphones" xml:space="preserve">
+    <value>دليل هواتف الشرطة</value>
+  </data>
+  <data name="ropserv" xml:space="preserve">
+    <value>للإستفسار عن خدمات شرطة عمان السلطانية</value>
+  </data>
+  <data name="saftyCompt" xml:space="preserve">
+    <value>مسابقة السلامة المرورية</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="searchin" xml:space="preserve">
+    <value>البحث في ..</value>
+  </data>
+  <data name="searchkey" xml:space="preserve">
+    <value>مفتاح البحث</value>
+  </data>
+  <data name="services" xml:space="preserve">
+    <value>خدماتنا</value>
+  </data>
+  <data name="servicesfees" xml:space="preserve">
+    <value>رسوم الخدمات</value>
+  </data>
+  <data name="slider1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="slider2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="slider3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="slider4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="smsserv" xml:space="preserve">
+    <value>خدمة التنبيه عبر الرسائل النصية</value>
+  </data>
+  <data name="socialh" xml:space="preserve">
+    <value>التواصل الإجتماعي</value>
+  </data>
+  <data name="SpecializedDirectorates" xml:space="preserve">
+    <value>الإدارات التخصصية</value>
+  </data>
+  <data name="stat" xml:space="preserve">
+    <value>إحصائيات</value>
+  </data>
+  <data name="survey" xml:space="preserve">
+    <value>إستبيان</value>
+  </data>
+  <data name="tabcom" xml:space="preserve">
+    <value>أكثر الخدمات إستخداما</value>
+  </data>
+  <data name="tabcom1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcom2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcom3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcom4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcom5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcomdet1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcomdet2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcomdet3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcomdet4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabcomdet5" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabour" xml:space="preserve">
+    <value>التصنيف</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>شرطة عمان السلطانية - الصفحة الرئـيسية</value>
+  </data>
+  <data name="trafficfines" xml:space="preserve">
+    <value>دفع المخالفات المرورية</value>
+  </data>
+  <data name="trafficfinespoint" xml:space="preserve">
+    <value>نقاط المخالفات المرورية</value>
+  </data>
+  <data name="twitter" xml:space="preserve">
+    <value>توتير</value>
+  </data>
+  <data name="updatecivil" xml:space="preserve">
+    <value>تحديث بيانات الأحوال المدنية</value>
+  </data>
+  <data name="vehicleregistration" xml:space="preserve">
+    <value>تجديد سجل المركبة</value>
+  </data>
+  <data name="visa" xml:space="preserve">
+    <value>الإستماره الإلكترونية للتأشيرات و الإقامة</value>
+  </data>
+  <data name="visastatus" xml:space="preserve">
+    <value>حالة طلب التأشيرة</value>
+  </data>
+  <data name="v_m" xml:space="preserve">
+    <value>الرؤية والرسالة</value>
+  </data>
+  <data name="worktime" xml:space="preserve">
+    <value>ساعات العمل</value>
+  </data>
+  <data name="youtube" xml:space="preserve">
+    <value>يوتيوب</value>
+  </data>
+  <data name="aren" xml:space="preserve">
+    <value>Ar</value>
+  </data>
+  <data name="ADahirah" xml:space="preserve">
+    <value>قيادة شرطة محافظة جنوب الشرقية</value>
+  </data>
+  <data name="ADakiliyah" xml:space="preserve">
+    <value>قيادة شرطة محافظة شمال الباطنة</value>
+  </data>
+  <data name="AirportSecurity" xml:space="preserve">
+    <value>الإدارة العامة لأمن المطارات</value>
+  </data>
+  <data name="AlBatinah" xml:space="preserve">
+    <value>قيادة شرطة محافظة البريمي</value>
+  </data>
+  <data name="AlBatinah1" xml:space="preserve">
+    <value>قيادة شرطة محافظة الداخلية</value>
+  </data>
+  <data name="AlBuraimi" xml:space="preserve">
+    <value>قيادة شرطة محافظة الوسطى</value>
+  </data>
+  <data name="AlWusta" xml:space="preserve">
+    <value>قيادة شرطة محافظة الظاهرة</value>
+  </data>
+  <data name="Ambulance" xml:space="preserve">
+    <value>وحدة الإسعاف</value>
+  </data>
+  <data name="ASharqiyah" xml:space="preserve">
+    <value>قيادة شرطة محافظة جنوب الباطنة</value>
+  </data>
+  <data name="ASharqiyahG" xml:space="preserve">
+    <value>قيادة شرطة محافظة شمال الشرقية</value>
+  </data>
+  <data name="CivilDefense" xml:space="preserve">
+    <value>الإدارة العامة للدفاع المدني</value>
+  </data>
+  <data name="CivilStatus" xml:space="preserve">
+    <value>الإدارة العامة للأحوال المدنية</value>
+  </data>
+  <data name="CombattingDrugs" xml:space="preserve">
+    <value>الإدارة العامة لمكافحة المخدرات والمؤثرات العقلية</value>
+  </data>
+  <data name="Communication" xml:space="preserve">
+    <value>إدارة الرعاية الاجتماعية</value>
+  </data>
+  <data name="Customs" xml:space="preserve">
+    <value>الإدارة العامة للجمارك</value>
+  </data>
+  <data name="DevelopmentandScrutiny" xml:space="preserve">
+    <value>الإدارة العامة للتطوير والتدقيق</value>
+  </data>
+  <data name="Dhofar" xml:space="preserve">
+    <value>قيادة شرطة محافظة ظفار</value>
+  </data>
+  <data name="FinancialAffairs" xml:space="preserve">
+    <value>الإدارة العامة للشؤون المالية</value>
+  </data>
+  <data name="FinancialInquiries" xml:space="preserve">
+    <value>وحدة الاستفسارات المالية</value>
+  </data>
+  <data name="GeneralofPrisons" xml:space="preserve">
+    <value>الإدارة العامة للسجون</value>
+  </data>
+  <data name="HumanResources" xml:space="preserve">
+    <value>الإدارة العامة للموارد البشرية</value>
+  </data>
+  <data name="InformationTechnology" xml:space="preserve">
+    <value>الإدارة العامة لتقنية المعلومات</value>
+  </data>
+  <data name="InquiriesandCriminalInvestigations" xml:space="preserve">
+    <value>الإدارة العامة للتحريات والتحقيقات الجنائية</value>
+  </data>
+  <data name="JuvenilePolice" xml:space="preserve">
+    <value>وحدة شرطة الأحداث</value>
+  </data>
+  <data name="LegalAffairs" xml:space="preserve">
+    <value>إدارة الشؤون القانونية</value>
+  </data>
+  <data name="logistic" xml:space="preserve">
+    <value>الإدارة العامة للتجهيزات واللوازم</value>
+  </data>
+  <data name="MedicalServices" xml:space="preserve">
+    <value>الإدارة العامة للخدمات الطبية</value>
+  </data>
+  <data name="Mounted" xml:space="preserve">
+    <value>وحدة شرطة الخيالة</value>
+  </data>
+  <data name="Musandam" xml:space="preserve">
+    <value>قيادة شرطة محافظة مسندم</value>
+  </data>
+  <data name="Muscat" xml:space="preserve">
+    <value>قيادة شرطة محافظة مسقط</value>
+  </data>
+  <data name="NationalCommittee" xml:space="preserve">
+    <value>المكتب التنفيذي للجنة الوطنية للدفاع المدني</value>
+  </data>
+  <data name="officerinst" xml:space="preserve">
+    <value>معهد الضباط</value>
+  </data>
+  <data name="Operations" xml:space="preserve">
+    <value>الإدارة العامة للعمليات</value>
+  </data>
+  <data name="PassportandResidences" xml:space="preserve">
+    <value>الإدارة العامة للجوازات والإقامة</value>
+  </data>
+  <data name="PoliceAviation" xml:space="preserve">
+    <value>الإدارة العامة لطيران الشرطة</value>
+  </data>
+  <data name="PoliceClubs" xml:space="preserve">
+    <value>إدارة نوادي الشرطة</value>
+  </data>
+  <data name="PoliceMusic" xml:space="preserve">
+    <value>إدارة موسيقى الشرطة</value>
+  </data>
+  <data name="PoliceSportsAssociation" xml:space="preserve">
+    <value>إدارة اتحاد الشرطة الرياضي</value>
+  </data>
+  <data name="ProjectsandMaintenance" xml:space="preserve">
+    <value>الإدارة العامة للمشاريع والصيانة</value>
+  </data>
+  <data name="PublicRelation" xml:space="preserve">
+    <value>إدارة العلاقات العامة</value>
+  </data>
+  <data name="SpecialSecurity" xml:space="preserve">
+    <value>وحدة شرطة الأمن الخاصة</value>
+  </data>
+  <data name="telcom" xml:space="preserve">
+    <value>الإدارة العامة للاتصالات</value>
+  </data>
+  <data name="Traffic" xml:space="preserve">
+    <value>الإدارة العامة للمرور</value>
+  </data>
+  <data name="Transport" xml:space="preserve">
+    <value>الإدارة العامة للنقليات</value>
+  </data>
+</root>

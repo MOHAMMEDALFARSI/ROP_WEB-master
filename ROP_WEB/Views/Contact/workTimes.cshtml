@@ -1,0 +1,102 @@
+﻿
+@section PageTitle {
+    @Resource.worktime
+}
+@section arurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view="WorkTimes",cont="Contact"}  )">
+        <i class="fa fa-globe"></i> عربي
+    </a>
+}
+
+@section enurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "en-US",view="WorkTimes",cont="Contact"}  )">
+        <i class="fa fa-globe"></i> En
+    </a>
+}
+@using ROP_WEB.Res
+
+
+<div class="container TopicStyle">
+    <div class="row">
+
+        <div class="col breadcrumbstyle" style="padding:0">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
+                    <li class="breadcrumb-item">@Resource.contact</li>
+                    <li class="breadcrumb-item active">@Resource.worktime </li>
+                    <li class="readspeakercls">
+                        <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                                <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
+                                <span class="rsbtn_right rsimg rsplay rspart"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container topiccontiner">
+
+        <div class="row">
+
+            <div class="col-md-4 d-none d-sm-block">
+                <ul class="list-group">
+                    <li class="list-group-item"> <a href="#">@Resource.contactuspage  </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.ropphones </a></li>
+                    <li class="list-group-item activelist"><a href="#">@Resource.worktime </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.faq </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.survey </a></li>
+
+
+                </ul>
+
+            </div>
+            <div class="col-md-8">
+
+                <div class="jumbotron" style="padding-right:20px;">
+                    <h3>@Resource.worktime</h3>
+                    <h4>القيادات والإدارات العامة والوحدات والإدارات التخصصية ومراكز الخدمة </h4>
+                    <p>من الأحد إلى الخميس الساعة 7,30 صباحا إلى 2,00 م</p>
+
+                    <h4>مراكز الشرطة  </h4>
+                    <p>مدار الساعة</p>
+
+                    <h4>
+                        خدمات المرور بالسيب
+                    </h4>
+                    <p>مدار الساعة</p>
+
+                    <h4>إدارة رخص القيادة وتسجيل المركبات</h4>
+                    <p>بالقرم - من الأحد إلى الخميس 7,30 ص - 2,00 م </p>
+                    <p>بالسيب - من الأحد إلى الخميس 7,30 ص - 10,00 م</p>
+
+                    <h4>إختبار السائقين بالقرم والسيب </h4>
+                    <p>من الأحد إلى الخميس 6,30ص - 11,30 م </p>
+                    <h4>رخص السياقة بالقرم</h4>
+                    <p> من الأحد إلى الخميس 7,30 ص - 2,00 م </p>
+
+                    <h4>فحص المركبات بالسيب والقرم </h4>
+                    <p> من الأحد إلى الخميس 7,30 ص - 2,00 م </p>
+
+
+                    <h4>فحص حوادث المركبات</h4>
+                    <p>من الأحد إلى الخميس 7,30 ص - 7,30م (توقيت صيفي) أو 5,30م (توقيت شتوي)</p>
+                    <h4>إدارة الأحوال المدنية بمسقط </h4>
+                    <p>من الأحد إلى الخميس 7,30 ص - 10,00 م </p>
+                    <h4>إدارات وأقسام الأحوال المدنية</h4>
+                    <p> من الأحد إلى الخميس 7,30 ص - 2,00 م </p>
+                    <h4>الإدارة العامة للجوازات و الإقامة</h4>
+                    <p> من الأحد إلى الخميس 7,30 ص - 2,00 م </p>
+                    <h4>مراكز الخدمة التابعة للإدارة العامة للجوازات والإقامة </h4>
+                    <p> من الأحد إلى الخميس 7,30 ص - 2,00 م </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>Al Dhahirah Police Headquarters</StationEn>
+    <StationAr>قيادة شرطة محافظة الظاهرة</StationAr>
+    <StationPhone>25650099</StationPhone>
+  </Station>
+ 
+ 
+  <Station>
+    <StationId>2</StationId>
+    <StationEn>Ibri Police Division</StationEn>
+    <StationAr>مركز شرطة عبري</StationAr>
+    <StationPhone>25690898</StationPhone>
+  </Station>
+
+
+ <Station>
+    <StationId>3</StationId>
+    <StationEn>Dhank Police Station</StationEn>
+    <StationAr>مركز شرطة ضنك</StationAr>
+    <StationPhone>25676199</StationPhone>
+  </Station>
+
+ <Station>
+    <StationId>4</StationId>
+    <StationEn>Yanqul Police Post</StationEn>
+    <StationAr>مركز شرطة ينقل</StationAr>
+    <StationPhone>25672299</StationPhone>
+  </Station>
+
+ <Station>
+    <StationId>5</StationId>
+    <StationEn>Al Fateh Police Post</StationEn>
+    <StationAr>نقطة شرطة الفتح</StationAr>
+    <StationPhone>99220805</StationPhone>
+  </Station>
+
+
+
+
+
+
+</RegionStation>

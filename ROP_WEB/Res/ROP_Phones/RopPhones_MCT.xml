@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>Muscat Governorate Police HQ</StationEn>
+    <StationAr>قيادة شرطة محافظة مسقط</StationAr>
+    <StationPhone>24648007</StationPhone>
+  </Station>
+ 
+  <Station>
+    <StationId>2</StationId>
+    <StationEn>Muscat Police Station</StationEn>
+    <StationAr>مركز شرطة مسقط</StationAr>
+    <StationPhone>24736611</StationPhone>
+  </Station>
+
+
+  <Station>
+    <StationId>3</StationId>
+    <StationEn>Wattayah Police Station</StationEn>
+    <StationAr>مركز شرطة الوطية</StationAr>
+    <StationPhone>24566538</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>4</StationId>
+    <StationEn>Ruwi Police Station</StationEn>
+    <StationAr>مركز شرطة روي</StationAr>
+    <StationPhone>24701099</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>5</StationId>
+    <StationEn>Muttrah Police Station</StationEn>
+    <StationAr>مركز شرطة مطرح</StationAr>
+    <StationPhone>24712211</StationPhone>
+  </Station>
+  
+  
+    <Station>
+    <StationId>6</StationId>
+    <StationEn>Bausher Police Station</StationEn>
+    <StationAr>مركز شرطة بوشر</StationAr>
+    <StationPhone>24691199</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>7</StationId>
+    <StationEn>Al-Amerat Police Station</StationEn>
+    <StationAr>مركز شرطة العامرات</StationAr>
+    <StationPhone>24875999 - 24876999</StationPhone>
+  </Station>
+  
+  
+    <Station>
+    <StationId>8</StationId>
+    <StationEn>Quraiyat Police Station</StationEn>
+    <StationAr>مركز شرطة قريات</StationAr>
+    <StationPhone>24845555</StationPhone>
+  </Station>
+  
+  
+    <Station>
+    <StationId>9</StationId>
+    <StationEn>A'Seeb Police Station</StationEn>
+    <StationAr>مركز شرطة السيب</StationAr>
+    <StationPhone>24420099</StationPhone>
+  </Station>
+  
+  
+    <Station>
+    <StationId>10</StationId>
+    <StationEn>Al-Ozaiba Police Station</StationEn>
+    <StationAr>مركز شرطة العذيبة</StationAr>
+    <StationPhone>24521099</StationPhone>
+  </Station>
+  
+  
+    <Station>
+    <StationId>11</StationId>
+    <StationEn>Al-Khodh Plice Station</StationEn>
+    <StationAr>مركز شرطة الخوض</StationAr>
+    <StationPhone>24425013</StationPhone>
+  </Station>
+  
+  
+    <Station>
+    <StationId>12</StationId>
+    <StationEn>Directorate of the University Security</StationEn>
+    <StationAr>إدارة أمن الجامعه</StationAr>
+    <StationPhone>24143357</StationPhone>
+  </Station>
+  
+  
+  
+</RegionStation>

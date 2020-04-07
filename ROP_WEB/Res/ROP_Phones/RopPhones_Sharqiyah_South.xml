@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>A’Sharqia South Governorate Police HQ</StationEn>
+    <StationAr>قيادة شرطة محافظة جنوب الشرقية</StationAr>
+    <StationPhone>25545070</StationPhone>
+  </Station>
+  
+  
+  <Station>
+    <StationId>2</StationId>
+    <StationEn>Sur Police Station</StationEn>
+    <StationAr>مركز شرطة صور</StationAr>
+    <StationPhone>25540099</StationPhone>
+  </Station>
+  
+    <Station>
+    <StationId>3</StationId>
+    <StationEn>Al Kamil & Al Wafi Police Station</StationEn>
+    <StationAr>مركز شرطة الكامل والوافي</StationAr>
+    <StationPhone>25557420</StationPhone>
+  </Station>
+  
+  
+    <Station>
+    <StationId>4</StationId>
+    <StationEn>Ja’lan Bani Bohassan Police Station</StationEn>
+    <StationAr>مركز شرطة جعلان بني بوحسن	</StationAr>
+    <StationPhone>25550420</StationPhone>
+  </Station>
+  
+  
+  
+    <Station>
+    <StationId>5</StationId>
+    <StationEn>Ja’lan Bani Boali Police Station/td></StationEn>
+    <StationAr>مركز شرطة جعلان بني بوعلي	</StationAr>
+    <StationPhone>25553090</StationPhone>
+  </Station>
+  
+  
+  
+    <Station>
+    <StationId>6</StationId>
+    <StationEn>Masira Police Station</StationEn>
+    <StationAr>مركز شرطة مصيرة/StationAr>
+    <StationPhone>25504004</StationPhone>
+  </Station>
+
+</RegionStation>
