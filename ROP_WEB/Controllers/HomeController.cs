@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ROP_WEB.Models;
+using System.Xml.Linq;
+using System.Globalization;
+using System.Threading;
 
 namespace ROP_WEB.Controllers
 {
@@ -13,36 +17,46 @@ namespace ROP_WEB.Controllers
         public ActionResult Index()
         {
 
-        // var xx=   ur.GetData(222);
+            //slider id 1 will be active one other normal
+            List<Slider> slides = new List<Slider>();
+            //use try andcatch for erorr control + id showd come from user request 
+            XElement xelement = XElement.Load(HttpContext.Server.MapPath("~/Res/Slider.xml"));
+            var slidslist = xelement.Elements();
+            //   var element = (from Offense in OffenseClass where (int)Offense.Element("OffenseId") == 1 select Offense).ToList();
 
-           //List<Models.Slider> sliderlist = new List<Models.Slider>();
-
-           //var lst = service.GetSliders();
-
-           // foreach (var item in lst)
-           // {
-           //     Models.Slider sldr = new Models.Slider();
-           //     int x = (int)item.SlideId;
-           //     sldr.sliderid = x;
-           //     sldr.sliderurl = item.slideUrl;
-           //     //sldr.sliderimg = item.SlideImg;
-
-           //     sliderlist.Add(sldr);
-
-             
-
-           // }
-
-           // //foreach (var aPart in lst)
-           // //{
-           // //    Console.WriteLine(aPart);
-           // //}
-
-           // ViewBag.sld = sliderlist;
+            foreach (XElement xEle in slidslist)
+            {
+                slides.Add(new Slider
+                {
+                    SlideId = (int)xEle.Element("SlideId"),
+                    SlideImg = xEle.Element("SlideImg").Value,
+                    SlideUrl = xEle.Element("SlideUrl").Value,
+                    SlideAlt = xEle.Element("SlideAlt").Value,
+                    SlideLang = xEle.Element("SlideLang").Value
+                   
 
 
 
-            return View();
+                });
+
+
+
+            }
+
+            CultureInfo currentInfo = Thread.CurrentThread.CurrentCulture;
+            if (currentInfo.IetfLanguageTag.ToString().Equals("ar-OM") || (currentInfo.IetfLanguageTag.ToString().Equals("ar")))
+            {
+                slides = slides.Where(x => x.SlideLang == "AR").ToList();
+            }
+            else
+            {
+                slides = slides.Where(x => x.SlideLang == "EN").ToList();
+            }
+
+
+
+
+            return View(slides);
         }
         public ActionResult terms()
         {
@@ -73,6 +87,8 @@ namespace ROP_WEB.Controllers
         public ActionResult Search()
         {
 
+            
+            //GET SEARCH THEN OPEN THIS PAGE THEN CLICL ON BUTTON AUTOMATICLAY
             return View();
         }
 

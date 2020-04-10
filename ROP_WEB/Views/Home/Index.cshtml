@@ -52,7 +52,7 @@
 
 @using ROP_WEB.Res
 
-
+@model IEnumerable<ROP_WEB.Models.Slider>
 
 <div class="container sectionA wow fadeInDown animated" data-wow-duration="900ms" data-wow-delay="100ms">
 
@@ -62,19 +62,31 @@
             <!-- Home -->
             <div id="carouselExampleControls" class="carousel slide caroide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
 
-                        <a href="#"><img class="d-block w-100" src="~/Content/images/x (2).jpg" alt="First slide"></a>
+                    @foreach (var item in Model)
+                    {
+                        if (item.SlideId == 1)
+                        {
+                            <div class="carousel-item active">
+
+                                <a href="@item.SlideUrl"><img class="d-block w-100" src="~/ROP-Content/images/@item.SlideImg" alt="@item.SlideAlt"></a>
 
 
 
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="~/Content/images/x (2).jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="~/Content/images/x (2).jpg" alt="Third slide">
-                    </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="carousel-item">
+
+                                <a href="@item.SlideUrl"><img class="d-block w-100" src="~/ROP-Content/images/@item.SlideImg" alt="@item.SlideAlt"></a>
+
+
+
+                            </div>
+                        }
+
+                    }
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -97,7 +109,7 @@
 
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="grident"> </div>
+                            @*<div class="grident"> </div>*@
                             <img class="d-block w-100" src="~/Content/images/news0.jpg" alt="First slide">
                             <div class="carousel-caption">
 
@@ -114,7 +126,7 @@
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="grident"> </div>
+                            @*<div class="grident"> </div>*@
                             <img class="d-block w-100" src="~/Content/images/news0.jpg" alt="third slide">
                             <div class="carousel-caption">
 

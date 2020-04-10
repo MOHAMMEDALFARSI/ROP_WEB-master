@@ -17,7 +17,21 @@
 }
 @using ROP_WEB.Res
 
+<style>
 
+    .cse .gsc-control-cse, .gsc-control-cse {
+        padding: 0;
+    }
+
+    .gsc-search-button-v2 {
+        background-color: #004B8F;
+    }
+
+        .cse .gsc-search-button-v2:hover, .gsc-search-button-v2:hover {
+            background-color: #004B8F;
+            cursor: pointer;
+        }
+</style>
 <div class="container TopicStyle">
     <div class="row">
 
@@ -59,50 +73,14 @@
 
             </div>
             <div class="col-md-8">
-
+     
                 <div class="jumbotron">
                     <h3>  @Resource.search </h3>
                     <div class="container">
 
-                        <form>
-                            <div class="form-group">
-                                <label for="name">@Resource.searchkey</label>
-                                <input type="text" class="form-control" id="search" placeholder="@Resource.searchkey" required>
-                            </div>
-                            <div class="form-group">
-                                <label>@Resource.searchin</label>
-
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input name="searchin" type="radio" class="form-check-input" value="">@Resource.services 
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input name="searchin" type="radio" class="form-check-input" value="">@Resource.md1
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input name="searchin" type="radio" class="form-check-input" value="">@Resource.faq
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="mx-auto">
-                                <button type="submit" class="btn btn-primary text-right">@Resource.search</button>
-                            </div>
-                        </form>
-
-                        <div class="searchresult" style="margin-top:15px;">
-
-
-
-                        
-                            <div class="alert alert-secondary" style="text-align:center">
-                                <strong> @Resource.noresult</strong>
-                            </div>
-
-                        </div>
+                        <script async src="https://cse.google.com/cse.js?cx=010640363325237699900:dtzqwqikqjq"></script>
+                        <div class="gcse-search" style="padding:0"></div>
+                      
 
                     </div>
 

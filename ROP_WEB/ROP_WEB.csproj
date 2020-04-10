@@ -339,6 +339,7 @@
     <Compile Include="Models\SERVICE_STATUS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Slider.cs" />
     <Compile Include="Models\Station.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Res\Resource.Designer.cs">
@@ -403,6 +404,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\ad\" />
     <Folder Include="Res\Album\" />
+    <Folder Include="ROP-Content\" />
     <Folder Include="ROP_Content\Audios\" />
     <Folder Include="ROP_Content\Imgs\" />
     <Folder Include="ROP_Content\pdfs\" />
