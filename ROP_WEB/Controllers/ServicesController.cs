@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using ROP_WEB.Models;
 using System.Globalization;
 using System.Threading;
-
+using System.Xml.Linq;
 namespace ROP_WEB.Controllers
 {
     public class ServicesController : Controller
@@ -15,23 +15,28 @@ namespace ROP_WEB.Controllers
         // GET: Services
         public ActionResult PersonalServices()
         {
+            var personalServices = db.SERVICEs.Where(x => x.Service_Cat_Id == 1 && x.services_Status_Id == 2).ToList();
             CultureInfo currentInfo = Thread.CurrentThread.CurrentCulture;
 
             if (currentInfo.IetfLanguageTag.ToString().Equals("ar-OM") || (currentInfo.IetfLanguageTag.ToString().Equals("ar")))
             {
-                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 1).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_Ar).Distinct();
-                ViewBag.ServiceProviders = ServiceProviders;
-
+                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 1 && x.services_Status_Id == 2).Select(m => m.Service_Provider_Id).Distinct();
+                var spname = db.SERVICE_PROVIDER.Where(x => ServiceProviders.Contains(x.Service_Provider_Id));
+                
+                ViewBag.ServiceProviders = spname;
             }
             else
             {
-                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 1).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_En).Distinct();
+                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 1 && x.services_Status_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_En).Distinct();
                 ViewBag.ServiceProviders = ServiceProviders;
             }
 
 
-            var personalServices = db.SERVICEs.Where(x=>x.Service_Cat_Id==1).ToList();
+            
+          
 
+
+            
             return View(personalServices);
         }
         public ActionResult GovServices()
@@ -41,19 +46,19 @@ namespace ROP_WEB.Controllers
 
             if (currentInfo.IetfLanguageTag.ToString().Equals("ar-OM") || (currentInfo.IetfLanguageTag.ToString().Equals("ar")))
             {
-                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_Ar).Distinct();
+                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 2 && x.services_Status_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_Ar).Distinct();
                 ViewBag.ServiceProviders = ServiceProviders;
 
             }
             else
             {
-                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_En).Distinct();
+                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 2 && x.services_Status_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_En).Distinct();
                 ViewBag.ServiceProviders = ServiceProviders;
             }
 
 
 
-            var puplicSecServices = db.SERVICEs.Where(x => x.Service_Cat_Id == 2).ToList();
+            var puplicSecServices = db.SERVICEs.Where(x => x.Service_Cat_Id == 2 && x.services_Status_Id == 2).ToList();
 
             return View(puplicSecServices);
 
@@ -66,19 +71,19 @@ namespace ROP_WEB.Controllers
 
             if (currentInfo.IetfLanguageTag.ToString().Equals("ar-OM") || (currentInfo.IetfLanguageTag.ToString().Equals("ar")))
             {
-                var ServiceProviders = db.SERVICEs.Where(x=>x.Service_Cat_Id==3).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_Ar).Distinct();
+                var ServiceProviders = db.SERVICEs.Where(x=>x.Service_Cat_Id==3 && x.services_Status_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_Ar).Distinct();
                 ViewBag.ServiceProviders = ServiceProviders;
 
             }
             else
             {
-                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 3).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_En).Distinct();
+                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 3 && x.services_Status_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_En).Distinct();
                 ViewBag.ServiceProviders = ServiceProviders;
             }
 
 
 
-            var ComServices = db.SERVICEs.Where(x => x.Service_Cat_Id == 3).ToList();
+            var ComServices = db.SERVICEs.Where(x => x.Service_Cat_Id == 3 && x.services_Status_Id == 2).ToList();
 
             return View(ComServices);
 
@@ -89,8 +94,54 @@ namespace ROP_WEB.Controllers
         {
 
             ROP_WEBEntities db = new ROP_WEBEntities();
+       
+                return View(db.SERVICEs.FirstOrDefault(x => x.Service_Id == id));
+        }
+
+        public ActionResult smsservice()
+        {
+            return View();
+        }
+        public ActionResult RopMobileApp()
+        {
+            return View();
+        }
+        public ActionResult Kiosks()
+        {
+
+            //slider id 1 will be active one,, other normal
+            List<Kiosk> kiosks = new List<Kiosk>();
+            //use try andcatch for erorr control + id showd come from user request 
+            XElement Kiosxelement = XElement.Load(HttpContext.Server.MapPath("~/ROP-Content/Xmls/Kiosk.xml"));
+            var adslist = Kiosxelement.Elements();
+            //   var element = (from Offense in OffenseClass where (int)Offense.Element("OffenseId") == 1 select Offense).ToList();
+
+            foreach (XElement xEle in adslist)
+            {
+                kiosks.Add(new Kiosk
+                {
+                   
+                    kioskLocationAr = xEle.Element("kioskLocationAr").Value,
+                    kioskLocationEn = xEle.Element("kioskLocationEn").Value,
+                    kioskLocationUrl = xEle.Element("kioskLocationUrl").Value,
+                    region = xEle.Element("region").Value
+                  
+                
+
+
+
+
+                }); ;
+
+
+
+            }
+
+
+
+           // kiosks = kiosks.Where(x => x.AdLang == "ar").ToList();
            
-            return View(db.SERVICEs.FirstOrDefault(x => x.Service_Id == id));
+            return View(kiosks);
         }
     }
 }

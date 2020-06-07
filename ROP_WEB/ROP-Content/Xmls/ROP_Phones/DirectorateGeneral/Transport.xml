@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>Al-Batinah North Governorate HQ</StationEn>
+    <StationAr>قيادة شرطة محافظة شمال الباطنة</StationAr>
+    <StationPhone>26859499</StationPhone>
+  </Station>
+
+ <Station>
+    <StationId>2</StationId>
+    <StationEn>Directorate of Traffic Licensing Sohar</StationEn>
+    <StationAr>إدارة المرور والترخيص صحار</StationAr>
+    <StationPhone>26843699</StationPhone>
+  </Station>
+
+<Station>
+    <StationId>3</StationId>
+    <StationEn>Sohar Police Station</StationEn>
+    <StationAr>مركز شرطة صحار</StationAr>
+    <StationPhone>26840099</StationPhone>
+  </Station>
+
+<Station>
+    <StationId>4</StationId>
+    <StationEn>Saham Police Station</StationEn>
+    <StationAr>مركز شرطة صحم</StationAr>
+    <StationPhone>26854099</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>5</StationId>
+    <StationEn>Al Khabura Police Station</StationEn>
+    <StationAr>مركز شرطة الخابورة</StationAr>
+    <StationPhone>26805099</StationPhone>
+  </Station>
+
+
+  <Station>
+    <StationId>6</StationId>
+    <StationEn>Shinas Police Station</StationEn>
+    <StationAr>مركز شرطة شناص</StationAr>
+    <StationPhone>26748199</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>7</StationId>
+    <StationEn>Khatmat Milaha Police Station</StationEn>
+    <StationAr>مركز شرطة خطمة ملاحة</StationAr>
+    <StationPhone>26849413</StationPhone>
+  </Station>
+
+<Station>
+    <StationId>8</StationId>
+    <StationEn>Suwaiq Police Station</StationEn>
+    <StationAr>مركز شرطة السويق</StationAr>
+    <StationPhone>26860099</StationPhone>
+  </Station>
+
+<Station>
+    <StationId>9</StationId>
+    <StationEn>Majan Police Post</StationEn>
+    <StationAr>مركز شرطة مجان</StationAr>
+    <StationPhone>25669433</StationPhone>
+  </Station>
+  
+  <Station>
+    <StationId>10</StationId>
+    <StationEn>Al Aswad Police Post</StationEn>
+    <StationAr>مركز شرطة الأسود</StationAr>
+    <StationPhone>26849599</StationPhone>
+  </Station>
+  
+ <Station>
+    <StationId>11</StationId>
+    <StationEn>Al Wajajah Police Station</StationEn>
+    <StationAr>مركز شرطة الوجاجة</StationAr>
+    <StationPhone>26849911</StationPhone>
+  </Station>
+  
+</RegionStation>

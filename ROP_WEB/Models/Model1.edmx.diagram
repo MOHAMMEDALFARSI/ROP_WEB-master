@@ -21,6 +21,10 @@
         <AssociationConnector Association="ROP_WEBModel.FK_scat" />
         <AssociationConnector Association="ROP_WEBModel.FK_serstatus" />
         <AssociationConnector Association="ROP_WEBModel.FK_sprov" />
+        <EntityTypeShape EntityType="ROP_WEBModel.CHANNEL" Width="1.5" PointX="7.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ROP_WEBModel.CHANNEL_SERVICES" Width="1.5" PointX="10" PointY="6.75" />
+        <AssociationConnector Association="ROP_WEBModel.Channel_Id" />
+        <AssociationConnector Association="ROP_WEBModel.Service_Id_CHANNEL" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

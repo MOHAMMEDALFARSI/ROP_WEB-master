@@ -16,7 +16,13 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
+
+    var url = Request.Url.ToString();
+}
+
 <style>
+
     * {
         box-sizing: border-box;
     }
@@ -37,7 +43,6 @@
     .caption {
         background: #D7D8D8;
         width: 400px;
-      
         text-align: center;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         margin-left: auto;
@@ -51,9 +56,9 @@
         }
 </style>
 @using ROP_WEB.Res
+@model IEnumerable<ROP_WEB.Models.Magazin>
 
-
-<div class="container TopicStyle">
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
@@ -64,7 +69,7 @@
                     <li class="breadcrumb-item">@Resource.md6  </li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -78,71 +83,63 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item"> <a href="#">@Resource.md1  </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.md2 </a></li>
 
-                    <li class="list-group-item"><a href="#">@Resource.md4</a></li>
-                    <li class="list-group-item"><a href="#">@Resource.md5</a></li>
-                    <li class="list-group-item activelist"><a href="#">@Resource.md6</a></li>
-                    <li class="list-group-item"><a href="#">@Resource.md7</a></li>
-
-
-
-                </ul>
-
-            </div>
             <div class="col-md-8">
-                <div class="jumbotron">
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3 style="text-align:center; padding:10px;">  @Resource.md6  </h3>
 
                     <div id="bs4-slide-carousel" class="carousel slide">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="~/Content/images/kidsmagazine_54.jpg" alt="Slide One" style="max-width:400px; margin-right:auto; margin-left:auto; ">
-                                <div class="caption">
 
-                                    <ul style="list-style:none">
-                                        <li>  العدد:44</li>
-                                        <li>    تاريخ الإصدار : 4/4/4444</li>
-                                        <li>    حجم الملف :5 mb</li>
-                                        <li>   <a href="#">تنزيل</a></li>
-                                    </ul>
 
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="~/Content/images/kidsmagazine_54.jpg" alt="Slide Two" style="max-width:400px; margin-right:auto; margin-left:auto; ">
-                                <div class="caption">
 
-                                    <ul style="list-style:none">
-                                        <li>  العدد:44</li>
-                                        <li>    تاريخ الإصدار : 4/4/4444</li>
-                                        <li>    حجم الملف :5 mb</li>
-                                        <li>   <a href="#">تنزيل</a></li>
-                                    </ul>
 
-                                </div>
-                            </div>
+                            @foreach (var item in Model)
 
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="~/Content/images/kidsmagazine_54.jpg" alt="Slide Three" style="max-width:400px; margin-right:auto; margin-left:auto; ">
-                                <div class="caption">
 
-                                    <ul style="list-style:none">
-                                        <li>  العدد:44</li>
-                                        <li>    تاريخ الإصدار : 4/4/4444</li>
-                                        <li>    حجم الملف :5 mb</li>
-                                        <li>   <a href="#">تنزيل</a></li>
-                                    </ul>
+                            {
+                                if (item.status == 1)
+                                {
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="~/ROP-Content/images/kidsmagazin_imgs/@item.magaimg" alt="Slide One" style="max-width:400px; margin-right:auto; margin-left:auto; ">
+                                        <div class="caption">
 
-                                </div>
-                            </div>
+                                            <ul style="list-style:none">
+                                                <li>  العدد:@item.count</li>
+
+                                                <li>    تاريخ الإصدار :@item.publishdate.Date.ToString("dd/MM/yyyy", new System.Globalization.CultureInfo("en"))</li>
+                                                <li>    حجم الملف : @item.filesize</li>
+                                                <li>   <a href="~/ROP-Content/pdfs/kidsmagazin/@item.magalang/@item.filename">تنزيل</a></li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="~/ROP-Content/images/kidsmagazin_imgs/@item.magaimg" alt="Slide One" style="max-width:400px; margin-right:auto; margin-left:auto; ">
+                                        <div class="caption">
+
+                                            <ul style="list-style:none">
+                                                <li>  العدد:@item.count</li>
+                                                <li>    تاريخ الإصدار :@item.publishdate.Date.ToString("dd/MM/yyyy", new System.Globalization.CultureInfo("en"))</li>
+                                                <li>    حجم الملف : @item.filesize</li>
+                                                <li>   <a href="~/ROP-Content/pdfs/kidsmagazin/@item.magalang/@item.filename">تنزيل</a></li>
+                                            </ul>
+
+
+
+                                        </div>
+                                    </div>
+                                }
+
+                            }
                         </div>
                         <a class="carousel-control-prev" href="#bs4-slide-carousel" role="button" data-slide="prev">
                             <span class="fa fa-angle-@Resource.alig" style="color:black ;font-size:50px;" aria-hidden="true"></span>
@@ -155,7 +152,7 @@
                     </div>
 
 
-                    <h4  style="text-align:center; padding:10px;">   @Resource.contribute</h4>
+                    <h4 style="text-align:center; padding:10px;">   @Resource.contribute</h4>
                     <p>
 
                         مساهمات الأصدقاء
@@ -174,6 +171,21 @@
 
 
                 </div>
+
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+          
+
+                    <li class="list-group-item"> <a href="../../../media/News">@Resource.md1  </a></li>
+                    <li class="list-group-item"><a href="../../../media/Articles">@Resource.md2 </a></li>
+                    <li class="list-group-item"><a href="../../../media/Ropmagazine">@Resource.md4</a></li>
+                    <li class="list-group-item"><a href="../../../media/Ads">@Resource.md5</a></li>
+                    <li class="list-group-item activelist"><a href="../../../media/KidsMagazin">@Resource.md6</a></li>
+                    <li class="list-group-item"><a href="../../../media/AlainaAssahira">@Resource.md7</a></li>
+
+
+                </ul>
 
             </div>
 

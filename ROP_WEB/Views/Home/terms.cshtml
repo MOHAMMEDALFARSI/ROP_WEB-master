@@ -15,10 +15,15 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
+
+    var url = Request.Url.ToString();
+}
+
 @using ROP_WEB.Res
 
-
-<div class="container TopicStyle">
+@using System.Threading;
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
@@ -29,7 +34,8 @@
                     <li class="breadcrumb-item active">@Resource.footer1  </li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -42,197 +48,304 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item activelist"> <a href="#">@Resource.footer1  </a></li>
-                    <li class="list-group-item"> <a href="#">@Resource.footer2  </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.footer3 </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.footer4 </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.footer6 </a></li>
 
-
-                </ul>
-
-            </div>
             <div class="col-md-8">
 
-                <div class="jumbotron">
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3>  @Resource.footer1 </h3>
-                    <p>
+                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                    {
+                        <p>
 
-                        استخدامك لهذه البوابة تأكيد على أنك قد اطلعت على شروط وأحكام استخدام البوابة. في حالة عدم الموافقة على شروط استخدام البوابة يرجى عدم استخدامه.
-                    </p>
-
-
-                    <div id="accordion" role="tablist" aria-multiselectable="true">
-
-
-
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
-                                <h5 class="mb-0">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        قيود استخدام مواد البوابة
+                            استخدامك لهذه البوابة تأكيد على أنك قد اطلعت على شروط وأحكام استخدام البوابة. في حالة عدم الموافقة على شروط استخدام البوابة يرجى عدم استخدامها.
+                        </p>
+                    }
+                    else
+                    {
+                        <p>
+                            Your use of this portal means that you read and agreed with its terms and conditions. Please do not use the portal if you do not agree with the terms and conditions.
+                        </p>
+                    }
+                    <div class="accordion" id="accordion12">
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingOne">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12One" aria-expanded="true" aria-controls="collapse12One">
+                                        @Resource.restrictions
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
+                            <div id="collapse12One" class="collapse show" aria-labelledby="collapse12HeadingOne" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
 
-                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                                        <p>
+
+                                            عود ملكية وإدارة بوابة شرطة عُمان السلطانية ولا يجوز إعادة نشر، أو إنتاج، أو تحميل، أو وضع، أو نقل، أو توزيع أي من مواد البوابة دون موافقة كتابية مسبقة من شرطة عُمان السلطانية، إلا أنه يجوز نسخ المحتوى دون تغيير بغرض الاستخدام الشخصي بحاسوبك الخاص، أو هاتفك النقال، أو أي أداة أخرى إن تطلب ذلك، شريطة الاحتفاظ بحقوق النشر وجميع الإشعارات الملكية الأخرى.
+
+                                            جميع الرسومات التوضيحية والصور في هذه البوابة محمية بحقوق النشر، ولا يجوز إعادة إنتاجها أو ملكيتها بأي صورة دون إذن كتابي من مالكه، ويعتبر أي تعديل في المواد أو استخدامها لأغراض أخرى انتهاكا لحقوق النشر الخاصة بشرطة عُمان السلطانية.
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <p>
+                                            This portal is owned and operated by Royal Oman Police. You may not republish, reproduce, upload, post, transmit, or distribute any material from this website without a prior written permission from Royal Oman Police. You may, however, copy the content without change for a personal use on your PC, mobile phone, or any other device if such copying is required, provided you keep all accompanying copyright and other proprietary notices. All graphics and images on this portal are protected by copyright, and may not be reproduced owned in any manner without written permission of their relevant owner. Modification or use of any of the materials for any other purpose shall be a violation of ROP's copyright.
+
+                                        </p>
+                                    }
+
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        عدم جواز التمثيل
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingTwo">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Two" aria-expanded="false" aria-controls="collapse12Two">
+                                        @Resource.norepresentation
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Two" class="collapse" aria-labelledby="collapse12HeadingTwo" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+
+                                        <p>
+                                            تم جمع مواد هذه البوابة من قبل المختصين بشرطة عُمان السلطانية، لكن لم يتم تقديم أي تمثيل أو ضمان على اكتمال أو دقة المعلومات المضمنة فيه، لذا يجب دائما التأكد من هذه المعلومات قبل أي تصرف حولها وذلك عبر مراجعة إدارة العلاقات العامة بشرطة عُمان السلطانية.
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <p>
+                                            We have determined that our ability to provide good service may be impaired when a visitor uses a service excessively. Accordingly, to ensure the fair allocation of network resources for all our portal visitors, we reserve the right to restrict your usage, if your usage is significantly greater than typical usage by our other visitors.
+                                        </p>
+                                    }
+
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingThree">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        سياسة الاستخدام العادل
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingThree">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Three" aria-expanded="false" aria-controls="collapse12Three">
+                                        @Resource.fair
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Three" class="collapse" aria-labelledby="collapse12HeadingThree" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <p>لقد توصلنا إلى أن الاستخدام المفرط لزوار البوابة للخدمات المضمنة فيها من شأنه أن يعيق قدرتنا على تقديم خدمة جيدة، لذلك ومن أجل ضمان التخصيص العادل لمصادر الشبكة بين جميع زوار البوابة، نحتفظ بحق تقييد الاستخدام إذا كان استخدامكم أكبر من الاستخدام لزوارنا الأخرين.</p>
+                                    }
+                                    else
+                                    {
+                                        <p>
+                                            We have determined that our ability to provide good service may be impaired when a visitor uses a service excessively. Accordingly, to ensure the fair allocation of network resources for all our portal visitors, we reserve the right to restrict your usage, if your usage is significantly greater than typical usage by our other visitors.
+                                        </p>
+                                    }
+
+
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingFour">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                                        إخلاء المسؤولية
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingFour">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Four" aria-expanded="false" aria-controls="collapse12Four">
+                                        @Resource.disclaimer
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Four" class="collapse" aria-labelledby="collapse12HeadingFour" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <p>
+                                            يتم تقديم المادة المتوفرة في هذه البوابة كما هي ودون أي ضمانات من أي نوع، وإلى أقصى حد مسموح به وفقاً للقوانين السارية، تخلي شرطة عٌمان السلطانية مسئوليتها عن أية ضمانات صريحة أو ضمنية، بما في ذلك – دون حصر- الضمانات الخاصة بالجودة المقبولة، الرواج والصلاحية لأغراض محددة، ولا تضمن شرطة عُمان السلطانية عدم انقطاع وظائف المواد المنشورة أو خلوها من الأخطاء أو أن هذا الخادم يقدم هذه المواد خالية من أي فيروسات أو أية عناصر ضارة أخرى.
+
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <p>
+                                            The materials in this portal are provided 'as is' and without warranties of any kind. To the fullest extent permissible and pursuant to applicable law, Royal Oman Police disclaims all warranties, explicit or implicit, including, but not limited to, warranties of satisfactory quality, merchantability and fitness for a particular purpose. ROP does not warrant that the functions contained in the materials will be uninterrupted or error-free. In addition, it does not warrant that defects will be corrected or that this website or server that makes it available is free of any virus or other harmful elements.
+
+                                        </p>
+                                    }
+
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingfive">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapsefive">
-                                        تحديد المسؤوليات
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingFive">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Five" aria-expanded="false" aria-controls="collapse12Five">
+                                        @Resource.limitation
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Five" class="collapse" aria-labelledby="collapse12HeadingFive" data-parent="#accordion12">
+                                <div class="card-body">
+
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+
+                                        <p>
+                                            إذعاناً للقوانين المطبقة في السلطنة وتحت أي ظرف من الظروف بما في ذلك الإهمال لن تكون شرطة عُمان السلطانية مسئولة عن أي ضرر ناتج عن استخدام أو عدم القدرة على استخدام المواد التي تتضمنها هذه البوابة. وربما يحتوي أي منشور لشرطة بعض الأخطاء الفنية والمطبعية. ويجوز إجراء التعديلات على هذه المنشورات بين الفنية والأخرى بطبعات جديدة منها في أي وقت دون إشعار مسبق، فهذه المنشورات تخضع للتطوير والتعديل في الخدمات المقدمة بواسطة الشرطة، وقد تم إعداد المعلومات المتوفرة بهذه البوابة للأغراض المعلوماتية فقط وهي مقدمة لكم على أساس التعامل معها كما هي، ولا تضمن أي دقة، أو توقيت، أو موثوقية أو صحة اكتمال أي من هذا المعلومات، ونحن غير مسؤولين عن أي معلومات أو خدمات قد تظهر في أي مواقع مرتبطة.
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <p>
+                                            Subject to applicable laws in the Sultanate, under no circumstances, including negligence, Royal Oman Police will not be liable for any special or consequential damage that results from the use of, or inability to use the materials in this portal. Any Royal Oman Police publication may include technical inaccuracies or typographical errors. Changes may be made to these publications from time to time and incorporated in new editions of these publications, at any time without prior notice, these publications are subject to improvements and changes in service provided by Royal Oman Police. The information contained in this portal is for informational purposes only and is provided to you on as is basis. We do not guarantee the accuracy, timeliness, reliability, authenticity of completeness of any of the information contained on this portal. We are not liable for any information or services, which may appear on any linked portals.
+                                        </p>
+                                    }
+
+
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingSix">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        التعديلات
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingSix">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Six" aria-expanded="false" aria-controls="collapse12Six">
+                                        @Resource.modifications
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Six" class="collapse" aria-labelledby="collapse12HeadingSix" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <p>
+                                            يجوز لشرطة عُمان السلطانية تعديل أي جزء من هذه البوابة في أي وقت حسبما ترى ودون إشعار مسبق ويجوز لشرطة عُمان السلطنية النفاذ لهذه البوابة في أي وقت.
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <p>
+                                            Royal Oman Police may modify any part of this portal at any time upon its discretion without prior notice. ROP may deny access to this website to anyone at any time.
+                                        </p>
+                                    }
+
                                 </div>
                             </div>
+
+
                         </div>
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingSeven">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                        الاقتراحات والتعليقات وتلقي الآراء
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingSeven">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Seven" aria-expanded="false" aria-controls="collapse12Seven">
+                                        @Resource.suggestions
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Seven" class="collapse" aria-labelledby="collapse12HeadingSeven" data-parent="#accordion12">
+                                <div class="card-body">
+
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <p>
+                                            في حالة تجاوبك مع أي وثيقة تنشرها شرطة عُمان السلطانية بمعلومات تتضمن آراء، أو أسئلة، أو تعليقات، أو اقتراحات أو خلافه فيما يتصل بمحتوى أي وثيقة لشرطة لن تعتبر هذه المعلومات سرية، ولن تكون الشرطة ملزمة بأي شكل تجاه هذه المعلومات ويجوز لها إعادة إنتاجها، أو الإفصاح عنها أو توزيعها للآخرين دون قيد، كما أن أي مراسلات تبعث بها إلى هذه البوابة أو لشرطة عُمان السلطانية عبر البريد الإلكتروني لن يتم التعامل معها على أساس أنها معلومات سرية، ويجوز لشرطة إعادة إنتاجها، أو نشرها، أو استخدامها لأي غرض، ويجوز لشرطة استخدام محتوى أي مراسلات بما في ذلك الأفكار، أو الاختراعات، أو المفاهيم أو التقنيات لأي غرض.
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <p>
+                                            If you respond to any Royal Oman Police published document with information including feedback data, such as questions, comments, suggestions, or otherwise regarding the content of any such ROP document, such information will be deemed non-confidential. In addition, ROP will have no obligation whatsoever with respect to such information and may reproduce, use, disclose and distribute the information to others without limitation. Any communications you send to this portal or to ROP via e-mail are on a non-confidential basis, and ROP may reproduce, publish or otherwise use them in any way for any purpose. ROP may use the content of any such communications, including any ideas, inventions, concepts, techniques, for any purpose.
+                                        </p>
+                                    }
+
+
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingEight">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                        روابط المواقع الأخرى
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingEight">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Eight" aria-expanded="false" aria-controls="collapse12Eight">
+                                        @Resource.linksother
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingEight">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Eight" class="collapse" aria-labelledby="collapse12HeadingEight" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <p>
+                                            تتضمن هذه البوابة روابط لمواقع أخرى لا تتم صيانتها بواسطة شرطة عُمان السلطانية، وبنفس القدر قد تتضمن مواقع أخرى روابط لهذه البوابة، ولذلك فالشرطة غير مسؤولة عن محتوى هذه المواقع ولا تتحمل مسئولية أي خسائر، أو ضرر، أو استفسار ناجم عن محتويات تلك المواقع.
+
+                                            يتم تقديم روابط المواقع الأخرى من أجل راحتكم كمستخدمين لهذه البوابة ولا ينطوي ذلك على موافقة الشرطة على تلك المواقع أو أي علاقة مع مشغليها، ولا تتحمل الشرطة أي مسئولية ناتجة عن استخدام البوابة ويعتبر النفاذ إليها واستخدامها مسئولية تخصكم.
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <p>
+                                            This portal contains links to other websites that are not maintained by Royal Oman Police. Similarly, other websites may contain links to this portal. ROP is not responsible for the contents of these websites and will not be liable for any loss, damage or injury arising from the contents of those websites. Any links to other websites are provided as a convenience to you as a user of this portal, and does not imply the endorsement of ROP of the linked websites or association with their operators. ROP disclaims all responsibility and liability for the use of linked websites, which you access and use at your own risk.
+                                        </p>
+                                    }
+
+
                                 </div>
                             </div>
+
                         </div>
 
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingNinie">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNinie" aria-expanded="false" aria-controls="collapseNinie">
-                                        القوانين المطبقة والاختصاص
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingNine">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Nine" aria-expanded="false" aria-controls="collapse12Nine">
+                                        @Resource.applicable
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingNinie">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Nine" class="collapse" aria-labelledby="collapse12HeadingNine" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <p>
+                                            القانون المطبق على شروط استخدام هذه البوابة هو قانون سلطنة عُمان وتتمتع محاكم السلطنة بسلطة الاختصاص في حالة نشوب نزاع ذي صلة.
+                                        </p>
+                                    }
+                                    else
+                                    {
+                                        <p>
+                                            The law applicable to the Conditions of use of portal is the law of the Sultanate of Oman and the courts of the Sultanate will have exclusive jurisdiction in case of any dispute.
+                                        </p>
+                                    }
+
+
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
 
 
                 </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item activelist"> <a href="../../../Home/terms">@Resource.footer1  </a></li>
+                    <li class="list-group-item"> <a href="../../../Home/copyright">@Resource.footer2  </a></li>
+                    <li class="list-group-item "><a href="../../../Home/polices">@Resource.footer3 </a></li>
+                    <li class="list-group-item "><a href="../../../Home/disclaimer">@Resource.footer4 </a></li>
+                    <li class="list-group-item "><a href="../../../Contact/ContactUs">@Resource.footer6 </a></li>
+
+
+                </ul>
+
             </div>
 
 

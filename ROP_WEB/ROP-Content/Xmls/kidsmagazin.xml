@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<magazines>
+
+
+  <magazine>
+
+
+    <count>33</count>
+    <publishdate>10/05/2020</publishdate>
+    <filename>aaa</filename>
+    <magaimg>aaaa</magaimg>
+    <filesize>11</filesize>
+    <magalang>ar</magalang>
+    <status>1</status>
+  </magazine>
+
+
+  <magazine>
+
+
+    <count>33</count>
+    <publishdate>10/5/2020</publishdate>
+    <filename>aaa</filename>
+    <magaimg>aaaa</magaimg>
+    <filesize>11</filesize>
+    <magalang>ar</magalang>
+    <status>0</status>
+  </magazine>
+
+  <magazine>
+
+    <count>33</count>
+    <publishdate>10/5/2020</publishdate>
+    <filename>aaa</filename>
+    <magaimg>aaaa</magaimg>
+    <filesize>11</filesize>
+    <magalang>en</magalang>
+    <status>1</status>
+  </magazine>
+
+
+</magazines>

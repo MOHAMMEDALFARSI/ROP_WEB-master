@@ -13,10 +13,15 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
+
+    var url = Request.Url.ToString();
+}
+@using System.Threading;
 @using ROP_WEB.Res
 
 
-<div class="container TopicStyle">
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
@@ -27,7 +32,7 @@
                     <li class="breadcrumb-item active">@Resource.dlil  </li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -40,158 +45,683 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item"> <a href="#">@Resource.laws  </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.trafficfinespoint </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.servicesfees </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.stat </a></li>
-                    <li class="list-group-item activelist"><a href="#">@Resource.dlil </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.Locations </a></li>
 
-                </ul>
-
-            </div>
             <div class="col-md-8">
 
-                <div class="jumbotron">
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3>  @Resource.dlil </h3>
 
-                    <div id="accordion" role="tablist" aria-multiselectable="true">
-
-
-
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
-                                <h5 class="mb-0">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        توجيهات عامة
+                    <div class="accordion" id="accordion12">
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingOne">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12One" aria-expanded="true" aria-controls="collapse12One">
+                                        @Resource.guidelines
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
+                            <div id="collapse12One" class="collapse show" aria-labelledby="collapse12HeadingOne" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <p class="mb-0">عزيزي السائق:</p>
 
-                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+
+                                        <ul>
+                                            <li>إذا استخدمت الإشارة الخطأ فقد تكون سببًا في حادث سير قد يروح ضحيته أبرياء.</li>
+                                            <li>عندما تعطي إشارة الانعطاف فإنك تنبه بذلك قائدي المركبات الآخرين بالمسار الذي تقصده، وتتيح الفرصة لهم لتخفيف السرعة.</li>
+                                            <li>الإشارة هي لغة الطريق فأحسن استخدامها وفهمها تجنباً الوقوع في المخاطر.</li>
+                                            <li>قبل التجاوز، تأكد من أن ظروف الطريق تسمح لك بذلك ، ولا تنس أن تعطي إشارة ضوئية.</li>
+                                            <li>الخروج من الطريق دون تنبيه من يسير خلفك قد يؤدي إلى وقوع حادث.</li>
+                                            <li>القيادة فن وذوق وأخلاق، فإستخدام المركبة بطريقة صحيحة يقينا شر الحوادث.</li>
+                                            <li>تقيد دائمًا بإشارات وخطوط ممنوع التجاوز.</li>
+                                            <li> الانعطاف أو الخروج من الطريق دون إعطاء إشارة مخالفة مرورية صريحة، فالتزم بأنظمة المرور تسلم.</li>
+                                            <li>استخدم الإشارة الضوئية الصحيحة ، فأبسط الأخطاء قد تكلفك الكثير.</li>
+                                            <li>خفف السرعة قبل الانعطاف، واعط الإشارة الضوئية الدالة على انعطافك من أجل سلامتك وسلامة الآخرين.</li>
+                                        </ul>
+
+                                    }
+                                    else
+                                    {
+
+                                        <p> Dear Motorist,</p>
+
+
+                                        <p class="mb-0">
+                                            Use the proper indicator well before you change your lane to another, or turn left or right. Avoid dangers and don't emerge suddenly into another lane.
+                                        </p>
+                                        <p class="mb-0">
+                                            You may cause a fatal accident if you use the improper direction indicator.
+                                        </p>
+
+                                        <p class="mb-0">
+                                            Use your indicator at turns to alert other drivers of your intended direction, and to allow them to slow down.
+                                        </p>
+                                        <p class="mb-0">
+                                            Traffic signs are the language of the road. If they are well, understood and complied with, dangers will be avoided.
+                                        </p>
+                                        <p class="mb-0">
+                                            Before you overtake_ ensure that it is safe to do so, and don't forget to signal your indicators.
+
+                                            Driving out of the road without signaling to those behind you, may cause an acci­dent.
+                                        </p>
+                                        <p class="mb-0">
+                                            Driving is an art, tact and decency. Drive in a civilized manner to avoid risks. Always comply with road signs and lines that prohibit overtaking. Turning or driving out of the road without signaling is a traffic offence. Be safe and comply with the traffic rules. Signal the proper indicator. A very minor mistake may cost very much.
+                                        </p>
+                                        <p class="mb-0">
+                                            For your own safety and the safety of others, slow down before you turn, and signal the proper direction indicator.
+
+                                        </p>
+                                    }
+
+
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        أخلاقيات السياقة
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingTwo">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Two" aria-expanded="false" aria-controls="collapse12Two">
+                                        @Resource.drivingmanners
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Two" class="collapse" aria-labelledby="collapse12HeadingTwo" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <h4>  إشارات المرور الضوئية</h4>
+                                        <p>وجِدَت إشارات المرور للتحكم بازدحام التقاطعات ومفترق الطرق ، مما يؤدي إلى سلاسة سيولة الطريق بصورة منظمة، والالتزام بها خلق حسن، وتجاهلها خطأ قاتل.</p>
+                                        <p>ماذا تفعل أمام إشارات المرور الضوئية؟</p>
+                                        <ul>
+                                            <li>قم عند اقترابك من إشارة المرور الضوئية بتخفيف السرعة وإن  كان ضوء الإشارة أخضرا. </li>
+                                            <li>توخى الحذر وكن منتبها على الطريق ولا تنشغل بشيء آخر.</li>
+                                            <li>توقف عند إشارة المرور ثم انطلق عندما تكون الإشارة خضراء فقط. </li>
+                                        </ul>
+
+                                        <h4>     التقاطعات </h4>
+                                        <p>وجدت التقاطعات لتسهيل تدفق حركة المرور والسماح لحركة السيارات من اتجاه واحد إلى آخر في تقاطعات الطرق، ويلزم سائقي السيارات إلى التحلي بالصبر وتجنب التوتر. </p>
+
+                                        <p>عبور التقاطعات: </p>
+                                        <p>قد يؤدي عدم الانتباه والالتزام بخط السير إلى وقوع حوادث مميتة.</p>
+                                        <p>ما المطلوب لعبور التقاطع؟</p>
+
+                                        <ul>
+                                            <li>قبل العزم لعبور التقاطع، تأكد من خلو الطريق أو بعد المركبات القادمة بمسافة تمكنك من عبوره.</li>
+                                            <li>لا تعبر التقاطع ما لم تتأكد من كون الطريق آمناً. </li>
+                                        </ul>
+
+                                        <h4>حزام الأمان</h4>
+                                        <p>حزام الأمان هو أحد الأجزاء المهمة بالمركبة، فهو يقلل من حدة الإصابة، ويبقي السائق في موضعه، خاصة  في المنعطفات. وربطك لحزام الأمان هو امتثال لقواعد حضارية.</p>
+                                        <p>أهمية حزام الأمان:</p>
+                                        <p>أثبتت البحوث أهمية حزام الأمان في الحد من الإصابات الخطيرة. ويمنع السائق ومقعد الراكب بالمقعد الأمامي من الارتطام  بجسم السيارة، كما أكدت أيضا أنه على عكس ما يعتقده العامة أن حزام الأمان لا يسبب ضررا لأية امرأة حامل في حالة وقوع حادث.</p>
+                                        <p>كيف أستخدام حزام الأمان؟</p>
+
+                                        <ul>
+                                            <li>على السائق وجميع الراكب بالمقعد الأمامي ربط حزام الأمان قبل تحرك المركبة.</li>
+                                            <li>تأكد من أن  حزام الأمان في حالة جيدة.</li>
+                                            <li>لا تنزع حزام الأمان حتى تتأكد من استقرار المركبة بمكان الوقوف.</li>
+                                        </ul>
+
+                                        <h4>  الهاتف المحمول (النقال)</h4>
+
+                                        <p>يعد جهاز الهاتف النقال من الوسائل الحديثة للتواصل و الاتصال، ولكنه يصبح خطرا عند استخدامه أثناء السياقة.</p>
+                                        <p>الاستخدام السليم للهواتف النقالة أثناء السياقة:</p>
+                                        <p>استخدام سماعة الأذن للتحدث أثناء السياقة أقل خطورة من حمل الجهاز النقال، كون الأخير يشغل يد السائق ويشغل انتباهه ويؤدي إلى فقدان السيطرة خاصة عن وجود مفاجآت في الطريق.</p>
+                                        <p>أخطار استخدام الهاتف النقال أثناء السياقة:</p>
+
+                                        <ul>
+                                            <li>فقدان السيطرة على مقود المركبة.</li>
+                                            <li>عدم الانتباه لحركة السير.</li>
+                                            <li>عدم الانتباه للعلامات المرورية بالطريق.</li>
+                                            <li>عدم الامتثال لحدود السرعة. </li>
+                                        </ul>
+                                    }
+
+                                    else
+                                    {
+                                        <h4>Traffic Lights</h4>
+                                        <p>Traffic lights are installed in crowded junctions to control flow of traffic in safe and smooth manner. Compliance with them without causing any harm to others is a commended behavior. Jumping the red signal mostly causes deadly accidents.</p>
+                                        <p>What to do at the Traffic Lights?</p>
+
+                                        <ul>
+                                            <li>When approaching traffic lights reduce your speed and don't depend on the fact that the green signal is on and the vehicle is far from the signals. </li>
+                                            <li>Be cautious, pay attention to the road and don't be distracted. </li>
+                                            <li>Stop at traffic lights, and drive only in the green signal, not in the amber. </li>
+                                        </ul>
+
+                                        <h4>Junctions </h4>
+                                        <p>Junctions are installed to facilitate the flow of traffic and allow movement of vehicles from one direction to another. At road junctions motorists are required to be patient and avoid nervousness. </p>
+                                        <p>Crossing Junctions Inattentively</p>
+                                        <p>Crossing a junction without full attention and proper judgment of the approaching traffic almost results in fatal accidents.</p>
+                                        <p>What is Required at Road Junctions?</p>
+
+                                        <ul>
+                                            <li>At a junction make sure that are no approaching vehicles, or at least that they are far enough for you to enter the road. </li>
+                                            <li>Don&rsquo;t cross a junction unless you ensure that  can enter the road safely. </li>
+                                        </ul>
+
+
+
+
+                                        <h4>Seat Belt</h4>
+                                        <p>The seat belt is one of the important parts of a vehicle. It reduces the severity of injuries, as it keeps the driver in position, especially at turns. Fastening the seatbelt is a civilized compliance with the rules.</p>
+                                        <p>Significance of the seatbelt</p>
+                                        <p>Researches have proved the importance of the seatbelt in reducing serious injuries .It prevents the driver and the front seat passenger from bumping into the body of the vehicle. Studies have confirmed also that, contrary to what is generally believed, the seatbelt does not cause any harm to a pregnant woman in case of accidents.</p>
+                                        <p>How to Use a Seatbelt?</p>
+
+                                        <ul>
+                                            <li>The driver and the front seat passenger must fasten the seatbelt before moving off.</li>
+                                            <li>Ensure that the seatbelt, its base and buckle are in good condition.</li>
+                                            <li>Don't unfasten the seatbelt during driving. Keep it fastened until the vehicle comes to a standstill.</li>
+                                        </ul>
+
+
+                                        <h4>  Mobile Telephone</h4>
+                                        <p>The mobile telephone is a modem and useful means of communication. But, using it during driving is dangerous and contrary to the traffic rules.</p>
+                                        <p>Proper Use of Mobile telephones During Driving</p>
+                                        <p>To use a telephone while driving, a motorist must use an earpiece. Carrying the telephone by hand while at the wheel may cause an awful accident as the driver will lose control over the vehicle, especially when there are surprises on the road.</p>
+                                        <p>Dangers of Using Mobile Telephone While Driving</p>
+                                        <p>Using a mobile telephone while driving without an earpiece will cause the following risks:</p>
+
+                                        <ul>
+                                            <li>Loss of control of the vehicle. </li>
+                                            <li>Inattention to the traffic on the road. - Inattention to traffic signs and light signals. </li>
+                                            <li>Non-compliance with the speed limit. </li>
+                                        </ul>
+                                    }
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingThree">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        حرائق المركبات
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingThree">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Three" aria-expanded="false" aria-controls="collapse12Three">
+                                        @Resource.vehiclefires
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Three" class="collapse" aria-labelledby="collapse12HeadingThree" data-parent="#accordion12">
+                                <div class="card-body">
+
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <h4>كيف نتجنب حراق المركبات؟</h4>
+                                        <ul>
+                                            <li>بين محطة الوقود وإشتعال الحرائق خيط رفيع جدًا ولابد من وعي العاملين في المحطة ووعي سائقي المركبات بخطورة ذلك حتى لا تحدث كارثة.</li>
+                                            <li>عدم تحميل المركبة أكثر من طاقتها أثناء القيادة لفترة طويلة ودون توقف.</li>
+                                            <li>حرائق السيارات قد تنجم عن التصادم العنيف أو التدهور؛ يزداد الأمر سوءًا حين تتعطل الأبواب والنوافذ عن العمل ويفشل الراكب في الخروج؛ ألا يدفعك هذا إلى التأني والإنتباه وأنت تقود سيارتك لتحمي نفسك والآخرين!</li>
+                                            <li>عدم ترك الأطفال لوحدهم في المركبة.</li>
+                                            <li>التأكد من وجود طفاية الحريق المناسبة في المركبة، ويفضل أن تكون بجوار مقعد السائق، وأفضل الأنواع لحرائق المركبات هي طفاية ثاني أكسيد الكربون. </li>
+                                            <li>تغيير الزيوت في موعدها والتأكد من وجود الماء في المبرد (الرادييتر).</li>
+                                        </ul>
+                                    }
+                                    else
+                                    {
+
+                                        <h4>How to prevent vehicle fires?</h4>
+                                        <p>A filling station staff and motorists must be aware and careful, otherwise there may be a disaster.</p>
+                                        <p>A vehicle shouldn't be overloaded and driven for long time without stopping.</p>
+                                        <p>Vehicle fires may result from violent collisions or overturning. It's even worse if the doors are jammed and the passengers unable to get out. Please drive carefully.</p>
+                                        <p>Don't leave children alone in a vehicle, especially if the engine is running.</p>
+                                        <p>Ensure that an appropriate fire extinguisher, preferably a carbon dioxide one, is fixed near the driver's seat.</p>
+                                        <p>Change the engine oil regularly, and always ensure that the radiator is full.</p>
+                                    }
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingFour">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                                        السلامة العامة
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingFour">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Four" aria-expanded="false" aria-controls="collapse12Four">
+                                        @Resource.publicsafety
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Four" class="collapse" aria-labelledby="collapse12HeadingFour" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <p>
+                                            السلامة العامة على الرغم مما وصل إليه الإنسان في وقتنا الحاضر من إمكانات كبيرة لتسخير قوى الطبيعة لخدمته، إلا أنه وجد نفسه محاطًا بالمخاطر من كل صوب، وفي كل مكان يوجد فيه.
+                                        </p>
+                                        <p>
+                                            وأصبحت الحيطة والحذر السمة الأساسية للتعامل مع معطيات عهد الذرة، وإن إنسان اليوم الذي يواجه كما هائلا من الأجهزة والمخترعات يحتاج إلى دراية تامة بالتعامل معها، إذ أن أقل خطأ قد يكلف الإنسان حياته.
+                                        </p>
+                                        <p>وشرطة عمان السلطانية وجدت لتعمل على مساعدة كل مواطن ومقيم، وتأمين حياته ضد كل المخاطر، فهدفها إنساني ونبيل ، فلنتعاون جميعًا مع رجال شرطة عمان السلطانية حفاظًا على سلامتنا وسلامة ممتلكاتنا.</p>
+                                        <h4>
+                                            السلامة في المنزل
+
+                                        </h4>
+                                        <p> إن المنزل هو مكان الراحة والطمأنينة للإنسان، إلا أنه يحتوي على مصادر خطورة عديدة من الممكن أن تتسبب في إحداث حرائق تهدد سلامة المنزل والممتلكات والسكان خاصة الأطفال، ولذلك يرجى مراعاة بعض الأمور البسيطة ولكنها في غاية الأهمية حفاظًا على سلامتكم مثل:</p>
+
+                                        <ul>
+                                            <li>
+                                                سوء استخدام التوصيلات والأجهزة الكهربائية في المنزل، ولعل الاستخدام المرط لهذه الأجهزة من أكثر أسباب حرائق المنازل.
+                                            </li>
+                                            <li>
+                                                الغاز وما يسببه من المخاطر، فهو من ناحية غاز خانق ومن ناحية أخرى شديد الإنفجار إذا تسرب بكميات مناسبة داخل أرجاء المنزل.
+                                            </li>
+                                            <li>
+                                                عبث الأطفال سواء بالمعدات الكهربائية والآلات الحادة أو بالمبيدات و المطهرات أو أي شيء تصل إليه يد الطفل ومن الممكن أن يؤذيه.
+                                            </li>
+                                            <li>
+                                                الإهمال ويعتبر من الأسباب الرئيسية للحوادث المختلفة ومن أشكاله : التدخين على سرير النوم أو ترك المبخرة دون عازل بينها وبين المفروشات.
+                                            </li>
+                                        </ul>
+                                        <h4>المركبات</h4>
+
+                                        <p> على الرغم من التقنية العالية التي تمتاز بها المركبات اليوم إلا أن الكثير من القصور فيما يتعلق بالسلامة.  وعلى سائقي المركبات المحافظة على أرواحهم أولا ثم مركباتهم التي تكون قد تكلفهم الكثير من المال، وفي هذا يجب اتباع الآتي:</p>
+
+                                        <ul>
+                                            <li>فحص مستوى الماء والزيت يوميا قبل التحرك.</li>
+                                            <li>متابعة كل ما يطرأ من تغيرات على المركبة أثناء سيرها.</li>
+                                            <li>عدم ترك الأطفال لوحدهم في المركبة دون إشراف أو مراقبة وخاصة أثناء دوران المحرك. </li>
+                                            <li>مراعاة حالة المركبة من حيث قدرتها على التحمل في المسافات الطويلة والجو الحار.</li>
+                                            <li>إجراء الفحص الدوري للمركبة وإصلاح الأعطال فيها أولاً بأول.</li>
+                                        </ul>
+
+                                        <p>يجب الانتباه: عند صيانة المركبة قد تقع أخطاء فنية بالدوائر الكهربائية.</p>
+
+
+                                        <h4>حوادث الغرق </h4>
+                                        <p>بعد هطول الأمطار تحتجز سدود التغذية الجوفية المنتشرة في مختلف الأودية بالسلطنة كميات مبيرة من مياه الأودية، كما تتجمع المياه في الحفر العميقة والمستنقعات، وكلها تغري الكثير من الأولاد الصغار للسباحة فيها لجهلهم بمدى خطورتها مما يؤدي إلى غرقهم ووفاتهم.</p>
+                                        <p>ولمزيد من الأمن والسلامة يرجى التقيد بالنصائح الآتية:</p>
+
+                                        <ul>
+                                            <li>عدم السباحة بتاتا في المجمعات المائية التي تتكون بعد هطول الأمطار وبخاصة في السدود والبرك و المستنقعات لخطورتها الشديدة. </li>
+                                            <li>لا تعرض نفسك أبدا للموت غرقا إذا كنت لا تجيد السباحة. </li>
+                                            <li>قبل أن تقذف بنفسك في الماء تأكد من سلامة المكان الذي تسبح فيه.</li>
+                                            <li>يجب عمل تمرينات الإحماء المناسبة قبل الشروع في السباحة تجنبا لإصابتك بالشد العضلي.  </li>
+                                            <li>تأكد من عدم وجود دوامات مياه في المكان الذي تنوي السباحة فيه.</li>
+                                            <li>يمنع الاطفال من السباحة لوحدهم دون مراقبة. </li>
+                                        </ul>
+
+                                        <h4>المصاعد الكهربائية</h4>
+                                        <p>تزداد أعداد المصاعد الكهربائية التي يتم تركيبها بشك مضطرد مع ازدياد عدد المباني والمنشآت مما يعكس التطور العمراني الذي تشهده السلطنة.</p>
+                                        <p>وحتى نحافظ على هذه المصاعد آمنة وصالحة للاستخدام، فإن هناك بعض السلوكيات التي يجب أن يتبعها مستخدمو هذه المصاعد وتتلخص في الآتي:</p>
+
+                                        <ul>
+                                            <li>عدم استخدام المصعد لغير الغرض المخصص له. </li>
+                                            <li>التقيد بالائحة المقررة للمصعد والموضحة بداخله.</li>
+                                            <li>عدم سكب الماء والسوائل داخل المصاعد عند مداخلها في كل طابق.</li>
+                                            <li>منع الأطفال من استخدام المصعد لوحدهم خوفا عليهم، حتى لا يعبثوا بمحتوياته.</li>
+                                            <li>
+                                                عدم استخدام الشدة مع المصاعد ، مثل ضرب الأبواب بقوة أو الضغط العنيف على الأزرار.
+                                            </li>
+                                        </ul>
+
+
+                                        <h4>الخروج للرحلات والنزهات</h4>
+                                        <p>تعد الإجازات والعطلات فرصا مناسبة للناس للقيام برحلات ونزهات في ربوع وطننا الغالي عمان للتمتع بجمال الطبيعة فيه.</p>
+                                        <p>وحتى تنتهي الرحلة على خير ولا يعكر صفوفها أي مكروه يستلزم الأمربعض الترتيبات :</p>
+
+                                        <ul>
+                                            <li>
+                                                قبل التحرك يجب أولا تحديد الوجهة ومكان الرحلة.
+                                            </li>
+                                            <li>
+                                                يجب أخذ الاحتياطات المناسبة للرحلة حسب ظروف المكان والطقس من حيث اختيار الملابس والأدوات التي يمكن استخدامها.
+                                            </li>
+                                            <li>لا تنسى صندوق الإسعافات الأولية. </li>
+                                            <li>افحص مركبتك جيدًا قبل التحرك وجهزها ببعض الأدوات المهمة التي قد تحتاج إليها مثل: حبل السحب، أدوات الحفر، خزان ماء احتياطي، صندوق العدة...إلخ. </li>
+                                            <li>يجب اختيار المكان المناسب للتخييم والتأكد من أنه بعيد عن الأماكن الخطرة مثل مجاري الأودية، كما يجب التأكد من خلوه من الحفر العميقة أو الوحوش أو الحشرات السامة. </li>
+                                            <li>مراقبة الأطفال جيدًا ومنعهم من الذهاب بعيدًا عن المكان لوحدهم. </li>
+                                            <li>عند انتهاء الرحلة والإستعداد للعودة يجب التأكد من أن جميع أفراد المجموعة موجودين وخاصة الأطفال.</li>
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <p>Despite the vast capabilities acquired to exploit nature, man everywhere is still surrounded by risks. Precaution and care are basic elements in dealing with the products of this atomic and electronic age.</p>
+                                        <p>Faced by an enormous number of inventions man is required to know how to handle them properly. Any minor fault may cost a person his life.</p>
+                                        <p>Civil defense organizations world-wide are established to help people and protect them against dangers, a noble human objective. Let's all co-operate with civil defense men to protect ourselves and properties.</p>
+                                        <h4>Safety at Home</h4>
+                                        <p>House is a place of living, rest and peace. However, it contains many hazards that may cause fires and threaten the building, properties and people, particularly children. Thus, all are requested to observe some simple but very important matters for their own safety.</p>
+
+                                        <ul>
+                                            <li>Improper use of electrical appliances at home. Overuse of these equipment is the most common cause of house fires. </li>
+                                            <li>Gas and the risks involved if it is improperly used. It is suffocating and   highly explosive if it leaks inside a house. </li>
+                                            <li>Children fiddling with electrical appliances, sharp instruments,    insecticides, detergents, or any harmful 'thing they can reach. </li>
+                                            <li>Negligence is one of the main causes of accidents. Examples of negligence are: smoking in bed and using incense burners without metal plates to prevent  hers from falling on to carpets.</li>
+                                        </ul>
+
+                                        <h4>Vehicles</h4>
+                                        <p>Although provided with highly technical features, today's vehicles suffer from many shortcomings in relation to safety. Drivers must first be careful for their own lives then their vehicles, which cost them a lot of money. To do so, they are required to observe the following:</p>
+
+                                        <ul>
+                                            <li>Check the oil and water levels daily before driving. </li>
+                                            <li>Detect any change that you may notice during driving. </li>
+                                            <li>Don't leave children alone and unwatched in the vehicle, especially while the engine is running. </li>
+                                            <li>Be aware of the vehicle's capability for long driving and its condition in hot weather. </li>
+                                            <li>Inspect the vehicle regularly and make necessary repairs immediately, </li>
+                                        </ul>
+
+                                        <p>Notice: Technical faults may take place in a vehicle's electrical circuit during maintenance.</p>
+                                        <h4>Drowning</h4>
+                                        <p>Following rains underground recharging dams constructed across many wadis in Oman contain huge quantities of water. Also, rain water collects in deep holes and catchments. Many children tend to go swimming .in these swamps unaware of the risk and may drown.</p>
+                                        <p>To ensure safety with regard to swimming comply with the following guidelines:</p>
+
+                                        <ul>
+                                            <li>Never swim in water pockets, especially reservoirs, ponds and swamps. </li>
+                                            <li>Before entering the water make sure of the safety of the place. </li>
+                                            <li>Warm up before swimming to keep your muscles from cramping. </li>
+                                            <li>Ensure that the place where you want to swim is free from whirlpools. </li>
+                                            <li>Children should not be allowed to enter water alone without being supervised. </li>
+                                        </ul>
+
+                                        <h4>Electric Lifts</h4>
+                                        <p>Electric lifts are increasingly installed in numerous new buildings throughout the country, an evidence of development in Oman.</p>
+                                        <p>To keep lifts safe and in good working condition users must observe the following actions:</p>
+
+                                        <ul>
+                                            <li>Use lifts only for the purpose they are made for. </li>
+                                            <li>Comply with the prescribed capacity of the lift as lapelled inside. </li>
+                                            <li>Don't pour water or any other liquid inside a lift or at its entrance in each floor. </li>
+                                            <li>To ensure their own safety and to avoid failure of lifts children should not be allowed to use lifts alone. </li>
+                                        </ul>
+
+                                        <h4>Picnicking</h4>
+                                        <p>Holidays are good opportunities for people to picnic and enjoy themselves with Oman's beautiful nature.</p>
+                                        <p>To have a safe and happy trip without any mishaps, certain arrangements must be taken as follows:</p>
+
+                                        <ul>
+                                            <li>Determine the destination beforehand. </li>
+                                            <li>Take necessary things including clothes and other articles according to the nature and weather conditions at your destination. </li>
+                                            <li>Take first aid kit. </li>
+                                            <li>Check your vehicle properly and provide it with necessary articles including a towing rope, digging tools, a spare water tank, spanners kit, etc. </li>
+                                            <li>Select a suitable camping site away from dangerous places like wadis or deep holes, and free from other hazards including fierce animals and poisonous insects. </li>
+                                            <li>Watch the children closely and don't let them go alone far away from the camp. </li>
+                                            <li>At the end of the picnic and before driving back ensure that all members of the group, especially the children are there. </li>
+                                        </ul>
+
+                                    }
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingfive">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapsefive">
-                                        مطفأة الحريق في المركبة
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingFive">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Five" aria-expanded="false" aria-controls="collapse12Five">
+                                        @Resource.fireextinguishers
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Five" class="collapse" aria-labelledby="collapse12HeadingFive" data-parent="#accordion12">
+                                <div class="card-body">
+
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+
+                                        <h4>مطفأة الحريق في المركبة </h4>
+                                        <p> على الرغم مما تميزت به المركبات من تقنية عالية وفرت العديد من شروط المتانة وسبل الأمان إلا أن وجود مطفأة الحريق بالمركبة يعد أهم عامل من شأنه أن يحقق السلامة من أخطار الحريق.</p>
+                                        <p>
+                                            وبما أنه لا يمكن إغفال ارتفاع درجة حرارة الجو في فصل الصيف التي تعتبر من أهم العوامل المساعدة في اشتعال حرائق المركبات، فإنه أيضا لا يمكننا إغفال حقيقة أنها تساعد على ارتفاع درجة حرارة المحرك وزيادة الضغط في الإطارات التي تكون بحالة سيئة مما يجعلها أكثر عرضة للانفجار بسبب احتكاكها بسطح الطريق، وبالتالي فإنها تتسبب في وقوع حوادث تضر بركاب المركبة ومستخدمي الطريق على حد سواء.
+                                        </p>
+                                        <p>ويجب عند  تركيب المطفأة أن تكون في متناول يد سائق المركبة. </p>
+                                        <h4>
+                                            أسباب حرائق المركبات :
+
+                                        </h4>
+
+                                        <ul>
+                                            <li>نقص الماء في الرادييتر  والذي يسمى المشع أو (خزان الماء). </li>
+                                            <li>سوء عزل الأسلاك أو خطأ في وضعية شماعات الاحتراق. </li>
+                                            <li>تمزق أنبوبة العادم. </li>
+                                            <li>تسرب البنزين من خلال أنابيب التغذية والخزان وفتحة التعبئة. </li>
+                                            <li>سلوكيات فردية. </li>
+                                        </ul>
+
+                                        <h4>الاحتياطات الواجب اتخاذها لتجنب وقوع حادث حريق مركبة:</h4>
+
+                                        <ul>
+                                            <li>تغيير الزيوت في موعدها والتأكد من وجود الماء في المبرد الرادييتر. ,/li>
+                                            <li>الالتزام بالحمولة المحددة للمركبة. </li>
+                                            <li>عدم السير بالمركبة لمسافات طويلة دون توقف. </li>
+                                            <li>يتوجب إجراء الفحص الدوري والصيانة المناسبة للمركبة. </li>
+                                            <li>الالتزام بالتوقف عن التدخين أثناء قيادة المركبة،وعند تزويد المركبة بالوقود.  </li>
+                                            <li>الامتناع عن ترك الأطفال لوحدهم في المركبة ، وخاصة إذا كانت في وضعية اشتغال. </li>
+                                            <li>بعد أن تقوم بتركيب مطفأة الحريق بالمركبة عليك القيام بفحصها كل ستة أشهر من قبل المعنيين. </li>
+                                            <li>انتبه إن عوائد التأمين لا تعفيك عن المسائلة القانونية. </li>
+                                        </ul>
+
+
+                                        <h4>ازدياد أعداد المركبات:</h4>
+                                        <p>بازدياد عدد المركبات في السلطنة زاد عدد الحواث المرورية الخطرة والتي نتج عن بعضها إصابة الركاب بحروق وراح ضحيتها العديد من أرواح الأبرياء حرقا بداخل مركباتهم نتيجة عجزهم عن إطفاء الحريق.</p>
+
+                                        <h4>النصوص القانونية من قانون المرور ولائحته التنفيذية:</h4>
+                                        <p>تنص المادة (17) من قانون المرور بوجوب احتواء كل مركبة آلية على جهاز إطفاء مناسب صالح الاستعمال بشكل دائم الفقرة(12). كما تنص المواد (35،36،37) من اللائحة التنفيذية بوجوب تزويد مركبات الأجرة ، و الحافلات ،والشاحنات بجهاز إطفاء صالح الاستعمال يكون في متناول السائق.</p>
+                                        <p>نتمنى السلامة للجميع وندعوا الله أن يجنبنا أخطار الطريق ونناشد الأخوة السائقين بضرورة اقتناء وتركيب مطفأة حريق في مركباتهم، واتباع تعليمات وإرشادات السلامة. </p>
+                                        <p>&nbsp;</p>
+                                    }
+                                    else
+                                    {
+
+
+                                        <p>Although vehicles are already equipped with high techniques and many features of durability and safety, the condition of a fire extinguisher will of course reinforce their safety against vehicle.</p>
+                                        <p>High temperature during summer is main factor in vehicle fires. A fire extinguisher fixed near the driver&rsquo;s seat is indispensable to put off fire if it ever breaks out in a vehicle.</p>
+                                        <h4>Causes of Vehicle Fire:</h4>
+                                        <div class="linklist">
+                                            <ul>
+                                                <li>Little quantity of water in the radiator. </li>
+                                                <li>Poor insulation of wires or improperly fixed plugs. </li>
+                                                <li>Cracks in the exhaust. </li>
+                                                <li>Fuel leak from the tank or supply tubes. </li>
+                                                <li>Individual acts </li>
+                                            </ul>
+                                        </div>
+                                        <h4>Precautions from Vehicle Fire:</h4>
+
+                                        <ul>
+                                            <li>Change oils regularly and always ensure that the radiator is full. </li>
+                                            <li>Comply with the vehicle&rsquo;s laud limit. </li>
+                                            <li>Don&rsquo;t drive for long time continuously without stopping. </li>
+                                            <li>Have your vehicle regularly checked, serviced and repaired. </li>
+                                            <li>Don&rsquo;t smoke while driving or during fuelling. </li>
+                                            <li>Don&rsquo;t leave the children alone in the vehicle, or the engine running while you are a way. </li>
+                                            <li>Remember that the insurance compensation does not exempt you from legal actions. </li>
+                                            <li>After fixing a fire extinguisher in your vehicle have it tested by authorized personnel every six months. </li>
+                                        </ul>
+
+                                        <h4>Increased Number of Vehicles:</h4>
+                                        <p>By the end of 2003 the total of vehicles reached 444,500. The increase the number of vehicles is among the cause of accidents. A total of 245 vehicles fires took place in 2003 alone. Among the causes of such fires were the high temperatures, negligence of maintenance, driving for long distances without stopping Sometimes passenger are caught by fire inside the vehicle.</p>
+                                        <h3>Texts from the road traffic law and its Implementing Regulations:</h3>
+                                        <p>Article 17.12 of the Road Traffic Law stipulates that every motor vehicle must be equipped with a suitable fire fighting equipment which must always be in good working condition.</p>
+                                        <p>Articles 35, 36 and 37 of the Implementing Regulations stipulate that taxis, buses and trucks must be provided with appropriate handy fire fighting equipment.</p>
+
+
+                                    }
+
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingSix">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                        حرائق المزارع
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingSix">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Six" aria-expanded="false" aria-controls="collapse12Six">
+                                        @Resource.farmfires
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Six" class="collapse" aria-labelledby="collapse12HeadingSix" data-parent="#accordion12">
+                                <div class="card-body">
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <p>تزداد حرائق المزارع خلال فترة الصيف بشكل كبير ، حيث تؤثر الحرارة العالية على المزروعات وخاصة اليابسة منها كالليف وكرب النخيل والخوص و الحشائش. وتتضافر عوامل عديدة لتؤدي إلى اندلاع حرائق المزارع ، لتجنب ذلك يجب اتباع الإرشادات التالية:</p>
+
+                                        <ul>
+                                            <li>يجب التخلص من المخلفات أولأً بأول، فأقل شرر يكفي لإضرام النيران فيها. </li>
+                                            <li>يجب توخي الحيطة والحذر عند حرق المخلفات. </li>
+                                            <li>عدم حرق كمية كبيرة من المخلفات مرة واحدة. </li>
+                                            <li>عدم حرق المخلفات عند اشتداد الريح. </li>
+                                            <li>عدم ترك النيران تشتعل دون رقابة. </li>
+                                            <li>ضرورة التخلص من أعقاب السجائر في مكان آمن بعيدًا عن المخلفات و المواد سريعة الاشتعال في المزرعة.  </li>
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <p>Farm fires are frequent during summer, especially in the Batinah Region, where high temperature has effect on dry rubbish including fibers, palm leaves, fronds and grass. This and other factors cause farm fires. The following measures are necessary to avoid these hazards:</p>
+
+                                        <ul>
+                                            <li>A small spark may cause a large fire. Dispose of the farm rubbish immediately.</li>
+                                            <li>Take necessary precautions while burning the rubbish. </li>
+                                            <li>Don't burn large heaps of rubbish at a time. </li>
+                                            <li>Don't burn farm rubbish when it's windy. </li>
+                                            <li>Keep watch while burning the rubbish. </li>
+                                            <li>Smokers should dispose of their cigarette butts properly, away from the rubbish and flammable materials. </li>
+                                        </ul>
+                                    }
                                 </div>
                             </div>
+
+
                         </div>
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingSeven">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                        إرشادات عند السفر
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingSeven">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Seven" aria-expanded="false" aria-controls="collapse12Seven">
+                                        @Resource.traveltips
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseSeven" class="collapse" role="tabpanel" aria-labelledby="headingSeven">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Seven" class="collapse" aria-labelledby="collapse12HeadingSeven" data-parent="#accordion12">
+                                <div class="card-body">
+
+
+                                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                    {
+                                        <p> <strong>الجوازات والتأشيرات:</strong></p>
+                                        <p>						  قبل السفر تأكد من صلاحية جواز سفرك لمدة تغطي فترة غيابك وتسمح لك بالعمل إذا كان ذلك هو الغرض من سفرك إلى الخارج. واحمل معك وثيقة أخرى لإثبات شخصيتك ويستحسن أن تكون بها صورتك، وتأكد من حصولك على التأشيرات المطلوبة للجهة التي تريد زيارتها.</p>
+
+                                        <p> <strong>التطعيم:</strong></p>
+                                        <p>						  تأكد مما إذا كنت تحتاج إلى تطعيم لدخول الدول التي تنوي زيارتها ، وخذ الجرعات الطلوبة قبل وقت كاف من موعد السفر ، واحتفظ معك بشهادات التطعيم .</p>
+
+                                        <p> <strong>تأمين المنزل:</strong></p>
+                                        <p>						  قبل سفرك اخطر الجيران والأقرباء بذلك كي يراقبوا منزلك حتى لا يتعرض للسرقة أو التخريب.</p>
+
+                                        <p> <strong>تجهيز الأمتعة: </strong></p>
+                                        <p>						  قم بنفسك بوضع أغراضك في الحقائب ، ولا تسمح لأحد بالتلاعب بها ، اترك الهدايا بدون تغليف ولا تحمل أشياء خطيرة مثل الأسلحة النارية ، السكاكين ، المتفجرات ، الألعاب النارية ، أسطوانات الغاز أو المواد الكيماوية الخطرة، لا تغفل عن مراقبة أمتعتك قبل انتهاء إجراءات وزن وتسليم أمتعة لأي شخص آخر ، فإعطاء معلومات خطأ رداً على الاستفسارات عند إجراءات تسليم الأمتعة سوف يعرضك للمساءلة القانونية.</p>
+
+                                        <p> <strong>الجمارك:</strong></p>
+                                        <p>						  تعرف على نظم ولوائح الجمارك ، وما هي السلع المقيدة أو المحظورة في الدول التي تنوي زيارتها ، أو في بلادك عند العودة ، ولا تأخذ أي شيء يعطيه لك شخص آخر واحرص على عدم استلام أية حقيبة لإيصالها إلى البلاد التي تقصدها، دون أن تعرف محتواها أو حتى تشارك في ربطها .</p>
+                                        <p> <strong>المخدرات:</strong></p>
+
+                                        <ul>
+                                            <li>احذر من التورط في المخدرات ، فعقوبتها شديدة وقد تصل إلى حد الإعدام .</li>
+                                            <li> لا تحمل أي شيء لأي شخص آخر عبر الجمارك فحتى لو كنت لا تعلم أنك تحمل مخدرات سوف تتعرض للمساءلة .</li>
+                                            <li>لا تعبر الحدود مع أناس لا تعرفهم خاصة الذين يوقفون السيارات على الطريق بغية توصيلهم .</li>
+                                            <li> احتفظ بوصفة طبية لأي دواء تحتاج لاستعماله ، وتأكد مما إذا كان ذلك العقار مسموحاً به في البلد الذي تقصده أم لا.</li>
+                                        </ul>
+
+
+                                        <p> <strong>النقود:</strong></p>
+                                        <p>						  احمل معك المبالغ ما يكفي لنفقاتك العادية وللأشياء الطارئة وأن يكون معظم تلك المبالغ في شكل شيكات سياحية ، وخذ معك من النقود ما يكفي لاحتياجاتك في اليوم الواحد .</p>
+
+                                        <p> <strong>بطاقات الائتمان:</strong></p>
+                                        <p>						  تأكد من تواريخ صلاحيتها قبل سفرك ، واحتفظ بالأرقام السرية في مكان آمن . ولا تحمل جميع بطاقاتك معك ، بل اترك واحدة منها على الأقل في خزانة الفندق التي تقيم فيه .</p>
+
+                                        <p> <strong>التذاكر:</strong></p>
+                                        <p>						  اشتر تذكرة ذهاب وعودة ، واحتفظ دائما بجميع التذاكر في مكان آمن .</p>
+
+                                        <p> <strong>الجمارك المحلية:</strong></p>
+                                        <p>						  عندما تكون بالخارج احترم الجمارك المحلية في البلد الذي قدمت إليه ، ولا تقدم على أي تصرف يؤدي إلى إدانتك ، وتقيد بالقوانين المحلية ، واعلم أن النظم والقوانين في البلد الذي تزوره  قد تكون مختلفة تماما عما هو مطبق في بلدك .</p>
+                                        <p> <strong>الأمن:</strong></p>
+                                        <p>						  بلغ الشرطة فوراً عن أية سرقة لنقودك أو جواز سفرك ، أو بطاقتك الائتمانية أو غيرها واحصل على بلاغ مكتوب فسوف تحتاج لذلك عند المطالبة بأي تأمين ، واخطر بعثتك الدبلوماسية في البلد الذي تتواجد به . وعليك أيضاً الاتصال بالبنك الذي تتعامل معه لإخطاره بسرقة بطاقتك الائتمانية ، وإبلاغ الجهة التي أصدرت لك الشيكات السياحية إن كانت قد سرقت .</p>
+
+                                        <p> <strong>الإيدز:</strong></p>
+                                        <p>
+                                            إن مرض نقص المناعة المكتسبة (الإيدز) منتشر في كثير من دول العالم ، وفي بعض البلدان لا يتم فحص الدم في حالة نقله إلى مريض . وتحاشياً لذلك اسأل الطبيب الذي يقوم بترتيبات نقل الدم إليك عما إذا تم اتخاذ الترتيبات للحصول على دم نقي لنقله إليك .<br />
+                                            وتجنب الممارسات الجنسية غير المشروعة ، فهي سبب مباشر في الإصابة بهذا المرض . <br />
+                                        </p>
+                                    }
+                                    else
+                                    {
+
+                                        <p>Passports and Visas:</p>
+                                        <p>						  Before you go, check that your passport is still valid, that it will cover the duration of your stay and will allow you to work, if that is your intention. Take one other means of identification, preferably with a photograph. Check if you will need any visas.</p>
+                                        <p><span>Vaccination: </span></p>
+                                        <p>						  Find out if you will need any vaccinations for the countries you are visiting and make arrangements with your doctor well in advance. Take any certificates with you.</p>
+                                        <p>Home Security : </p>
+                                        <p>						  Before you depart inform your neighbours and relatives of your trip so that they may look after your house and safeguard it against theft.</p>
+                                        <p>Packing Luggage: </p>
+                                        <p>						  Pack your own luggage, do not let anyone tamper with it, leave gifts unwrapped and do not pack &lsquo;dangerous goods&rsquo; such as firearms, knives, weapons, explosives, fireworks, gas cylinders or dangerous chemicals. Do not leave your luggage unattended before checking in or check in luggage for anyone else. You will be subject to legal procedures if you give false information in response to questions when checking in.</p>
+                                        <p>Customs: </p>
+                                        <p>
+                                            Find out what customs regulations apply, and what constitutes restricted
+                                            or prohibited goods, in the countries you will be visiting or returning home to. Never carry anything for anyone else, or take any luggage to the country of your destination if you do not know its contents and take part in packing it.
+                                        </p>
+                                        <p>Drugs: </p>
+                                        <ul>
+                                            <li>
+                                                Avoid any involvement with drugs. Drug offence sentences can be as
+                                                severe as the death penalty.
+                                            </li>
+                                            <li>Don&rsquo;t carry anything for other people through customs.Even if you were unaware that you were carrying drugs, you would be liable to legal procedures.</li>
+                                            <li>Don&rsquo;t cross land borders with people you don&rsquo;t know, eg. hitch-hikers.</li>
+                                            <li>
+                                                Carry a doctor&rsquo;s prescription for any medicinal drugs you have to use,
+                                                but check if even these are permitted in your destination country.
+                                            </li>
+                                        </ul>
+
+                                        <p>Money: </p>
+                                        <p>
+                                            Take enough to cover expenses and emergencies, most of it in travellers
+                                            cheques. Carry only what you need for the day.
+                                        </p>
+                                        <p>Credit Cards:</p>
+                                        <p>Check the expiry dates before you go and make a separate note of their numbers. Don&rsquo;t carry all your cards with you - leave at least one in your hotel safe.</p>
+                                        <p><span>Tickets :</span>						  Buy a return ticket and keep all tickets in a safe place at all times.</p>
+                                        <p>Local Customs: </p>
+                                        <p>
+                                            When abroad, respect local customs and Avoid doing anything which may
+                                            cause offence. Obey local laws and be aware that the system of justice
+                                            in the country you are visiting may be quite different from what you are
+                                            used to at home.
+                                        </p>
+                                        <p>Security: </p>
+                                        <p>
+                                            Report any theft of money, passport, credit cards etc. to the local police
+                                            immediately, and obtain a statement. You will need this for any insurance
+                                            claim. Inform your country&rsquo;s diplomatic mission. You should also contact your bank to advise of stolen credit cards, and the issuing agent for any stolen travellers cheques.
+                                        </p>
+                                        <p>Aids: </p>
+                                        <p>
+                                            Aids is present worldwide. In some countries, blood for transfusions may
+                                            not be screened for the virus. Ask the doctor treating you if arrangements
+                                            can be made for obtaining screened blood. Avoid illegal sexual practices which are direct cause of contracting AIDS.
+                                        </p>
+
+
+
+                                    }
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
-
                 </div>
 
+            </div>
+
+
+
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item"> <a href="../../../OpenData/Roplaws">@Resource.laws  </a></li>
+                    <li class="list-group-item "><a href="../../../OpenData/TrafficFines">@Resource.trafficfinespoint </a></li>
+                    <li class="list-group-item "><a href="../../../OpenData/Statistics">@Resource.stat </a></li>
+                    <li class="list-group-item activelist"><a href="../../../OpenData/Saftytips">@Resource.dlil </a></li>
+
+
+
+                </ul>
 
             </div>
         </div>

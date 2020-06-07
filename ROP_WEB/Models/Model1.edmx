@@ -20,6 +20,23 @@
           <Property Name="Language" Type="nchar" MaxLength="10" />
           <Property Name="Archive" Type="bit" />
         </EntityType>
+        <EntityType Name="CHANNEL">
+          <Key>
+            <PropertyRef Name="Channel_Id" />
+          </Key>
+          <Property Name="Channel_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Channel_Name_Ar" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Channel_Name_En" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="channel_url" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHANNEL_SERVICES">
+          <Key>
+            <PropertyRef Name="Service_Channel_Id" />
+          </Key>
+          <Property Name="Service_Channel_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Channel_Id" Type="int" Nullable="false" />
+          <Property Name="Service_Id" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="FAQCategory">
           <Key>
             <PropertyRef Name="CategoryID" />
@@ -86,8 +103,8 @@
             <PropertyRef Name="Service_Id" />
           </Key>
           <Property Name="Service_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Service_Name_Ar" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Service_Name_En" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Service_Name_Ar" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Service_Name_En" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Service_Desc_Ar" Type="nvarchar(max)" />
           <Property Name="Service_Desc_En" Type="nvarchar(max)" />
           <Property Name="Service_procedure_Ar" Type="nvarchar(max)" />
@@ -101,10 +118,12 @@
           <Property Name="Service_Req_Doc_Ar" Type="nvarchar(max)" />
           <Property Name="Service_Req_Doc_En" Type="nvarchar(max)" />
           <Property Name="Service_Cat_Id" Type="int" Nullable="false" />
-          <Property Name="Service_Doc" Type="nvarchar" MaxLength="50" />
+          <Property Name="Service_Doc" Type="nvarchar(max)" />
           <Property Name="Service_Provider_Id" Type="int" Nullable="false" />
           <Property Name="services_Status_Id" Type="int" Nullable="false" />
           <Property Name="AddedDate" Type="date" />
+          <Property Name="New" Type="bit" />
+          <Property Name="service_Url" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="SERVICE_CAT">
           <Key>
@@ -127,8 +146,22 @@
             <PropertyRef Name="services_Status_Id" />
           </Key>
           <Property Name="services_Status_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="services_Status" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="services_Status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <Association Name="Channel_Id">
+          <End Role="CHANNEL" Type="Self.CHANNEL" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CHANNEL_SERVICES" Type="Self.CHANNEL_SERVICES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHANNEL">
+              <PropertyRef Name="Channel_Id" />
+            </Principal>
+            <Dependent Role="CHANNEL_SERVICES">
+              <PropertyRef Name="Channel_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CategoryID">
           <End Role="FAQCategory" Type="Self.FAQCategory" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -171,7 +204,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_scat">
+        <Association Name="Service_Cat_Idd">
           <End Role="SERVICE_CAT" Type="Self.SERVICE_CAT" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -185,21 +218,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_serstatus">
-          <End Role="SERVICE_STATUS" Type="Self.SERVICE_STATUS" Multiplicity="1">
+        <Association Name="Service_Id_CHANNEL">
+          <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="*" />
+          <End Role="CHANNEL_SERVICES" Type="Self.CHANNEL_SERVICES" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="SERVICE_STATUS">
-              <PropertyRef Name="services_Status_Id" />
+            <Principal Role="SERVICE">
+              <PropertyRef Name="Service_Id" />
             </Principal>
-            <Dependent Role="SERVICE">
-              <PropertyRef Name="services_Status_Id" />
+            <Dependent Role="CHANNEL_SERVICES">
+              <PropertyRef Name="Service_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_sprov">
+        <Association Name="Service_Provider_Idd">
           <End Role="SERVICE_PROVIDER" Type="Self.SERVICE_PROVIDER" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -213,8 +246,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="Services_Status_Idd">
+          <End Role="SERVICE_STATUS" Type="Self.SERVICE_STATUS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SERVICE" Type="Self.SERVICE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE_STATUS">
+              <PropertyRef Name="services_Status_Id" />
+            </Principal>
+            <Dependent Role="SERVICE">
+              <PropertyRef Name="services_Status_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ROP_WEBModelStoreContainer">
           <EntitySet Name="Articles" EntityType="Self.Articles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHANNEL" EntityType="Self.CHANNEL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHANNEL_SERVICES" EntityType="Self.CHANNEL_SERVICES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FAQCategory" EntityType="Self.FAQCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FAQMain" EntityType="Self.FAQMain" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NewsCategory" EntityType="Self.NewsCategory" Schema="dbo" store:Type="Tables" />
@@ -224,6 +273,10 @@
           <EntitySet Name="SERVICE_CAT" EntityType="Self.SERVICE_CAT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SERVICE_PROVIDER" EntityType="Self.SERVICE_PROVIDER" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SERVICE_STATUS" EntityType="Self.SERVICE_STATUS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="Channel_Id" Association="Self.Channel_Id">
+            <End Role="CHANNEL" EntitySet="CHANNEL" />
+            <End Role="CHANNEL_SERVICES" EntitySet="CHANNEL_SERVICES" />
+          </AssociationSet>
           <AssociationSet Name="FK_CategoryID" Association="Self.FK_CategoryID">
             <End Role="FAQCategory" EntitySet="FAQCategory" />
             <End Role="FAQMain" EntitySet="FAQMain" />
@@ -236,16 +289,20 @@
             <End Role="NewsMain" EntitySet="NewsMain" />
             <End Role="NewsImage" EntitySet="NewsImage" />
           </AssociationSet>
-          <AssociationSet Name="FK_scat" Association="Self.FK_scat">
+          <AssociationSet Name="Service_Cat_Idd" Association="Self.Service_Cat_Idd">
             <End Role="SERVICE_CAT" EntitySet="SERVICE_CAT" />
             <End Role="SERVICE" EntitySet="SERVICE" />
           </AssociationSet>
-          <AssociationSet Name="FK_serstatus" Association="Self.FK_serstatus">
-            <End Role="SERVICE_STATUS" EntitySet="SERVICE_STATUS" />
+          <AssociationSet Name="Service_Id_CHANNEL" Association="Self.Service_Id_CHANNEL">
+            <End Role="SERVICE" EntitySet="SERVICE" />
+            <End Role="CHANNEL_SERVICES" EntitySet="CHANNEL_SERVICES" />
+          </AssociationSet>
+          <AssociationSet Name="Service_Provider_Idd" Association="Self.Service_Provider_Idd">
+            <End Role="SERVICE_PROVIDER" EntitySet="SERVICE_PROVIDER" />
             <End Role="SERVICE" EntitySet="SERVICE" />
           </AssociationSet>
-          <AssociationSet Name="FK_sprov" Association="Self.FK_sprov">
-            <End Role="SERVICE_PROVIDER" EntitySet="SERVICE_PROVIDER" />
+          <AssociationSet Name="Services_Status_Idd" Association="Self.Services_Status_Idd">
+            <End Role="SERVICE_STATUS" EntitySet="SERVICE_STATUS" />
             <End Role="SERVICE" EntitySet="SERVICE" />
           </AssociationSet>
         </EntityContainer>
@@ -325,8 +382,8 @@
             <PropertyRef Name="Service_Id" />
           </Key>
           <Property Name="Service_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Service_Name_Ar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Service_Name_En" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Service_Name_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Service_Name_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Service_Desc_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Service_Desc_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Service_procedure_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -340,13 +397,16 @@
           <Property Name="Service_Req_Doc_Ar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Service_Req_Doc_En" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Service_Cat_Id" Type="Int32" Nullable="false" />
-          <Property Name="Service_Doc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Service_Doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Service_Provider_Id" Type="Int32" Nullable="false" />
           <Property Name="services_Status_Id" Type="Int32" Nullable="false" />
           <Property Name="AddedDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="SERVICE_CAT" Relationship="ROP_WEBModel.FK_scat" FromRole="SERVICE" ToRole="SERVICE_CAT" />
           <NavigationProperty Name="SERVICE_STATUS" Relationship="ROP_WEBModel.FK_serstatus" FromRole="SERVICE" ToRole="SERVICE_STATUS" />
           <NavigationProperty Name="SERVICE_PROVIDER" Relationship="ROP_WEBModel.FK_sprov" FromRole="SERVICE" ToRole="SERVICE_PROVIDER" />
+          <Property Name="New" Type="Boolean" />
+          <Property Name="service_Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHANNEL_SERVICES" Relationship="ROP_WEBModel.Service_Id_CHANNEL" FromRole="SERVICE" ToRole="CHANNEL_SERVICES" />
         </EntityType>
         <EntityType Name="SERVICE_CAT">
           <Key>
@@ -371,7 +431,7 @@
             <PropertyRef Name="services_Status_Id" />
           </Key>
           <Property Name="services_Status_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="services_Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="services_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="SERVICEs" Relationship="ROP_WEBModel.FK_serstatus" FromRole="SERVICE_STATUS" ToRole="SERVICE" />
         </EntityType>
         <EntityType Name="Article">
@@ -466,6 +526,16 @@
             <End Role="SERVICE_PROVIDER" EntitySet="SERVICE_PROVIDER" />
             <End Role="SERVICE" EntitySet="SERVICEs" />
           </AssociationSet>
+          <EntitySet Name="CHANNELs" EntityType="ROP_WEBModel.CHANNEL" />
+          <EntitySet Name="CHANNEL_SERVICES" EntityType="ROP_WEBModel.CHANNEL_SERVICES" />
+          <AssociationSet Name="Channel_Id" Association="ROP_WEBModel.Channel_Id">
+            <End Role="CHANNEL" EntitySet="CHANNELs" />
+            <End Role="CHANNEL_SERVICES" EntitySet="CHANNEL_SERVICES" />
+          </AssociationSet>
+          <AssociationSet Name="Service_Id_CHANNEL" Association="ROP_WEBModel.Service_Id_CHANNEL">
+            <End Role="SERVICE" EntitySet="SERVICEs" />
+            <End Role="CHANNEL_SERVICES" EntitySet="CHANNEL_SERVICES" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK_scat">
           <End Type="ROP_WEBModel.SERVICE_CAT" Role="SERVICE_CAT" Multiplicity="1">
@@ -506,6 +576,54 @@
             </Principal>
             <Dependent Role="SERVICE">
               <PropertyRef Name="Service_Provider_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CHANNEL">
+          <Key>
+            <PropertyRef Name="Channel_Id" />
+          </Key>
+          <Property Name="Channel_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Channel_Name_Ar" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Channel_Name_En" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="channel_url" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHANNEL_SERVICES" Relationship="ROP_WEBModel.Channel_Id" FromRole="CHANNEL" ToRole="CHANNEL_SERVICES" />
+        </EntityType>
+        <EntityType Name="CHANNEL_SERVICES">
+          <Key>
+            <PropertyRef Name="Service_Channel_Id" />
+          </Key>
+          <Property Name="Service_Channel_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Channel_Id" Type="Int32" Nullable="false" />
+          <Property Name="Service_Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CHANNEL" Relationship="ROP_WEBModel.Channel_Id" FromRole="CHANNEL_SERVICES" ToRole="CHANNEL" />
+          <NavigationProperty Name="SERVICE" Relationship="ROP_WEBModel.Service_Id_CHANNEL" FromRole="CHANNEL_SERVICES" ToRole="SERVICE" />
+        </EntityType>
+        <Association Name="Channel_Id">
+          <End Type="ROP_WEBModel.CHANNEL" Role="CHANNEL" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ROP_WEBModel.CHANNEL_SERVICES" Role="CHANNEL_SERVICES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHANNEL">
+              <PropertyRef Name="Channel_Id" />
+            </Principal>
+            <Dependent Role="CHANNEL_SERVICES">
+              <PropertyRef Name="Channel_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Service_Id_CHANNEL">
+          <End Type="ROP_WEBModel.SERVICE" Role="SERVICE" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="ROP_WEBModel.CHANNEL_SERVICES" Role="CHANNEL_SERVICES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SERVICE">
+              <PropertyRef Name="Service_Id" />
+            </Principal>
+            <Dependent Role="CHANNEL_SERVICES">
+              <PropertyRef Name="Service_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -584,6 +702,8 @@
           <EntitySetMapping Name="SERVICEs">
             <EntityTypeMapping TypeName="ROP_WEBModel.SERVICE">
               <MappingFragment StoreEntitySet="SERVICE">
+                <ScalarProperty Name="service_Url" ColumnName="service_Url" />
+                <ScalarProperty Name="New" ColumnName="New" />
                 <ScalarProperty Name="Service_Id" ColumnName="Service_Id" />
                 <ScalarProperty Name="Service_Name_Ar" ColumnName="Service_Name_Ar" />
                 <ScalarProperty Name="Service_Name_En" ColumnName="Service_Name_En" />
@@ -646,6 +766,25 @@
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Language" ColumnName="Language" />
                 <ScalarProperty Name="Archive" ColumnName="Archive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHANNELs">
+            <EntityTypeMapping TypeName="ROP_WEBModel.CHANNEL">
+              <MappingFragment StoreEntitySet="CHANNEL">
+                <ScalarProperty Name="channel_url" ColumnName="channel_url" />
+                <ScalarProperty Name="Channel_Name_En" ColumnName="Channel_Name_En" />
+                <ScalarProperty Name="Channel_Name_Ar" ColumnName="Channel_Name_Ar" />
+                <ScalarProperty Name="Channel_Id" ColumnName="Channel_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHANNEL_SERVICES">
+            <EntityTypeMapping TypeName="ROP_WEBModel.CHANNEL_SERVICES">
+              <MappingFragment StoreEntitySet="CHANNEL_SERVICES">
+                <ScalarProperty Name="Service_Id" ColumnName="Service_Id" />
+                <ScalarProperty Name="Channel_Id" ColumnName="Channel_Id" />
+                <ScalarProperty Name="Service_Channel_Id" ColumnName="Service_Channel_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

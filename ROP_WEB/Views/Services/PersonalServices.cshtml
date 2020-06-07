@@ -19,21 +19,39 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@section servsearchfun{
+    <script>
+
+        $(document).ready(function () {
+            $("#findserv").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $(".servicecontent .servicesboxtitle").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+}
+@{
+
+    var url = Request.Url.ToString();
+}
+
 @using ROP_WEB.Res
 @using System.Threading;
 
-<div class="container TopicStyle">
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
+                    <li class="breadcrumb-item"><a href="../../../home/index">@Resource.home</a></li>
                     <li class="breadcrumb-item">@Resource.services</li>
                     <li class="breadcrumb-item active">@Resource.personalserv  </li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -46,38 +64,56 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item activelist"> <a href="#">@Resource.personalserv  </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.puplicserv </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.companyserv </a></li>
 
 
-                </ul>
+            <div class="col-md-12">
 
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
+                    <h3>  @Resource.personalserv </h3>
+                    @*<form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+
+                <input type="password" class="form-control " id="findserv" placeholder="Password">
             </div>
 
-            <div class="col-md-8">
+            <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+        </form>*@
+                    <input type="text" name="name" value="" class="form-control servicefind" id="findserv" placeholder="@Resource.search" />
+                
+                    <a href="#" id="advanceser" class="primary" data-toggle="modal" data-target="#smallModal">    <i class="fa fa-filter"></i> فرز حسب الإدارة </a>
+                    <div class="modal fade show" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel"  aria-modal="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                              
+                                <div class="modal-body">
+                                    <div id="grpChkBox">
+                                        @foreach (var sp in  ViewBag.ServiceProviders as IQueryable<ROP_WEB.Models.SERVICE_PROVIDER>)
+                                        {
+                                        <p><input type="checkbox" name="@sp.Service_Provider_Id" /> @sp.Service_Provider_Name_Ar</p>
+                                        }
 
-                <div class="jumbotron">
-                    <h3>  @Resource.personalserv </h3>
-
-                    <input type="text" name="name" value="" class="form-control servicefind" id="findserv" placeholder="البحث في خدمات الأفراد" />
-                    @foreach (var sp in ViewBag.ServiceProviders)
+                                    </div>                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light" data-dismiss="modal">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @foreach (var sp in ViewBag.ServiceProviders as IQueryable<ROP_WEB.Models.SERVICE_PROVIDER> )
                     {
 
 
-                        <table class="table table-bordered">
+                        <table class="@sp.Service_Provider_Id table table-bordered" >
 
                             <tbody class="servicecontent">
 
                                 <tr>
-                                    <th colspan="2" style="text-align:center; background-color:#EFF2F7">
-                                        @sp
+                                    <th colspan="2" style="text-align:center; background-color:#e9ecef">
+                                      @sp.Service_Provider_Name_Ar
                                     </th>
 
 
@@ -86,33 +122,33 @@
                                 <tr>
                                     <td>
                                         <div class="row">
-                                
-  
+
+
                                             @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
-                                            {
+                          {
 
 
-                                                foreach (var item in Model.Where(x => x.SERVICE_PROVIDER.Service_Provider_Name_Ar == sp))
-                                                {
-                                                <div class="col-lg-4 col-md-6 col-sm-6 ">
-                                                    <div class="servicesboxtitle wow fadeIn" data-wow-delay="0s">
-                                                        <a href="@Url.Action("ServicesDetails", "Services", new { cat=@item.SERVICE_CAT.Service_Cat_Name_En.Replace(" ","-"),id = @item.Service_Id })">@item.Service_Name_Ar</a>
-                                                    </div>
-                                                </div>
-
-                                                }
-                                            }
-                                            else
-                                            {
-                                                foreach (var item in Model.Where(x => x.SERVICE_PROVIDER.Service_Provider_Name_En == sp ))
-                                                {
-                                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0s">
-                                                            <a href="@Url.Action("ServicesDetails", "Services", new {cat=@item.SERVICE_CAT.Service_Cat_Name_En.Replace(" ","-"), id = @item.Service_Id })">@item.Service_Name_En</a>
+                              foreach (var item in Model.Where(x => x.SERVICE_PROVIDER.Service_Provider_Name_Ar == sp.Service_Provider_Name_Ar))
+                              {
+                                                    <div class="col-lg-4 col-md-6 col-sm-6 ">
+                                                        <div class="servicesboxtitle">
+                                                            <a href="@Url.Action("ServicesDetails", "Services", new { cat = @item.SERVICE_CAT.Service_Cat_Name_En.Replace(" ", "-"), id = @item.Service_Id })">@item.Service_Name_Ar</a>
                                                         </div>
                                                     </div>
-                                                }
-                                            }
+
+                              }
+                          }
+                          else
+                          {
+                              foreach (var item in Model.Where(x => x.SERVICE_PROVIDER.Service_Provider_Name_En == sp.Service_Provider_Name_En))
+                              {
+                                                    <div class="col-lg-4 col-md-6 col-sm-6">
+                                                        <div class="servicesboxtitle">
+                                                            <a href="@Url.Action("ServicesDetails", "Services", new { cat = @item.SERVICE_CAT.Service_Cat_Name_En.Replace(" ", "-"), id = @item.Service_Id })">@item.Service_Name_En</a>
+                                                        </div>
+                                                    </div>
+                              }
+                          }
                                         </div>
                                     </td>
 
@@ -126,14 +162,27 @@
                             </tbody>
 
                         </table>
+                            
 
-                    }
+                          }
 
 
 
 
 
                 </div>
+            </div>
+
+            <div class="col-md-4 d-sm-block d-md-none">
+                <ul class="list-group">
+                    <li class="list-group-item activelist"> <a href="../../../services/PersonalServices">@Resource.personalserv  </a></li>
+                    <li class="list-group-item "><a href="../../../services/CompaniesServices">@Resource.puplicserv </a></li>
+                    <li class="list-group-item "><a href="../../../services/GovServices">@Resource.companyserv </a></li>
+
+
+
+                </ul>
+
             </div>
 
 

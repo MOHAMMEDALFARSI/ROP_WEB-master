@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Ads>
+  
+  
+  <Ad>
+    <AdId>1</AdId>
+    <AdTitle>AdTitleAR</AdTitle>
+    <Adtxt>sampltxt sampltxt sampltxt sampltxt s ampltxt</Adtxt>
+    <Adfile>filenameAR</Adfile>
+    <Adimg>picar.gpj</Adimg>
+    <AdLang>ar</AdLang>
+    <AdEndDate>04/20/2020</AdEndDate>
+  </Ad>
+
+  <Ad>
+    <AdId>2</AdId>
+    <AdTitle>AdTitleEN</AdTitle>
+    <Adtxt>sampltxt</Adtxt>
+    <Adfile>filenamEN.pdf</Adfile>
+    <Adimg>picen.gpj</Adimg>
+    <AdLang>en</AdLang>
+    <AdEndDate>04/20/2020</AdEndDate>
+  </Ad>
+  
+  
+  </Ads>

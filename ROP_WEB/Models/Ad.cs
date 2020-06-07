@@ -12,6 +12,7 @@ namespace ROP_WEB.Models
         public string AdTitle { get; set; }
         public string Adtxt { get; set; }
         public string Adfile { get; set; }
+        public string Adimg { get; set; }
         public string AdLang { get; set; }
         public DateTime AdEndDate { get; set; }
 

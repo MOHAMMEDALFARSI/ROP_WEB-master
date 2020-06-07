@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>Directorate General of Customs</StationEn>
+    <StationAr>الإدارة العامة للجمارك</StationAr>
+    <StationPhone>24521109</StationPhone>
+  </Station>
+    <Station>
+    <StationId>2</StationId>
+    <StationEn>Customs Dept, Muscat International Airport</StationEn>
+    <StationAr>جمارك مطار مسقط</StationAr>
+    <StationPhone>24519528</StationPhone>
+  </Station>
+    <Station>
+    <StationId>3</StationId>
+    <StationEn>Customs Dept, Al Wajaja Border Post</StationEn>
+    <StationAr>جمارك الوجاجة</StationAr>
+    <StationPhone>26879959</StationPhone>
+  </Station>
+    <Station>
+    <StationId>4</StationId>
+    <StationEn>Customs Dept, Khatmat Milaha Border Post</StationEn>
+    <StationAr>جمارك خطمة ملاحة</StationAr>
+    <StationPhone>26849410</StationPhone>
+  </Station>
+    <Station>
+    <StationId>5</StationId>
+    <StationEn>Customs Dept, Hafeet Border Post</StationEn>
+    <StationAr>جمارك حفيت</StationAr>
+    <StationPhone>25662222</StationPhone>
+  </Station>
+    <Station>
+    <StationId>6</StationId>
+    <StationEn>Customs Dept, Wadi Al Jizzi Border Post</StationEn>
+    <StationAr>جمارك وادي الجزي</StationAr>
+    <StationPhone>25659339</StationPhone>
+  </Station>
+    <Station>
+    <StationId>7</StationId>
+    <StationEn>Customs Dept, Sallah Port</StationEn>
+    <StationAr>جمارك ميناء صلالة</StationAr>
+    <StationPhone>23219045</StationPhone>
+  </Station>
+    <Station>
+    <StationId>8</StationId>
+    <StationEn>Customs Dept, Salalah Airport</StationEn>
+    <StationAr>جمارك مطار صلالة</StationAr>
+    <StationPhone>23204277(271)</StationPhone>
+  </Station>
+    <Station>
+    <StationId>9</StationId>
+    <StationEn>Customs Dept, Musandam</StationEn>
+    <StationAr>جمارك مسندم</StationAr>
+    <StationPhone>26830804</StationPhone>
+  </Station>
+    <Station>
+    <StationId>10</StationId>
+    <StationEn>Customs Dept, Sur</StationEn>
+    <StationAr>جمارك صور</StationAr>
+    <StationPhone>25544809</StationPhone>
+  </Station>
+
+ 
+</RegionStation>

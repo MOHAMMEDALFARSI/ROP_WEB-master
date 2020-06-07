@@ -16,11 +16,12 @@ namespace ROP_WEB.Controllers
         // GET: Home
         public ActionResult Index()
         {
-
-            //slider id 1 will be active one other normal
+            ROP_WEBEntities db = new ROP_WEBEntities();
+            ViewModel mymodel = new ViewModel();
+            //slider id 1 will be active one,, other normal
             List<Slider> slides = new List<Slider>();
             //use try andcatch for erorr control + id showd come from user request 
-            XElement xelement = XElement.Load(HttpContext.Server.MapPath("~/Res/Slider.xml"));
+            XElement xelement = XElement.Load(HttpContext.Server.MapPath("~/ROP-Content/Xmls/Slider.xml"));
             var slidslist = xelement.Elements();
             //   var element = (from Offense in OffenseClass where (int)Offense.Element("OffenseId") == 1 select Offense).ToList();
 
@@ -42,21 +43,74 @@ namespace ROP_WEB.Controllers
 
 
             }
-
+         
             CultureInfo currentInfo = Thread.CurrentThread.CurrentCulture;
             if (currentInfo.IetfLanguageTag.ToString().Equals("ar-OM") || (currentInfo.IetfLanguageTag.ToString().Equals("ar")))
             {
-                slides = slides.Where(x => x.SlideLang == "AR").ToList();
+                mymodel.Sliders = slides.Where(x => x.SlideLang == "ar").ToList();
             }
             else
             {
-                slides = slides.Where(x => x.SlideLang == "EN").ToList();
+                mymodel.Sliders = slides.Where(x => x.SlideLang == "en").ToList();
+            }
+            //get last 3 ads/*******************************/
+           
+          
+            //slider id 1 will be active one,, other normal
+            List<Ad> ad = new List<Ad>();
+            //use try andcatch for erorr control + id showd come from user request 
+            XElement adsxelement = XElement.Load(HttpContext.Server.MapPath("~/ROP-Content/Xmls/Ads.xml"));
+            var adslist = adsxelement.Elements();
+            //   var element = (from Offense in OffenseClass where (int)Offense.Element("OffenseId") == 1 select Offense).ToList();
+
+            foreach (XElement xEle in adslist)
+            {
+                ad.Add(new Ad
+                {
+                    AdId = (int)xEle.Element("AdId"),
+                    AdTitle = xEle.Element("AdTitle").Value,
+                    Adtxt = xEle.Element("Adtxt").Value,
+                    Adimg = xEle.Element("Adimg").Value,
+                    Adfile = xEle.Element("Adfile").Value,
+                    AdLang = xEle.Element("AdLang").Value,
+                    AdEndDate = (DateTime)xEle.Element("AdEndDate")
+
+
+
+
+                }); ;
+
+
+
+            }
+
+          
+            if (currentInfo.IetfLanguageTag.ToString().Equals("ar-OM") || (currentInfo.IetfLanguageTag.ToString().Equals("ar")))
+            {
+                mymodel.Ads = ad.Where(x => x.AdLang == "ar").ToList();
+            }
+            else
+            {
+                mymodel.Ads = ad.Where(x => x.AdLang == "en").ToList();
             }
 
 
+            //get last 4 news/***************************/
 
 
-            return View(slides);
+            if (currentInfo.IetfLanguageTag.ToString().Equals("ar-OM") || (currentInfo.IetfLanguageTag.ToString().Equals("ar")))
+            {
+                mymodel.News = db.NewsMains.Where(x => x.Show == true && x.Archive == false && x.Language == "ar").Take(4).ToList();
+
+            }
+            else
+            {
+                mymodel.News = db.NewsMains.Where(x => x.Show == true && x.Archive == false && x.Language == "en").Take(4).ToList();
+
+            }
+
+
+            return View(mymodel);
         }
         public ActionResult terms()
         {
@@ -89,6 +143,34 @@ namespace ROP_WEB.Controllers
 
             
             //GET SEARCH THEN OPEN THIS PAGE THEN CLICL ON BUTTON AUTOMATICLAY
+            return View();
+        }
+        public ActionResult privacy()
+        {
+
+
+           
+            return View();
+        }
+        public ActionResult SMSServices()
+        {
+
+
+
+            return View();
+        }
+        public ActionResult MolileAppService()
+        {
+
+
+
+            return View();
+        }
+        public ActionResult KOISService()
+        {
+
+
+
             return View();
         }
 

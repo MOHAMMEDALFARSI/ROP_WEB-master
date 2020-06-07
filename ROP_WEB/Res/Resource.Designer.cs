@@ -19,7 +19,7 @@ namespace ROP_WEB.Res {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resource {
@@ -88,6 +88,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Access Service.
+        /// </summary>
+        public static string accessserv {
+            get {
+                return ResourceManager.GetString("accessserv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Achievements.
         /// </summary>
         public static string achivment {
@@ -111,6 +120,15 @@ namespace ROP_WEB.Res {
         public static string ADakiliyah {
             get {
                 return ResourceManager.GetString("ADakiliyah", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ROP Ads.
+        /// </summary>
+        public static string adsrop {
+            get {
+                return ResourceManager.GetString("adsrop", resourceCulture);
             }
         }
         
@@ -151,7 +169,7 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to left.
+        ///   Looks up a localized string similar to right.
         /// </summary>
         public static string alig {
             get {
@@ -160,7 +178,7 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to right.
+        ///   Looks up a localized string similar to left.
         /// </summary>
         public static string alig2 {
             get {
@@ -192,6 +210,24 @@ namespace ROP_WEB.Res {
         public static string Ambulance {
             get {
                 return ResourceManager.GetString("Ambulance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Applicable Law and Jurisdiction.
+        /// </summary>
+        public static string applicable {
+            get {
+                return ResourceManager.GetString("applicable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to english.
+        /// </summary>
+        public static string arabicenglish {
+            get {
+                return ResourceManager.GetString("arabicenglish", resourceCulture);
             }
         }
         
@@ -228,6 +264,42 @@ namespace ROP_WEB.Res {
         public static string bootstrap {
             get {
                 return ResourceManager.GetString("bootstrap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Buraimi Region.
+        /// </summary>
+        public static string brimi {
+            get {
+                return ResourceManager.GetString("brimi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Batinah North.
+        /// </summary>
+        public static string btnn {
+            get {
+                return ResourceManager.GetString("btnn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Batinah South.
+        /// </summary>
+        public static string btns {
+            get {
+                return ResourceManager.GetString("btns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Directorate:.
+        /// </summary>
+        public static string Choosedir {
+            get {
+                return ResourceManager.GetString("Choosedir", resourceCulture);
             }
         }
         
@@ -340,11 +412,38 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Royal Oman Police logo may only be used with the prior consent of the Royal Oman Police which has delegated authority to authorise its reproduction. All requests to reproduce the Royal Oman Police logo can be forwarded to Royal Oman Police - Directorate of Public Relation ..
+        /// </summary>
+        public static string copyrighttxt {
+            get {
+                return ResourceManager.GetString("copyrighttxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Crimes.
+        /// </summary>
+        public static string crimestat {
+            get {
+                return ResourceManager.GetString("crimestat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to main_styles.css.
         /// </summary>
         public static string css {
             get {
                 return ResourceManager.GetString("css", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Civil status Update.
+        /// </summary>
+        public static string csupdate {
+            get {
+                return ResourceManager.GetString("csupdate", resourceCulture);
             }
         }
         
@@ -367,11 +466,128 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Death rate due to road accidents.
+        /// </summary>
+        public static string deathratecar {
+            get {
+                return ResourceManager.GetString("deathratecar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Registered Deaths by gender.
+        /// </summary>
+        public static string deathrategender {
+            get {
+                return ResourceManager.GetString("deathrategender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Registered Deaths by Region.
+        /// </summary>
+        public static string deathratestate {
+            get {
+                return ResourceManager.GetString("deathratestate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click here to update.
+        /// </summary>
+        public static string desccsup {
+            get {
+                return ResourceManager.GetString("desccsup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check Police Clearance Certificate Validity.
+        /// </summary>
+        public static string descecs {
+            get {
+                return ResourceManager.GetString("descecs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On-Arrival Tourist visa, Express visa and Entry visa for foreign residents in GCC states.
+        /// </summary>
+        public static string descevisa {
+            get {
+                return ResourceManager.GetString("descevisa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inquiry and pay penalties and fines.
+        /// </summary>
+        public static string descfinalexit {
+            get {
+                return ResourceManager.GetString("descfinalexit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inquiry and pay traffic fine.
+        /// </summary>
+        public static string descfine {
+            get {
+                return ResourceManager.GetString("descfine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Renew your vehicle easly.
+        /// </summary>
+        public static string descrenw {
+            get {
+                return ResourceManager.GetString("descrenw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apply online.
+        /// </summary>
+        public static string descvisa {
+            get {
+                return ResourceManager.GetString("descvisa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visa Application Status.
+        /// </summary>
+        public static string desvvisastatus {
+            get {
+                return ResourceManager.GetString("desvvisastatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Directorate General of Development and Scrutiny.
         /// </summary>
         public static string DevelopmentandScrutiny {
             get {
                 return ResourceManager.GetString("DevelopmentandScrutiny", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dahirah Region.
+        /// </summary>
+        public static string dhira {
+            get {
+                return ResourceManager.GetString("dhira", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dakiliyah Region.
+        /// </summary>
+        public static string dhk {
+            get {
+                return ResourceManager.GetString("dhk", resourceCulture);
             }
         }
         
@@ -394,11 +610,56 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ltr.
+        /// </summary>
+        public static string dir {
+            get {
+                return ResourceManager.GetString("dir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disclaimer.
+        /// </summary>
+        public static string disclaimer {
+            get {
+                return ResourceManager.GetString("disclaimer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Royal Oman Police makes every effort to ensure that the information contained in the pages of its Website is accurate and up to date. However, it will not be liable for any loss, financial or otherwise, arising from the use of the information in these Web pages. The Royal Oman Police reserves the right to make any changes in these pages without notice..
+        /// </summary>
+        public static string disclamer {
+            get {
+                return ResourceManager.GetString("disclamer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Safty tips.
         /// </summary>
         public static string dlil {
             get {
                 return ResourceManager.GetString("dlil", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Driver License renewal.
+        /// </summary>
+        public static string DLrenew {
+            get {
+                return ResourceManager.GetString("DLrenew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dhofar Region.
+        /// </summary>
+        public static string dofr {
+            get {
+                return ResourceManager.GetString("dofr", resourceCulture);
             }
         }
         
@@ -417,6 +678,24 @@ namespace ROP_WEB.Res {
         public static string dpr {
             get {
                 return ResourceManager.GetString("dpr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Driving Manners.
+        /// </summary>
+        public static string drivingmanners {
+            get {
+                return ResourceManager.GetString("drivingmanners", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Electronic certificate service.
+        /// </summary>
+        public static string ecs {
+            get {
+                return ResourceManager.GetString("ecs", resourceCulture);
             }
         }
         
@@ -448,6 +727,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Traffic Escort Security application service.
+        /// </summary>
+        public static string escort {
+            get {
+                return ResourceManager.GetString("escort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Electronic-Visa.
         /// </summary>
         public static string evisa {
@@ -457,11 +745,38 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fair Usage Policy.
+        /// </summary>
+        public static string fair {
+            get {
+                return ResourceManager.GetString("fair", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FAQ.
         /// </summary>
         public static string faq {
             get {
                 return ResourceManager.GetString("faq", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Farm Fires.
+        /// </summary>
+        public static string farmfires {
+            get {
+                return ResourceManager.GetString("farmfires", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online Exit Penalty Payment services.
+        /// </summary>
+        public static string finalexit {
+            get {
+                return ResourceManager.GetString("finalexit", resourceCulture);
             }
         }
         
@@ -516,6 +831,15 @@ namespace ROP_WEB.Res {
         public static string finepoint {
             get {
                 return ResourceManager.GetString("finepoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fire extinguishers in vehicles.
+        /// </summary>
+        public static string fireextinguishers {
+            get {
+                return ResourceManager.GetString("fireextinguishers", resourceCulture);
             }
         }
         
@@ -601,6 +925,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Guide lines.
+        /// </summary>
+        public static string guidelines {
+            get {
+                return ResourceManager.GetString("guidelines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string home {
@@ -651,6 +984,15 @@ namespace ROP_WEB.Res {
         public static string JuvenilePolice {
             get {
                 return ResourceManager.GetString("JuvenilePolice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kiosks.
+        /// </summary>
+        public static string kiosk {
+            get {
+                return ResourceManager.GetString("kiosk", resourceCulture);
             }
         }
         
@@ -709,6 +1051,24 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Limitation of Liability.
+        /// </summary>
+        public static string limitation {
+            get {
+                return ResourceManager.GetString("limitation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Links to other portals.
+        /// </summary>
+        public static string linksother {
+            get {
+                return ResourceManager.GetString("linksother", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Listen.
         /// </summary>
         public static string listen {
@@ -754,6 +1114,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to tt.
         /// </summary>
         public static string logistic {
@@ -777,6 +1146,15 @@ namespace ROP_WEB.Res {
         public static string logout {
             get {
                 return ResourceManager.GetString("logout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Muscat Region.
+        /// </summary>
+        public static string mct {
+            get {
+                return ResourceManager.GetString("mct", resourceCulture);
             }
         }
         
@@ -889,6 +1267,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mission.
+        /// </summary>
+        public static string miss {
+            get {
+                return ResourceManager.GetString("miss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string missiontext {
@@ -903,6 +1290,24 @@ namespace ROP_WEB.Res {
         public static string missiontext2 {
             get {
                 return ResourceManager.GetString("missiontext2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string mngtname {
+            get {
+                return ResourceManager.GetString("mngtname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modifications.
+        /// </summary>
+        public static string modifications {
+            get {
+                return ResourceManager.GetString("modifications", resourceCulture);
             }
         }
         
@@ -970,6 +1375,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Musandam Region.
+        /// </summary>
+        public static string musndam {
+            get {
+                return ResourceManager.GetString("musndam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The Executive Office of the National Committee for Civil Defence.
         /// </summary>
         public static string NationalCommittee {
@@ -988,11 +1402,29 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No Representation.
+        /// </summary>
+        public static string norepresentation {
+            get {
+                return ResourceManager.GetString("norepresentation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No Result !!.
         /// </summary>
         public static string noresult {
             get {
                 return ResourceManager.GetString("noresult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to *You can downlaod PDF Program from.
+        /// </summary>
+        public static string notepdf {
+            get {
+                return ResourceManager.GetString("notepdf", resourceCulture);
             }
         }
         
@@ -1047,6 +1479,15 @@ namespace ROP_WEB.Res {
         public static string personalserv {
             get {
                 return ResourceManager.GetString("personalserv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone Number.
+        /// </summary>
+        public static string phonenum {
+            get {
+                return ResourceManager.GetString("phonenum", resourceCulture);
             }
         }
         
@@ -1123,6 +1564,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to privacy.
+        /// </summary>
+        public static string privicy {
+            get {
+                return ResourceManager.GetString("privicy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Directorate General of Projects and Maintenance.
         /// </summary>
         public static string ProjectsandMaintenance {
@@ -1137,6 +1587,15 @@ namespace ROP_WEB.Res {
         public static string PublicRelation {
             get {
                 return ResourceManager.GetString("PublicRelation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Public Safety.
+        /// </summary>
+        public static string publicsafety {
+            get {
+                return ResourceManager.GetString("publicsafety", resourceCulture);
             }
         }
         
@@ -1186,6 +1645,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restrictions on Use of Materials.
+        /// </summary>
+        public static string restrictions {
+            get {
+                return ResourceManager.GetString("restrictions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to left.
         /// </summary>
         public static string right {
@@ -1209,6 +1677,24 @@ namespace ROP_WEB.Res {
         public static string rlinksh {
             get {
                 return ResourceManager.GetString("rlinksh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Road Accidents.
+        /// </summary>
+        public static string Roadacc {
+            get {
+                return ResourceManager.GetString("Roadacc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ROP Mobile APP.
+        /// </summary>
+        public static string ropmobile {
+            get {
+                return ResourceManager.GetString("ropmobile", resourceCulture);
             }
         }
         
@@ -1249,6 +1735,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to EN.css.
+        /// </summary>
+        public static string rtlltr {
+            get {
+                return ResourceManager.GetString("rtlltr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Traffic Safety Competion.
         /// </summary>
         public static string saftyCompt {
@@ -1285,6 +1780,33 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Region:.
+        /// </summary>
+        public static string selectregion {
+            get {
+                return ResourceManager.GetString("selectregion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Channels.
+        /// </summary>
+        public static string servchannel {
+            get {
+                return ResourceManager.GetString("servchannel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Fees.
+        /// </summary>
+        public static string servfees {
+            get {
+                return ResourceManager.GetString("servfees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our Services.
         /// </summary>
         public static string services {
@@ -1299,6 +1821,51 @@ namespace ROP_WEB.Res {
         public static string servicesfees {
             get {
                 return ResourceManager.GetString("servicesfees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service procedure.
+        /// </summary>
+        public static string servprocedure {
+            get {
+                return ResourceManager.GetString("servprocedure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required Documents.
+        /// </summary>
+        public static string servreqdoc {
+            get {
+                return ResourceManager.GetString("servreqdoc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Service Terms.
+        /// </summary>
+        public static string servterm {
+            get {
+                return ResourceManager.GetString("servterm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sharqiyah North.
+        /// </summary>
+        public static string shrkian {
+            get {
+                return ResourceManager.GetString("shrkian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sharqiyah South.
+        /// </summary>
+        public static string shrkias {
+            get {
+                return ResourceManager.GetString("shrkias", resourceCulture);
             }
         }
         
@@ -1348,6 +1915,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ROP SMS Services.
+        /// </summary>
+        public static string smsservice {
+            get {
+                return ResourceManager.GetString("smsservice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Social Media.
         /// </summary>
         public static string socialh {
@@ -1389,6 +1965,24 @@ namespace ROP_WEB.Res {
         public static string String1 {
             get {
                 return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String2 {
+            get {
+                return ResourceManager.GetString("String2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suggestions, Comments and Feedback.
+        /// </summary>
+        public static string suggestions {
+            get {
+                return ResourceManager.GetString("suggestions", resourceCulture);
             }
         }
         
@@ -1519,6 +2113,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Templetes.
+        /// </summary>
+        public static string templetes {
+            get {
+                return ResourceManager.GetString("templetes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Royal Oman Police - Home.
         /// </summary>
         public static string title {
@@ -1564,6 +2167,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Travel Tips.
+        /// </summary>
+        public static string traveltips {
+            get {
+                return ResourceManager.GetString("traveltips", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to twitter.
         /// </summary>
         public static string twitter {
@@ -1587,6 +2199,15 @@ namespace ROP_WEB.Res {
         public static string v_m {
             get {
                 return ResourceManager.GetString("v_m", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vehicle Fires.
+        /// </summary>
+        public static string vehiclefires {
+            get {
+                return ResourceManager.GetString("vehiclefires", resourceCulture);
             }
         }
         
@@ -1618,11 +2239,38 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vission.
+        /// </summary>
+        public static string viss {
+            get {
+                return ResourceManager.GetString("viss", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Royal Oman Police is a professional police force with outstanding superior capabilities, working in active with society and in cooperation with other institutions, to achieve a safe, stable and prosperous society..
+        /// </summary>
+        public static string vissionmsg {
+            get {
+                return ResourceManager.GetString("vissionmsg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Work Times.
         /// </summary>
         public static string worktime {
             get {
                 return ResourceManager.GetString("worktime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wusta Region.
+        /// </summary>
+        public static string wsta {
+            get {
+                return ResourceManager.GetString("wsta", resourceCulture);
             }
         }
         

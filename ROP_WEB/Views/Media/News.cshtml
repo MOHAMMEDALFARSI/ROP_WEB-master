@@ -13,6 +13,11 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+
+@{
+
+    var url = Request.Url.ToString();
+}
 @using ROP_WEB.Res
 
 
@@ -20,19 +25,19 @@
 @model PagedList.IPagedList<ROP_WEB.Models.NewsMain>
 @using PagedList.Mvc;
 
-<div class="container TopicStyle">
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
+                    <li class="breadcrumb-item"><a href="../../../home/index">@Resource.home</a></li>
                     <li class="breadcrumb-item">@Resource.media</li>
                     <li class="breadcrumb-item active">@Resource.md1  </li>
 
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -45,33 +50,19 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item activelist"> <a href="#">@Resource.md1  </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.md2 </a></li>
 
-                    <li class="list-group-item"><a href="#">@Resource.md4</a></li>
-                    <li class="list-group-item"><a href="#">@Resource.md5</a></li>
-                    <li class="list-group-item"><a href="#">@Resource.md6</a></li>
-                    <li class="list-group-item"><a href="#">@Resource.md7</a></li>
-
-
-
-                </ul>
-
-            </div>
             <div class="col-md-8">
-                <h3 style="text-align:center; padding:10px;">  @Resource.md1 </h3>
-                <div style="padding:10px; padding-bottom:0;">
 
-                    @foreach (var item in Model )
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
+                    <h3 style="text-align:center; padding:10px;"> @Resource.md1 </h3>
+                    @foreach (var item in Model)
                     {
                         <div class="page">
-                            <h3>@item.Title</h3>
+                            <h3> <a href="@Url.Action("NewsDetails", "Media", new { cat = @item.NewsCategory.CategoryE.Replace(" ", "-"), id = @item.NewsID })">@item.Title</a></h3>
                             <div class="details">
                                 <ul>
 
@@ -88,8 +79,8 @@
                             <h4><a href="@Url.Action("NewsDetails","Media" , new { cat=@item.NewsCategory.CategoryE.Replace(" ","-"),id=@item.NewsID})">@Resource.readmore</a></h4>
                         </div>
                     }
-                   
-            
+
+
 
                     <ul class="pagination">
                         @for (int i = 1; i <= Model.PageCount; i++)
@@ -102,6 +93,19 @@
                     </ul>
                 </div>
 
+
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+            
+                    <li class="list-group-item activelist"> <a href="../../../media/News">@Resource.md1  </a></li>
+                    <li class="list-group-item"><a href="../../../media/Articles">@Resource.md2 </a></li>
+                    <li class="list-group-item"><a href="../../../media/Ropmagazine">@Resource.md4</a></li>
+                    <li class="list-group-item"><a href="../../../media/Ads">@Resource.md5</a></li>
+                    <li class="list-group-item "><a href="../../../media/KidsMagazin">@Resource.md6</a></li>
+                    <li class="list-group-item"><a href="../../../media/AlainaAssahira">@Resource.md7</a></li>
+
+                </ul>
 
             </div>
         </div>

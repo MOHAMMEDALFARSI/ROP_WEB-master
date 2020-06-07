@@ -1,0 +1,116 @@
+﻿
+
+
+@section PageTitle {
+    @Resource.privicy
+}
+@section arurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view="privacy",cont="Home"}  )">
+        <i class="fa fa-globe"></i> عربي
+    </a>
+}
+
+@section enurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "en-US",view="privacy",cont="Home" } )">
+        <i class="fa fa-globe"></i> En
+    </a>
+}
+@{
+
+    var url = Request.Url.ToString();
+}
+
+@using ROP_WEB.Res
+@using System.Threading;
+
+<div class="container">
+    <div class="row">
+
+        <div class="col breadcrumbstyle" style="padding:0">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
+
+                    <li class="breadcrumb-item active">@Resource.privicy</li>
+                    <li class="readspeakercls">
+                        <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
+                                <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
+                                <span class="rsbtn_right rsimg rsplay rspart"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-md-8">
+
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
+                    <h3>  @Resource.privicy </h3>
+
+                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                    {
+
+                        <h4> <i class="fa fa-1 fa fa-exclamation-circle "></i> لوائح الخصوصية المتعلقة بالموقع الإلكتروني لشرطة عمان السلطانية </h4>
+
+                        <p>
+                            تعتبر خصوصية وثقة الأفراد الذين يقومون بزيارة الموقع الإلكتروني لشرطة عمان السلطانية من الأمور الهامة. حيث لا يمكن الحصول على معلومات شخصية من هذا الموقع ما لم يتم تقديمها بصورة طوعية ورسمية من قبل أي فرد أثناء مشاركته في أي خدمة من خدمات هذا الموقع ةالتي تتطلب تقديم مثل هذه المعلومات .
+                        </p>
+
+                        <p>الحصول على المعلومات </p>
+                        <p>                      تتطلب بعض صفحات هذا الموقع أو للحصول خدمات الموقع الحصول على المعلومات الشخصية التي تعتبر ضرورية لتقديم المعلومات أو الخدمات التي تطلب من قبل الشخص. إذ أن &quot;المعلومات الشخصية&quot; مثل اسم الشخص والعنوان ورقم الهاتف وبريده الإلكتروني. وكذلك يتم الحصول على معلومات احصائية لكي تساعدنا على فهم كيفية قيام الأشخاص بإستخدام موقعنا اٌلإلكتروني حتى نتمكن من مواصلة العمل لتحسين وتطوير خدماتنا. أن المعلومات التي يتم الحصول عليها لن تكون لها اي صله بإي شخص معين ولن تكون هنالك أي محاولة للإطلاع على ملف الأشخاص من قبل الذين يقومون بتصفح الموقع الإلكتروني. </p>
+                        <p>استخدام المعلومات </p>
+                        <p>                      تستخدم شرطة عمان السلطانية، المعلومات المتجمعة للاستجابة الجيدة للجمهور . وقد يكون ذلك بالرد عليكم مباشرة أو بتحسين الموقع . ويجوز الاحتفاظ بالبريد الإلكتروني أو طلبات المعلومات المطلوبة الأخرى التي ترد إلى موقع شرطة عمان السلطانية أو تحويلها إلى الإدارة أو القسم المختص ليتسنى لها الرد على الطلب . والمعلومات التي تقدم للمسح يتم استخدامها فقط للغرض المحدد في المسح .</p>
+                        <p>نظام حماية الموقع الإلكتروني </p>
+                        <p>                      تلتزم شرطة عمان السلطانية بحماية المعلومات التي تتوفر من او تجمع بواسطة الموقع الإلكتروني. ولقد قامت شرطة عمان السلطانية بخطوات عديدة لحماية منظومة إتصالاتها المتكاملة والقيام بما يلزم لحماية المعلومات مثل التوثيق والمراقبة والتدقيق والتشفير .</p>
+                        <p>روابط أخرى لمواقع إلكترونية </p>
+                        <p>                      يحتوى هذا الموقع على روابط لمواقع إلكترونية أخرى . ويشمل ذلك روابط المواقع الإلكترونية التي تديرها جهات ومؤسسات حكومية أخرى ، والشركات التجارية الخاصة . ولا تعد شرطة عمان السلطانية مسئولة عن محتوى أو ممارسات الخصوصية بهذه المواقع وتقترح عليكم الإطلاع على بيانات الخصوصية الخاصة بها . </p>
+
+
+                    }
+                    else
+                    {
+                        <p class="pgsubhead">Royal Oman Police Web Site Privacy Statement </p>
+                        <p>						  The privacy, confidence, and trust of individuals who visit the ROP web site are important to us. No personal information is collected at this site unless provided voluntarily by an individual while participating in an activity that asks for the information. </p>
+                        <p class="pgsubhead">Collection of Information </p>
+                        <p>						  The site only collects the personal information that is necessary to provide the information or services requested by an individual. &quot;Personal information&quot; refers to any information relating to an identified or identifiable individual includes such items as an individual&rsquo;s name, address, or phone number. We also collect statistical information that helps us understand how people are using the web site so we can continually improve our services. The information collected is not associated with any specific individual and no attempt is made to profile individuals who browse the web site. You may be asked to participate in surveys at this site. Participation is optional, and the choice to participate or not to participate will have no effect on your ability to use other features of the site.</p>
+                        <p class="pgsubhead">Use of Information </p>
+                        <p>						  Royal Oman Police (ROP) uses the collected information to respond appropriately to requests. This may be to respond directly to you or to improve the web site. E-mail or other information requests sent to the ROP web site may be maintained or forwarded to the appropriate departments/Sections in order to respond to the request. Survey information is used for the purpose designated in the survey. </p>
+                        <p class="pgsubhead">Links to Other Sites </p>
+                        <p>
+                            This web site has links to many other web sites. These include links to web sites operated by other government agencies, nonprofit organizations, and private businesses. ROP is not responsible for the content or privacy practices of these sites and suggests you review their privacy statements.<br />
+                        </p>
+
+                    }
+
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item"> <a href="../../../Home/terms">@Resource.footer1  </a></li>
+                    <li class="list-group-item"> <a href="../../../Home/copyright">@Resource.footer2  </a></li>
+                    <li class="list-group-item"><a href="../../../Home/polices">@Resource.footer3 </a></li>
+                    <li class="list-group-item"><a href="../../../Home/disclaimer">@Resource.footer4 </a></li>
+                    <li class="list-group-item activelist"><a href="../../../Home/privacy">@Resource.privicy </a></li>
+                    <li class="list-group-item"><a href="../../../Home/Sitemap">@Resource.footer6 </a></li>
+
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+

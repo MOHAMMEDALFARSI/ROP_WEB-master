@@ -15,10 +15,15 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
+
+    var url = Request.Url.ToString();
+}
+
 @using ROP_WEB.Res
+@using System.Threading;
 
-
-<div class="container TopicStyle">
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
@@ -29,7 +34,7 @@
                     <li class="breadcrumb-item active">@Resource.footer3 </li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -42,43 +47,75 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
+
+            <div class="col-md-8">
+
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
+                    <h3>  @Resource.footer3 </h3>
+                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                    {
+                        <ul>
+                            <!--<li><a  href="../pdfs/polices/ar/Social Media Policy.pdf" target="_blank" title="إضغط للتحميل" >سياسة التواصل الاجتماعي</a></li>-->
+
+
+                            <li><a href="terms.html" target="_blank" title="سوف ينقلك المتصفح إلى صفحة الشروط والأحكام">الشروط والأحكام</a></li>
+
+                            <li><a href="../pdfs/polices/ar/سياسة البيانات المتاحة.pdf" target="_blank" title="إضغط للتحميل">سياسة البيانات المتاحة</a></li>
+                            <li><a href="DisabilityEmploymentPolicy.html" target="_blank" title="إضغط للتحميل">سياسة توظيف المعوقين (ODEP)</a></li>
+
+                            <li><a href="../pdfs/polices/ar/eParticipation Policy.pdf" target="_blank" title="إضغط للتحميل">سياسة المشاركة الإلكترونية</a></li>
+
+                            <li><a href="../pdfs/polices/ar/eGovernment Transformation Policies.pdf" target="_blank" title="إضغط للتحميل">سياسة تحول الحكومة الإلكترونية</a></li>
+
+                            <li><a href="https://omanportal.gov.om/wps/wcm/connect/9460f357-41aa-47bb-9cc0-09a0f953db0b/9.+ITA_Social+Media+Guidelines+v.3.pdf?MOD=AJPERES&CACHEID=9460f357-41aa-47bb-9cc0-09a0f953db0b" target="_blank" title="إضغط للتحميل">سياسة التواصل الإجتماعي الحكومي</a></li>
+
+                            <li><a href="../pdfs/polices/ar/سياسة النفاذ الرقمي.pdf" target="_blank" title="إضغط للتحميل">سياسة النفاذ الرقمي</a></li>
+
+                            <li><a href="http://www.sai.gov.om/en/AntiCorruption.aspx" target="_blank" title=" سوف ينقلك المتصفح إلى سياسة مكافحة الفساد">سياسة مكافحة الفساد</a></li>
+
+                            <li><a href="../../home/privacy" title="سوف ينقلك المتصفح إلى صفحة الخصوصية">الخصوصية</a></li>
+
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul>
+
+                            <li><a href="../pdfs/polices/en/ITA_Open_Government_Data_Policy_Final_Draft_Dec202016.pdf" target="_blank" title="Download">Government Open Data Policy</a></li>
+                            <li><a href="../pdfs/polices/en/eParticipation Policy.pdf" target="_blank" title="Download">E-Participation Policy</a></li>
+                            <li><a href="../pdfs/polices/en/eGovernment Transformation Policies.pdf" target="_blank" title="Download">E-Government Transformation Policies</a></li>
+
+                            <li><a href="https://omanportal.gov.om/wps/wcm/connect/56e430da-a411-43f6-8967-52f538c22ed5/9.+ITA_Social+Media+Guidelines+v.3.pdf?MOD=AJPERES&CACHEID=56e430da-a411-43f6-8967-52f538c22ed5" target="_blank" title="Download">Social Media Adoption Guidelines</a></li>
+
+                            <li><a href="../pdfs/polices/en/e-Accessibility Policy.pdf" target="_blank" title="Download">E-Accessibility Policy</a></li>
+                            <li><a href="../pdfs/polices/en/Service Level Policy.pdf" target="_blank" title="Download">Service Level Policy</a></li>
+
+
+                            <li><a href="http://www.sai.gov.om/AntiCorruption.aspx" target="_blank" title="Download">Anti-Corruption Commission</a></li>
+                            <li><a href="../../home/privacy" title="Download">Privacy</a></li>
+                        </ul>
+
+
+                    }
+
+                </div>
+            </div>
+            <div class="col-md-4">
                 <ul class="list-group">
-                    <li class="list-group-item"> <a href="#">@Resource.footer1  </a></li>
-                    <li class="list-group-item"> <a href="#">@Resource.footer2  </a></li>
-                    <li class="list-group-item activelist"><a href="#">@Resource.footer3 </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.footer4 </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.footer6 </a></li>
+                    <li class="list-group-item"> <a href="../../../Home/terms">@Resource.footer1  </a></li>
+                    <li class="list-group-item"> <a href="../../../Home/copyright">@Resource.footer2  </a></li>
+                    <li class="list-group-item activelist"><a href="../../../Home/polices">@Resource.footer3 </a></li>
+                    <li class="list-group-item"><a href="../../../Home/disclaimer">@Resource.footer4 </a></li>
+                    <li class="list-group-item"><a href="../../../Home/Sitemap">@Resource.privicy </a></li>
+        
 
 
                 </ul>
 
-            </div>
-            <div class="col-md-8">
-
-                <div class="jumbotron">
-                    <h3>  @Resource.footer3 </h3>
-
-                    <ul class="txtul">
-                        <li> <a href="#">الشروط والأحكام</a></li>
-                        <li> <a href="#">سياسة البيانات المتاحة</a></li>
-                        <li> <a href="#">سياسة توظيف المعوقين (ODEP)</a></li>
-                        <li> <a href="#">سياسة المشاركة الإلكترونية</a></li>
-                        <li> <a href="#">سياسة تحول الحكومة الإلكترونية</a></li>
-                        <li> <a href="#">سياسة التواصل الإجتماعي الحكومي</a></li>
-                        <li> <a href="#">سياسة النفاذ الرقمي</a></li>
-                        <li> <a href="#">سياسة مكافحة الفساد</a></li>
-                        <li> <a href="#">الخصوصية</a></li>
-
-
-                    </ul>
-
-
-                </div>
             </div>
 
 

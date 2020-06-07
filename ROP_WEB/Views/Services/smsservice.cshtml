@@ -1,0 +1,380 @@
+﻿
+
+
+@section PageTitle {
+
+@Resource.smsservice
+}
+@section arurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view="smsservice",cont="Services"}  )">
+        <i class="fa fa-globe"></i> عربي
+    </a>
+}
+
+@section enurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "en-US",view="smsservice",cont="Services" } )">
+        <i class="fa fa-globe"></i> En
+    </a>
+}
+@{
+
+    var url = Request.Url.ToString();
+}
+
+@using ROP_WEB.Res
+
+@using System.Threading;
+<div class="container">
+    <div class="row">
+
+        <div class="col breadcrumbstyle" style="padding:0">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
+
+                    <li class="breadcrumb-item active"> @Resource.services  </li>
+                    <li class="breadcrumb-item active"> @Resource.smsservice  </li>
+                    <li class="readspeakercls">
+                        <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
+
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
+                                <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
+                                <span class="rsbtn_right rsimg rsplay rspart"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-md-8">
+
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
+                    <h3> @Resource.smsservice </h3>
+                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                    {
+                        <h4>المساعدة العامة</h4>
+
+                        <ul>
+                            <li>
+                                للحصول على المساعدة في كافة خدمات الرسائل القصيرة ارسل كلمة مساعدة إلى الرقم 90085
+                            </li>
+                            <li>
+                                للمساعدة في خدمة عرض تاريخ انتهاء تسجيل مركبة خاصة أرسل تب إلى الرقم 90085
+                            </li>
+                            <li>
+                                للمساعدة في خدمة عرض تاريخ انتهاء تسجيل مركبة تجارية أرسل تم إلى الرقم 90085
+                            </li>
+                            <li>
+                                للمساعدة في خدمة عرض حالة طلب التأشيرة أرسل حط إلى الرقم 90085
+                            </li>
+                        </ul>
+
+
+                        <ol>
+                            ملاحظة:
+                            <li>
+                                قيمة كل رسالة 100 بيسة.
+                            </li>
+                            <li>
+                                قيمة الإشترك لخدمة التنبيه عبر الرسائل النصية ريال واحد ويكون ويكون ساري لمدة ستة أشهر
+                            </li>
+                            <li>
+                                قد تستخدم رقم رخصة سياقه أو رقم بطاقة الإقامة لغير العمانيين بدل الرقم المدني.
+                            </li>
+                            <li>
+                                قد تستخدم رقم السجل التجاري على النسقين القديم والجديد.
+                            </li>
+                        </ol>
+
+
+                        <h4>خدمة التنبيه عبر الرسائل النصية</h4>
+                        <p>يمكن للمواطنين والمقيمين و الشركات الإشتراك في خدمة التنبيه عبر الرسائل النصية لإستقبال رسائل تنبيهية لعدد من خدمات الشرطة وهي كالتي :-</p>
+
+                        <ul>
+
+
+                            <li>
+                                تنبيه لقرب انتهاء صلاحية رخصة القيادة
+                            </li>
+                            <li>
+                                تنبيه لقرب انتهاء صلاحية تسجيل مركبة
+                            </li>
+                            <li>
+                                تنبيه لقرب انتهاء صلاحية البطاقة المدنية / بطاقة مقيم
+                            </li>
+                            <li>
+                                تنبيه لقرب انتهاء صلاحية جواز سفر (للعمانيين)
+                            </li>
+                            <li>
+                                تنبيه لقرب انتهاء صلاحية تأشيرة (للوافدين)
+                            </li>
+                            <li>
+                                إعلام بحالة طلب تأشيرة
+                            </li>
+                            <li>
+                                والعديد من الخدمات سيتم إضافتها قريبًا.
+                            </li>
+                        </ul>
+
+                        <p>
+                            رسوم الإشتراك في الخدمة ريال واحد فقط ويكون ساريا لمدة ستة أشهر من تاريخ الإشتراك، وسيتم تذكير المشترك بتجديد الإشتراك في حين إنتهاء الخدمة .
+                        </p>
+                        <p>
+                            يمكن للمشترك طلب إلغاء الخدمة قبل نهاية فترة الإشتراك بإرسال رمز الأمر المناسب.
+                        </p>
+
+                    }
+                    else
+                    {
+                        <p>Within the framework of Royal Oman Police concern on the development and modernization in all services, and the belief of the need to take advantage of new technologies and adapt them for the benefit of leading to provide excellent services. General Directorate of Information Technology has launched a SMS service, which are as follow:</p>
+
+                        <h4>Premium(PUSH) SMS Services (require Subscription)</h4>
+
+                        <p>Individuals and commercial organizations can subscribe to receive regular SMS alerts about various services offered by ROP which which are as follow: </p>
+
+                        <ul>
+                            <!-- <li>Traffic Violation Alerts. </li>-->
+                            <li>Civil ID Card Expiry Alerts.</li>
+                            <li> Passport Expiry Alerts. (for Omani only)]</li>
+                            <li>Visa Expiry Alerts. (for Expats only)</li>
+                            <li>Driving License Expiry Alerts.</li>
+                            <li>Vehicle Registration Expiry Alerts.</li>
+                            <li>Visa Application Status Alerts.</li>
+                            <li>More services will be added in near future with no additional costs.</li>
+                        </ul>
+                        <p>
+                            The subscription fee is R.O 1/- and it will be valid for 6 months from the date of subscription. Timely renewal reminders will be sent before the expiry date, and is bordered to the following conditions :
+                        </p>
+
+                        <ul>
+                            <li>For Individuals : unlimited sms messages.</li>
+                            <li>For companies : fifty (50) sms messages.</li>
+                            <li>Subscription is valid for a period of six (6) months</li>
+                            <li>Upon completion of the subscription period it will be renewed automatically unless unsubscribed manually.</li>
+                            <li>Implements the terms for any subscription, whether an individual or a company.</li>
+
+                        </ul>
+
+                        <p>The subscriber will be alerted one day before the date of expiry, or in case of reaching of the maximum number of messages.<br /><br />The subscriber can unsubscribe by sending the appropriate command within the subscription period.</p>
+
+                   
+                }
+                <div class="accordion" id="accordion12">
+
+                    <div class="card card-default">
+                        <div class="card-header" id="collapse12HeadingTwo">
+                            <h4 class="card-title m-0">
+                                <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Two" aria-expanded="false" aria-controls="collapse12Two">
+                                    أضغط هنا لإظهار تفاصيل الخدمة
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse12Two" class="collapse" aria-labelledby="collapse12HeadingTwo" data-parent="#accordion12">
+                            <div class="card-body">
+                                @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                {
+
+                                    <h4>إجراءات الاشتراك للتنبيهات الرسائل القصيرة</h4>
+
+                                    <p><font color="#800000"> للاشتراك الشخصي بالرقم المدني (مواطن أو مقيم)) </font></p>
+                                    <p>أرسل <strong>ت</strong> <strong>< الرقم المدني></strong>  إلى الرقم  <strong>90085</strong> (مثال: ت 123456)</p>
+                                    <p><font color="#800000"> لاشتراك شركة برقم السجل التجاري </font> </p>
+                                    <p> أرسل <strong>ست</strong> <strong>< رقم السجل التجاري ></strong>  إلى الرقم  <strong>90085</strong> (مثال: ست 1234567)</p>
+                                    <h3>&nbsp;</h3>
+                                    <h3>إجراءات إلغاء الاشتراك</h3>
+                                    <p><font color="#800000"> لإلغاء الاشتراك الشخصي  </font></p>
+                                    <p>أرسل <strong>إلغاء</strong> <strong>< الرقم المدني></strong>  إلى الرقم  <strong>90085</strong> (مثال: إلغاء 123456) </p>
+                                    <p><font color="#800000">لإلغاء اشتراك شركة </font> </p>
+                                    <p>أرسل <strong>إلغاء < رقم السجل التجاري ></strong>  إلى الرقم  <strong>90085</strong> (مثال: إلغاء 1234567)</p>
+
+                                }
+                                else
+                                {
+                                    <h4>Procedure for subscribing for ROP SMS Alerts</h4>
+
+                                    <p><font color="#800000"> For Individuals (with ID card / Resident card) </font></p>
+                                    <p>send<strong>R &lt;CIVIL NUMBER&gt;</strong>to<strong>90085</strong>(example:  R 12345678) </p>
+                                    <p><font color="#800000">For Commercial Organizations(with Commercial Registration Number-CRno</font> </p>
+                                    <p>send<strong>CR &lt;Commercial Registration Number&gt;</strong>to<strong>90085</strong>(example:CR 1234567)</p>
+                                    <h3>Procedure for Unsubscribing for ROP SMS Alerts</h3>
+
+                                    <p><font color="#800000"> For Individuals (with ID card / Resident card)  </font></p>
+                                    <p>send <strong>UNSUB &lt;CIVIL NUMBER&gt;</strong> to  <strong>90085</strong>(example:UNSUB 12345678)</p>
+                                    <p><font color="#800000">For Commercial Organizations(with Commercial Registration Number-CRno)</font></p>
+                                    <p>
+                                        send<strong>UNSUB &lt;Commercial Registration Number&gt;</strong>to<strong>90085</strong><br />
+                                        (example:  UNSUB 1234567)
+                                    </p>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                    {
+                        <h4>خدمة الاستعلام عبر الرسائل النصية </h4>
+
+                        <p>يمكن للمواطنين والمقيمين و الشركات الإستفادة من خدمة الإستعلام عبر الرسائل النصية لإستقبال رسائل ذات علاقة لعدد من خدمات الشرطة مثل الاستفسار عن تاريخ إنتهاء صلاحية البطاقة المدنية أو بطاقة مقيم وتاريخ إنتهاء صلاحية تسجيل مركبة والاستفسار وحالة طلب تأشيرة ، وذلك عبر إرسال رمز الخدمة المناسب على الرقم 90085، وسيتم إضافة خدمات استعلام أخرى قريبا. </p>
+                    }
+                    else
+                    {
+                        <h4 >PULL SMS Services (no Subscription required)</h4>
+
+                        <p>Individuals and commercial organizations can get information relating to their Vehicle Registration Expiry, Visa Application Status, etc. by sending appropriate service commands to ROP short code 90085. ROP will be adding more related services in near future.</p>
+
+                        <P><B>General Help</B></P>
+
+                        <p style="line-height: 200%">To get help of all services list at anytime just send <font color="#800000"><b>HELP</b></font> to 90085<br><!--/For Traffic Offense Enquiry of Personal Vehicles help send <font color="#800000"><b>TP</b></font> to 90085<br>For Traffic Offense Enquiry of Commercial Vehicles help send <font color="#800000"><b>TC</b></font> to 90085<br>-->For Registration Expiry of Personal Vehicle help send <font color="#800000"><b>RP</b></font> to 90085<br>For Registration Expiry of Commercial Vehicle help 	send <font color="#800000"><b>RC</b></font> to 90085<br>For Visa Application Status Enquiry help send <font color="#800000"><b>VS</b></font> to 90085</p>
+
+                        <p>
+                            <b>Notes:</b> <br><font color="#414141">
+                                <span style="font-size: 9pt; font-style: italic">
+                                    1) All PULL SMS request will cost 100 baizes<br>
+                                    2) ID number refer to ID Card Number, Residence Card Number OR License Number for Owner.<br>
+                                    3) Commercial Registration Number either OLD or NEW format.
+                                </span>
+                            </font>
+                            &nbsp;
+                        </p>
+                    }
+
+                    <div class="card card-default">
+                        <div class="card-header" id="collapse12HeadingThree">
+                            <h4 class="card-title m-0">
+                                <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Three" aria-expanded="false" aria-controls="collapse12Three">
+                                    أضغط هنا لإظهار تفاصيل الخدمة
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse12Three" class="collapse" aria-labelledby="collapse12HeadingThree" data-parent="#accordion12">
+                            <div class="card-body">
+                                @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                {
+                                    <h3>أوامر خدمة الرسائل القصيرة</h3>
+
+                                    <p style="line-height: 200%">
+
+                                        <!--/<font color="#800000">للاستفسار عن كافة المخالفات المرورية بالرقم المدني<br>
+            </font>أرسل<span lang="en-us"> </span><b>&nbsp;مب
+            <span lang="en-us">&lt;</span> الرقم المدني</b><span lang="en-us"><b>&gt;</b>
+            </span>&nbsp;إلى الرقم 90085 <br>
+            <font color="#003399">مثال:</font>
+            مب 123456<br>
+            <br>
+            <font color="#800000">للاستفسار عن مخالفات مركبة خاصة بالرقم المدني<br>
+            </font>أرسل <b>مب <span lang="en-us">&lt;</span>الرقم المدني<span lang="en-us">&gt;
+            &lt;</span> رمز المركبة<span lang="en-us">&gt;</span>
+            <span lang="en-us">&lt;</span> رقم
+            للوحة</b><span lang="en-us"><b>&gt;</b>&nbsp; </span>إلى الرقم 90085<br>
+            <font color="#003399">مثال:</font>
+            مب 123456 أد 3210<br>
+            <br>
+            <font color="#800000">للاستفسار عن كافة المخالفات المرورية برقم السجل
+            التجاري<br>
+            </font>أرسل <b>مم <span lang="en-us">&lt;</span> رقم السجل التجاري</b><span lang="en-us"><b>
+            &gt;</b> </span>&nbsp;إلى الرقم 90085<br>
+            <font color="#003399">مثال:</font>
+            مم 123456<br>
+            <br>
+            <font color="#800000">للاستفسار عن مخالفات مركبة تجارية برقم السجل التجاري<br>
+            </font>أرسل <b>مم <span lang="en-us">&lt; </span>رقم السجل التجاري
+            <span lang="en-us">&gt; &lt;</span> رمز المركبة
+            <span lang="en-us">&gt; &lt;</span>
+            رقم اللوحة</b><span lang="en-us"><b> &gt;</b> </span>&nbsp;إلى الرقم 90085 <br>
+            <font color="#003399">مثال:</font>
+            مم 123456 أد 3210<br>-->
+                                        <br>
+                                        <font color="#800000">
+                                            للاستفسار عن تاريخ انتهاء تسجيل لمركبة خاصة بالرقم
+                                            المدني<br>
+                                        </font>أرسل <b>
+                                            تب <span lang="en-us">&lt;</span> الرقم المدني
+                                            <span lang="en-us">&gt; &lt;</span> رمز المركبة
+                                            <span lang="en-us">&gt; &lt;</span> رقم
+                                            للوحة
+                                        </b><span lang="en-us"><b>&gt;</b>&nbsp; </span>إلى الرقم 90085 <br>
+                                        <font color="#003399">مثال:</font>
+                                        تب 123456 أد 3210<br>
+                                        <br>
+                                        <font color="#800000">
+                                            للاستفسار عن تاريخ انتهاء تسجيل لمركبة تجارية برقم
+                                            السجل التجاري<br>
+                                        </font>أرسل <b>
+                                            تم <span lang="en-us">&lt;</span> رقم السجل التجاري
+                                            <span lang="en-us">&gt; &lt;</span> رمز المركبة
+                                            <span lang="en-us">&gt; &lt;</span>
+                                            رقم اللوحة
+                                        </b><span lang="en-us">
+                                            <b>&gt;</b>&nbsp;
+                                        </span>إلى الرقم 90085 <br>
+                                        <font color="#003399">مثال:</font>
+                                        تم 123456 أد 3210<br>
+                                        <br>
+                                        <font color="#800000">
+                                            للاستفسار عن حالة طلب التأشير بإرسال رقم الاستمارة
+                                            الإلكترونية للتأشيرة ورقم المرجع<br>
+                                        </font>أرسل <b>
+                                            حط<span lang="en-us"> &lt;</span> رقم الاستمارة الإلكترونية للتأشيرة
+                                            <span lang="en-us">&gt; &lt;</span>
+                                            رقم المرجع
+                                        </b><span lang="en-us">
+                                            <b>&gt;</b>&nbsp;
+                                        </span>إلى الرقم 90085 <br>
+                                        <font color="#003399">مثال:</font> حط 496325510 753D555E0D<br>
+                                        &nbsp;
+                                    </p>}
+                                else
+                                {
+
+                                 
+
+                                        <h3>PULL SMS Service Commands</h3>
+
+                 <p>
+                                        <font color="#800000">For Enquiry of Registration Expiry Enquiry of Personal Vehicle</font><br>Send: <b> RP &lt;ID number&gt; &lt;VehicleCode&gt; &lt;VehicleNumber&gt;</b> to 90085<br>
+                                        <font color="#003399">example:</font> RP 123456 AD 3210<br><br>
+                                        <font color="#800000">For Enquiry of Registration Expiry Enquiry of company Vehicle</font><br>Send: <b>RC &lt; Commercial Registration Number &gt; &lt;VehicleCode&gt; 	&lt;VehicleNumber&gt;</b> to 90085<br>
+                                        <font color="#003399">example:</font> RC 123456 AD 3210<br><br>
+                                        <font color="#800000">To enquire about the status of Visa Application submitted online through the ROP 	website</font><br>Send: <b>VS &lt; WEB APPLICATION NUMBER &gt;&lt; REFRENCE KEY &gt;</b> to 90085<br><font color="#003399">example:</font> VS 496325510 753D555E0D</p>
+                                  
+                                }
+
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item"> <a href="../../../Services/Kiosks">@Resource.kiosk  </a></li>
+                    <li class="list-group-item"> <a href="../../../Services/RopMobileApp">@Resource.ropmobile  </a></li>
+                    <li class="list-group-item activelist"> <a href="../../../Services/smsservice">@Resource.smsservice  </a></li>
+
+
+
+                </ul>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

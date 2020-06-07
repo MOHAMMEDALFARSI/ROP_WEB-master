@@ -13,10 +13,14 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
+
+    var url = Request.Url.ToString();
+}
 @using ROP_WEB.Res
+@using System.Threading;
 
-
-<div class="container TopicStyle">
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
@@ -27,7 +31,7 @@
                     <li class="breadcrumb-item active">@Resource.laws  </li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -41,55 +45,301 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item activelist"> <a href="#">@Resource.laws  </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.trafficfinespoint </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.servicesfees </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.stat </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.dlil </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.Locations </a></li>
 
-                </ul>
-
-            </div>
             <div class="col-md-8">
 
                 <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3>  @Resource.laws </h3>
                     <p>
 
-                     @Resource.lawtxt
+                        @Resource.lawtxt
 
                     <p class="note">
-                       @Resource.lawnote
+                        @Resource.lawnote
                     </p>
-                  
-                    <table class="table table-bordered table-hover table-responsive-lg">
+                    <p class="note">
+                        @Resource.notepdf
+                        <a href="http://www.adobe.com/cfusion/tdrc/index.cfm?product=acrobat_pro&loc=en" target="_blank">Adobe Acrobat Reader</a>
+                    </p>
+
+                    <table class="table table-bordered table-hover table-responsive-lg table-striped">
                         <thead>
                             <tr>
                                 <th>@Resource.lawnumber</th>
                                 <th>@Resource.lawname</th>
-                               
+
                                 <th>@Resource.downlaod</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        1
+                                    </td>
+                                    <td>
+                                        قانون الجزاء العُماني
+                                    </td>
+
+                                    <td>
+                                        <a class="preview" href="../pdfs/roplaws/ROPRULE-1.pdf" target="_blank" title="إضغط للتحميل">
+                                            <img src="../images/laws/pdfFile.gif" />
+
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        2
+                                    </td>
+                                    <td>
+                                        قانون المخدرات والمؤثرات العقلية
+                                    </td>
+
+                                    <td>
+                                        <a class="preview" href="../pdfs/roplaws/ROPRULE-2.pdf" target="_blank" title="إضغط للتحميل">
+                                            <img src="../images/laws/pdfFile.gif" />
+
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        قانون الأحوال المدنية
+                                    </td>
+
+                                    <td>
+                                        <a class="preview" href="../pdfs/roplaws/ROPRULE-3.pdf" target="_blank" title="إضغط للتحميل">
+                                            <img src="../images/laws/pdfFile.gif" />
+
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        4
+                                    </td>
+                                    <td>
+                                        قانون الجنسية العمانية
+                                    </td>
+
+                                    <td>
+                                        <a class="preview" href="../pdfs/roplaws/ROPRULE-4.pdf" target="_blank" title="إضغط للتحميل">
+                                            <img src="../images/laws/pdfFile.gif" />
+
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        5
+                                    </td>
+                                    <td>
+                                        قانون الجمارك الموحد ولائحته التنفيذية
+                                    </td>
+
+                                    <td>
+                                        <a class="preview" href="../pdfs/roplaws/ROPRULE-5.pdf" target="_blank" title="إضغط للتحميل">
+                                            <img src="../images/laws/pdfFile.gif" />
+
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        6
+                                    </td>
+                                    <td>
+                                        قانون المرور
+                                    </td>
+
+                                    <td>
+                                        <a class="preview" href="../pdfs/roplaws/ROPRULE-6.pdf" target="_blank" title="إضغط للتحميل">
+                                            <img src="../images/laws/pdfFile.gif" />
+
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        7
+                                    </td>
+                                    <td>
+                                        قانون إقامة الأجانب
+                                    </td>
+
+                                    <td>
+                                        <a class="preview" href="../pdfs/roplaws/ROPRULE-7.pdf" target="_blank" title="إضغط للتحميل">
+                                            <img src="../images/laws/pdfFile.gif" />
+
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        8
+                                    </td>
+                                    <td>
+                                        قانون الأسلحة والذخائر
+                                    </td>
+
+                                    <td>
+                                        <a class="preview" href="../pdfs/roplaws/ROPRULE-8.pdf" target="_blank" title="إضغط للتحميل">
+                                            <img src="../images/laws/pdfFile.gif" />
+
+                                        </a>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        }
+                        else
+                        {
+
                             <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                            
-                                <td>john@example.com</td>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    Omani Penalty Code
+                                </td>
+
+                                <td>
+                                    <a class="preview" href="../pdfs/roplaws/ROPRULE-1.pdf" target="_blank" title="إضغط للتحميل">
+                                        <img src="../images/laws/pdfFile.gif" />
+
+                                    </a>
+                                </td>
                             </tr>
-                          
-                        </tbody>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+                                <td>
+                                    Drug Laws
+                                </td>
+
+                                <td>
+                                    <a class="preview" href="../pdfs/roplaws/ROPRULE-2.pdf" target="_blank" title="إضغط للتحميل">
+                                        <img src="../images/laws/pdfFile.gif" />
+
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+                                <td>
+                                    Civil Status Laws
+                                </td>
+
+                                <td>
+                                    <a class="preview" href="../pdfs/roplaws/ROPRULE-3.pdf" target="_blank" title="إضغط للتحميل">
+                                        <img src="../images/laws/pdfFile.gif" />
+
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+                                <td>
+                                    Omani Citizenship Laws
+                                </td>
+
+                                <td>
+                                    <a class="preview" href="../pdfs/roplaws/ROPRULE-4.pdf" target="_blank" title="إضغط للتحميل">
+                                        <img src="../images/laws/pdfFile.gif" />
+
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    5
+                                </td>
+                                <td>
+                                    Customs Laws
+                                </td>
+
+                                <td>
+                                    <a class="preview" href="../pdfs/roplaws/ROPRULE-5.pdf" target="_blank" title="إضغط للتحميل">
+                                        <img src="../images/laws/pdfFile.gif" />
+
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    6
+                                </td>
+                                <td>
+                                    Traffic Laws
+                                </td>
+
+                                <td>
+                                    <a class="preview" href="../pdfs/roplaws/ROPRULE-6.pdf" target="_blank" title="إضغط للتحميل">
+                                        <img src="../images/laws/pdfFile.gif" />
+
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    7
+                                </td>
+                                <td>
+                                    Expatriate Visa Laws
+                                </td>
+
+                                <td>
+                                    <a class="preview" href="../pdfs/roplaws/ROPRULE-7.pdf" target="_blank" title="إضغط للتحميل">
+                                        <img src="../images/laws/pdfFile.gif" />
+
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    8
+                                </td>
+                                <td>
+                                    Weapons Laws
+                                </td>
+
+                                <td>
+                                    <a class="preview" href="../pdfs/roplaws/ROPRULE-8.pdf" target="_blank" title="إضغط للتحميل">
+                                        <img src="../images/laws/pdfFile.gif" />
+
+                                    </a>
+                                </td>
+                            </tr>
+
+                        }
                     </table>
 
                 </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item activelist"> <a href="../../../OpenData/Roplaws">@Resource.laws  </a></li>
+                    <li class="list-group-item "><a href="../../../OpenData/TrafficFines">@Resource.trafficfinespoint </a></li>
+                    <li class="list-group-item "><a href="../../../OpenData/Statistics">@Resource.stat </a></li>
+                    <li class="list-group-item "><a href="../../../OpenData/Saftytips">@Resource.dlil </a></li>
+
+                </ul>
+
             </div>
 
 

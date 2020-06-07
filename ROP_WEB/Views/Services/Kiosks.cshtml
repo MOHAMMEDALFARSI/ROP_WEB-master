@@ -1,0 +1,633 @@
+﻿
+@model IEnumerable<ROP_WEB.Models.Kiosk>
+@section PageTitle {
+    @Resource.kiosk
+}
+@section arurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view="Kiosks",cont="Services"}  )">
+        <i class="fa fa-globe"></i> عربي
+    </a>
+}
+
+@section enurl{
+    <a href="@Url.Action("GetLang", "Home", new { lang = "en-US",view="Kiosks",cont="Services" } )">
+        <i class="fa fa-globe"></i> En
+    </a>
+}
+@{
+
+    var url = Request.Url.ToString();
+}
+
+@using ROP_WEB.Res
+
+@using System.Threading;
+<div class="container">
+    <div class="row">
+
+        <div class="col breadcrumbstyle" style="padding:0">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
+
+                    <li class="breadcrumb-item active"> @Resource.services  </li>
+                    <li class="breadcrumb-item active"> أجهزة الخدمة الذاتية </li>
+                    <li class="readspeakercls">
+                        <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
+
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
+                                <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
+                                <span class="rsbtn_right rsimg rsplay rspart"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <div class="col-md-8">
+
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
+                    <h3> @Resource.kiosk </h3>
+                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                    {
+
+
+                        <h5>  أجهزة الاستفسار ودفع المخالفات الذاتية</h5>
+                        <p>
+
+                            خدمة الاستفسار ودفع المخالفات المرورية والخليجية والبلدية عبر في مطار مسقط الدولي، وتأتي هذه الخدمة للتسهيل على المغادرين تسوية المخالفات المرورية المترتبة عليهم من خلال أجهزة خدمة ذاتية. ويمكن استخدام أجهزة دفع المخالفات إلكترونيًا عبر إدخال الرقم المدني، أو رقم التأشيرة للسائحين والزائرين.
+                        </p>
+
+                        <h5>   الخدمة الذاتية لطباعة ملكية المركبات</h5>
+                        <p>
+                            يعمل الجهاز من خلال خطوات بسيطة فبعد تجديد المركبة ودفع المخالفات المرورية عبر تطبيق شرطة عمان السلطانية يقوم مالك المركبة وبإتباع الخطوات التي توضحها الشاشة الإلكترونية التي تعمل باللمس بتعبئة بيانات رقم المركبة ورمزها والرقم المدني ومن ثم الضغط على زر تقديم الخدمة لإتمام عملية طباعة الملكية.
+
+                        </p>
+                        <p>مواقع تواجد الأجهزة في مختلف المحافظات :  </p>
+
+
+                        <h4>@Resource.mct</h4>
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+                            </thead>
+
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "MCT")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+
+
+                        </table>
+                        <h4>@Resource.btnn</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "BATN")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.btns</h4>
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "BATS")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.brimi</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "BUR")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.dhira</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "ALZ")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.dhk</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "ALD")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.dofr</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "DHO")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.musndam</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "MUS")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.shrkian</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "SHAN")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.shrkias</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "SHAS")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.wsta</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>الموقع</th>
+                                    <th>رابط الموقع</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "WSTA")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationAr</td>
+                                        <td> <a href="@item.kioskLocationUrl">الوصول للموقع</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                    }
+                    else
+                    {
+                        <h5> Traffic fines payment kiosks at Muscat International Airports</h5>
+                        <p>
+
+                            Self-service kiosks facilitate the payment and enquiry of fines for local and GCC traffic fines, in addition to municipal fines for citizens, residents (expats) and other visitors to the Sultanate. These devices can be used by entering the ID number for citizens and residents and visa number for tourists.
+
+                        </p>
+
+
+                        <h5>  Kiosks to renew vehicle registration </h5>
+                        <p>
+                            Owners of private vehicles can get their vehicle registration cards (mulkiya) through the self-service kiosks. Once the insurance formalities are completed, vehicle owners can use the kiosks to obtain the registration card (mulkiya.) easily at any time.
+                        </p>
+
+                        <p>KIOSKs Locations on Oman: </p>
+
+                        <h4>@Resource.mct</h4>
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+                            </thead>
+
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "MCT")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+
+
+                        </table>
+                        <h4>@Resource.btnn</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region =="BATN")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.btns</h4>
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "BATS")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.brimi</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "BUR")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.dhira</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "ALZ")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.dhk</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "ALD")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.dofr</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "DHO")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.musndam</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "MUS")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.shrkian</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "SHAN")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.shrkias</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "SHAS")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+                        <h4>@Resource.wsta</h4>
+                        <table class="table table-bordered table-hover  table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Location</th>
+                                    <th>Location URL</th>
+
+
+                                </tr>
+
+                            </thead>
+                            @foreach (var item in Model)
+                            {
+                                if (item.region == "WSTA")
+                                {
+                                    <tr>
+                                        <td>@item.kioskLocationEn</td>
+                                        <td> <a href="@item.kioskLocationUrl">Access Location</a></td>
+                                    </tr>
+                                }
+
+                            }
+                        </table>
+
+                    }
+
+
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item activelist"> <a href="../../../Services/Kiosks">@Resource.kiosk  </a></li>
+                    <li class="list-group-item"> <a href="../../../Services/RopMobileApp">@Resource.ropmobile  </a></li>
+                    <li class="list-group-item"> <a href="../../../Services/smsservice">@Resource.smsservice  </a></li>
+
+
+
+                </ul>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

@@ -133,10 +133,10 @@
     <value>الجوائز والإنجازات</value>
   </data>
   <data name="alig" xml:space="preserve">
-    <value>right</value>
+    <value>left</value>
   </data>
   <data name="alig2" xml:space="preserve">
-    <value>left</value>
+    <value>right</value>
   </data>
   <data name="AlWustaGovernoratePoliceHeadquarter" xml:space="preserve">
     <value>قيادة شرطة محافظة الوسطى</value>
@@ -154,7 +154,7 @@
     <value>الخدمات الأكثر إستخداما</value>
   </data>
   <data name="companyserv" xml:space="preserve">
-    <value>خدمات الشركات</value>
+    <value>خدمات الأعمال</value>
   </data>
   <data name="contact" xml:space="preserve">
     <value>تواصل معنا</value>
@@ -638,5 +638,223 @@
   </data>
   <data name="Transport" xml:space="preserve">
     <value>الإدارة العامة للنقليات</value>
+  </data>
+  <data name="dir" xml:space="preserve">
+    <value>rtl</value>
+  </data>
+  <data name="rtlltr" xml:space="preserve">
+    <value>AR.css</value>
+  </data>
+  <data name="det" xml:space="preserve">
+    <value />
+  </data>
+  <data name="accessserv" xml:space="preserve">
+    <value>الدخول للخدمة</value>
+  </data>
+  <data name="applicable" xml:space="preserve">
+    <value>القوانين المطبقة والاختصاص</value>
+  </data>
+  <data name="crimestat" xml:space="preserve">
+    <value>إحصائيات الجرائم</value>
+  </data>
+  <data name="deathratecar" xml:space="preserve">
+    <value>معدل وفيات حوادث الطرق</value>
+  </data>
+  <data name="deathrategender" xml:space="preserve">
+    <value>عدد الوفيات المسجلة حسب الجنس</value>
+  </data>
+  <data name="deathratestate" xml:space="preserve">
+    <value>عدد الجرائم المسجلة حسب المحافظات</value>
+  </data>
+  <data name="disclaimer" xml:space="preserve">
+    <value>إخلاء المسؤولية</value>
+  </data>
+  <data name="drivingmanners" xml:space="preserve">
+    <value>أخلاقيات السياقة</value>
+  </data>
+  <data name="fair" xml:space="preserve">
+    <value>سياسة الاستخدام العادل</value>
+  </data>
+  <data name="farmfires" xml:space="preserve">
+    <value>حرائق المزارع</value>
+  </data>
+  <data name="fireextinguishers" xml:space="preserve">
+    <value>مطفأة الحريق في المركبة</value>
+  </data>
+  <data name="guidelines" xml:space="preserve">
+    <value>توجيهات عامة</value>
+  </data>
+  <data name="limitation" xml:space="preserve">
+    <value>تحديد المسؤوليات</value>
+  </data>
+  <data name="linksother" xml:space="preserve">
+    <value>روابط المواقع الأخرى</value>
+  </data>
+  <data name="mngtname" xml:space="preserve">
+    <value>المسمى</value>
+  </data>
+  <data name="modifications" xml:space="preserve">
+    <value>التعديلات</value>
+  </data>
+  <data name="norepresentation" xml:space="preserve">
+    <value>عدم جواز التمثيل</value>
+  </data>
+  <data name="phonenum" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="publicsafety" xml:space="preserve">
+    <value>السلامة العامة</value>
+  </data>
+  <data name="restrictions" xml:space="preserve">
+    <value>قيود استخدام مواد البوابة</value>
+  </data>
+  <data name="Roadacc" xml:space="preserve">
+    <value>إحصائيات الحوادث</value>
+  </data>
+  <data name="servchannel" xml:space="preserve">
+    <value>قنوات الخدمة</value>
+  </data>
+  <data name="servfees" xml:space="preserve">
+    <value>رسوم الخدمة</value>
+  </data>
+  <data name="servprocedure" xml:space="preserve">
+    <value>إجراءات الخدمة</value>
+  </data>
+  <data name="servreqdoc" xml:space="preserve">
+    <value>المستندات المطلوبة</value>
+  </data>
+  <data name="servterm" xml:space="preserve">
+    <value>شروط الخدمة</value>
+  </data>
+  <data name="suggestions" xml:space="preserve">
+    <value>الاقتراحات والتعليقات وتلقي الآراء</value>
+  </data>
+  <data name="templetes" xml:space="preserve">
+    <value>نماذج</value>
+  </data>
+  <data name="traveltips" xml:space="preserve">
+    <value>إرشادات عند السفر</value>
+  </data>
+  <data name="vehiclefires" xml:space="preserve">
+    <value>حرائق المركبات</value>
+  </data>
+  <data name="Choosedir" xml:space="preserve">
+    <value>إختر الإدارة :</value>
+  </data>
+  <data name="copyrighttxt" xml:space="preserve">
+    <value>حقوق الطبع في مواد هذا الموقع ملك لشرطة عمان السلطانية ( إلا في حال التصريح بغير ذلك). ولا يجوز إعادة إنتاج أو إستخدام شعار شرطة عمان السلطانية أو أي جزء مهما كان لأغراض تجارية، وذلك فيما عدا التعامل العادل لأغراض الدراسات الخاصة أو البحث أو النقد أو المراجعة، كما هو مرخص بموجب تشريعات حقوق الطبع.</value>
+  </data>
+  <data name="disclamer" xml:space="preserve">
+    <value>شرطة عمان السلطانية لا تألوا جهدا في ضمان أن ما يحتويه هذا الموقع الإلكتروني من معلومات صحيحة وتخضع للتحديث بشكل مستمر وإن كافة ما يحتويه هذا الموقع الإلكتروني هو لغرض توفير المعلومات فقط لا يمكن تحميل شرطة عمان السلطانية ومسؤوليها وموظفيها، والمرتبطين معها في مجال الأعمال، المسؤولية في حال حدوث أي أضرار أو خسائر، سواء أكان ذلك بطريقة مباشرة أو غير مباشرة، أو كنتيجة لسلسلة من الأحداث أو نشأ نتيجة لإستخدام هذا الموقع الإلكتروني أو أي من محتوياته.
+
+                        تملك شرطة عمان السلطانية الحق في تعديل وتغيير أي جزء من محتويات هذا الموقع بغير إشعار سابق.</value>
+  </data>
+  <data name="selectregion" xml:space="preserve">
+    <value>إختر المحافظة :</value>
+  </data>
+  <data name="adsrop" xml:space="preserve">
+    <value>إعلانــات</value>
+  </data>
+  <data name="miss" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="notepdf" xml:space="preserve">
+    <value>* لعرض ملف PDF يرجى تنزيل برنامج</value>
+  </data>
+  <data name="privicy" xml:space="preserve">
+    <value>الخصوصية</value>
+  </data>
+  <data name="viss" xml:space="preserve">
+    <value>الرؤية</value>
+  </data>
+  <data name="vissionmsg" xml:space="preserve">
+    <value>شرطة عمان السلطانية شرطة مهنية متميزة بقدرات وإمكانات عالية تعمل في ظل شراكة فاعلة مع المجتمع وبتعاون مع المؤسسات الأخرى، لتحقيق مجتمع آمن ومستقر ومزدهر.</value>
+  </data>
+  <data name="brimi" xml:space="preserve">
+    <value>محافظة البريمي</value>
+  </data>
+  <data name="btnn" xml:space="preserve">
+    <value>الباطنة شمال</value>
+  </data>
+  <data name="btns" xml:space="preserve">
+    <value>الباطنة جنوب</value>
+  </data>
+  <data name="dhira" xml:space="preserve">
+    <value>محافظة الظاهرة</value>
+  </data>
+  <data name="dhk" xml:space="preserve">
+    <value>محافطة الداخلية</value>
+  </data>
+  <data name="dofr" xml:space="preserve">
+    <value>محافظة ظفار</value>
+  </data>
+  <data name="mct" xml:space="preserve">
+    <value>محافظة مسقط</value>
+  </data>
+  <data name="musndam" xml:space="preserve">
+    <value>محافظة مسندم</value>
+  </data>
+  <data name="shrkian" xml:space="preserve">
+    <value>الشرقية شمال</value>
+  </data>
+  <data name="shrkias" xml:space="preserve">
+    <value>الشرقية جنوب</value>
+  </data>
+  <data name="wsta" xml:space="preserve">
+    <value>محافظة الوسطى</value>
+  </data>
+  <data name="csupdate" xml:space="preserve">
+    <value>تحديث بيانات السجل المدني</value>
+  </data>
+  <data name="DLrenew" xml:space="preserve">
+    <value>تجديد رخصة القيادة</value>
+  </data>
+  <data name="escort" xml:space="preserve">
+    <value>خدمة المرافقات الأمنية</value>
+  </data>
+  <data name="desccsup" xml:space="preserve">
+    <value>يمكنك تحديث بياناتك الشخصية الأن</value>
+  </data>
+  <data name="descecs" xml:space="preserve">
+    <value>تحقق من صحة بيانات شهادة عدم المحكومية</value>
+  </data>
+  <data name="descevisa" xml:space="preserve">
+    <value>التأشيرات السياحية و السريعة والمقيمي دول مجلس التعاون</value>
+  </data>
+  <data name="descfinalexit" xml:space="preserve">
+    <value>تحقق من الغرمات والمخالفات قبل مغادرة السلطنة</value>
+  </data>
+  <data name="descfine" xml:space="preserve">
+    <value>يمكنك الإستفسار و دفع المخالفات</value>
+  </data>
+  <data name="descrenw" xml:space="preserve">
+    <value>تمكنك الخدمة من تجديد مركبتك بسهولة </value>
+  </data>
+  <data name="descvisa" xml:space="preserve">
+    <value>اطلب عبر الانترنت وتحقق من حالة الطلب</value>
+  </data>
+  <data name="desvvisastatus" xml:space="preserve">
+    <value>تتبع حالة طلب التأشيرة</value>
+  </data>
+  <data name="ecs" xml:space="preserve">
+    <value>الخدمة الألكترونية للشهادات</value>
+  </data>
+  <data name="finalexit" xml:space="preserve">
+    <value> إستيفاء الغرامات عند مغادرة السلطنة</value>
+  </data>
+  <data name="arabicenglish" xml:space="preserve">
+    <value>arabic</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="smsservice" xml:space="preserve">
+    <value>خدمة الرسائل القصيرة</value>
+  </data>
+  <data name="ropmobile" xml:space="preserve">
+    <value>تطبيق الشرطة على الهواتف الذكية</value>
+  </data>
+  <data name="kiosk" xml:space="preserve">
+    <value>أجهزة الخدمة الذاتية</value>
   </data>
 </root>

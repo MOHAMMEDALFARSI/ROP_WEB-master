@@ -13,10 +13,14 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
+
+    var url = Request.Url.ToString();
+}
 @using ROP_WEB.Res
+@using System.Threading;
 
-
-<div class="container TopicStyle">
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
@@ -27,7 +31,7 @@
                     <li class="breadcrumb-item active">@Resource.achivment</li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -40,49 +44,200 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item"> <a href="#">@Resource.about1  </a></li>
-                    <li class="list-group-item"> <a href="#">@Resource.v_m  </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.about2 </a></li>
-                    <li class="list-group-item activelist"><a href="#">@Resource.achivment </a></li>
 
-
-                </ul>
-
-            </div>
             <div class="col-md-8">
 
                 <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3>  @Resource.achivment </h3>
+
                     <p>
 
                         تعرف على الإنجازات التي حققتها شرطة عمان السلطانية.
 
                     </p>
-                    @*<div class="dropdownlist">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                            إختر السنة
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">2010</a>
-                            <a class="dropdown-item" href="#">2011</a>
-                            <a class="dropdown-item" href="#">2012</a>
+                    @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                    {
 
-                        </div>
-                    </div>*@
-                    <h4>جوائز 2010</h4>
+                        <h4>2018</h4>
+                        <h5> جائزة السلطان قابوس للإجادة في الخدمات الحكومية الإلكترونية الدورة السادسة </h5>
+                        <p>  التفاصيل : تطبيق شرطة عمان السلطانية  - فئة أفضل تطبيق للأجهزة الذكية في القطاع الحكومي </p>
 
-                    <h5>1- العنوان </h5>
-                    <p>تفاصيل الجائزة </p>
 
-                    <h5>2- العنوان </h5>
-                    <p>تفاصيل الجائزة </p>
+                        <hr />
+
+                        <h4>2018</h4>
+                        <h5>  جائزة السلطان قابوس للإجادة في الخدمات الحكومية الإلكترونية الدورة السادسة</h5>
+                        <p> التفاصيل : مشروع بيان - فئة أفضل مشروع حكومي تكاملي</p>
+
+                        <hr />
+                        <h4>2016</h4>
+                        <h5>جائزة أفضل خدمة حكومية عبر الهاتف المحمول على المستوى العربي في قطاع الأمن والسلامة </h5>
+                        <p>التفاصيل : تطبيق شرطة عمان السلطانية  - مؤتمر القمة العالمية للحكومات</p>
+
+                        <hr />
+                        <h4>2015</h4>
+                        <h5>جائزة مسابقة دول مجلس التعاون للإجادة والتميز في خدمات الحكومة </h5>
+
+                        <p> التفاصيل : قاعدة بيانات موحدة للرقم المدني لجميع السكان في السلطنة - أفضل مشروع إلكتروني وطني مشترك </p>
+                        <hr />
+                        <h4>2015</h4>
+                        <h5>جائزة الشرق الأوسط ال 20 للإجادة في الخدمات الالكترونية الذكية -دبي</h5>
+
+                        <p>التفاصيل : الربط الإلكتروني مع دولة الإمارات - فئة أفضل خدمة إلكترونية متكاملة</p>
+                        <hr />
+                        <h4>2014</h4>
+                        <h5>جائزة السلطان قابوس للإجادة في خدمات الحكومة الإلكترونية-مسقط</h5>
+
+                        <p>التفاصيل : مشروع الربط الآلي مع المؤسسات الحكومية داخل السلطنة والربط الخارجي مع دولة الإمارات العربية المتحدة - فئة أفضل خدمة إلكترونية مقدمة للقطاع الحكومي</p>
+                        <hr />
+                        <h4>2014</h4>
+                        <h5>جائزة السلطان قابوس للإجادة في خدمات الحكومة الإلكترونية-مسقط</h5>
+
+                        <p>التفاصيل : جاهزية شرطة عمان السلطانية للتحول الإلكتروني - فئة أفضل مؤسسة متطورة إلكترونياً</p>
+                        <hr />
+                        <h4>2012</h4>
+                        <h5>جائزة السلطان قابوس للإجادة في خدمات الحكومة الإلكترونية-مسقط </h5>
+
+                        <p>التفاصيل : نظام الأحـوال المدنية-الإصدار الثاني - فئة أفضل خدمة حكومية إلكترونية مقدمة من مؤسسة حكومية لقطاع خــاص</p>
+                        <hr />
+                        <h4>2012</h4>
+                        <h5>جائزة السلطان قابوس للإجادة في خدمات الحكومة الإلكترونية-مسقط </h5>
+
+                        <p>التفاصيل  : نظام حوسبة مراكز الشرطة - فئة جائزة أفضل محتوى إلكتروني</p>
+
+                        <hr />
+                        <h4>2010</h4>
+                        <h5>جائزة السلطان قابوس للإجادة في خدمات الحكومة الإلكترونية-مسقط</h5>
+
+                        <p>التفاصيل : نظام دفع المخالفات الإلكتروني  - فئة أفضل خدمة حكومية إلكترونية مقدمه إلى المواطنين</p>
+                        <hr />
+                        <h4>2009</h4>
+                        <h5>جائزة السلطان قابوس للإجادة في خدمات الحكومة الإلكترونية-مسقط</h5>
+
+                        <p>التفاصيل : موقع جهاز شرطة عمان الــــــسلطانية - فئة  أفضل موقع إلكتروني: المركز الأول</p>
+                        <hr />
+                        <h4>2009</h4>
+                        <h5>جائزة السلطان قابوس للإجادة في خدمات الحكومة الإلكترونية-مسقط</h5>
+
+                        <p>التفاصيل : مشـــــــــــروع الـــــــــسجل المــــدني - فئة أفضل مشروع للحكومة الإلكترونية: المركز الأول</p>
+                        <hr />
+                        <h4>2009</h4>
+                        <h5>جائزة السلطان قابوس للإجادة في خدمات الحكومة الإلكترونية-مسقط</h5>
+
+                        <p>التفاصيل : خدمة المخالــــفات المرورية الإلكترونية - فئة  أفضل خدمة إلكترونية: المركز الثاني </p>
+                        <hr />
+
+
+
+                        <h4>2009</h4>
+                        <h5>جائزة الإجادة التابعة للأمم المتحدة</h5>
+
+                        <p> التفاصيل : نظام الأحوال المدنية - فئة  تحسين تقديم الخدمات </p>
+                        <hr />
+                    }
+                    else
+                    {
+                        <h4>2018</h4>
+                        <h5> Sultan Qaboos Award for Excellence in eGovernment Services  </h5>
+                        <p>
+                            Details:  Royal Oman Police Mobile App - Best Government Application for Smart Devices
+
+                        </p>
+
+
+                        <hr />
+
+                        <h4>2018</h4>
+                        <h5>  Sultan Qaboos Award for Excellence in eGovernment Services </h5>
+                        <p> Details:eCutoms (Bayan) - Best Whole of Government Project </p>
+
+                        <hr />
+                        <h4>2016</h4>
+                        <h5>The best mobile government service on the Arab level in the security and safety sector  </h5>
+                        <p>Details:  Royal Oman Police Mobile App -  World Governments Summit</p>
+
+                        <hr />
+                        <h4>2015</h4>
+                        <h5>GCC Competition for Excellence and Excellence in Government Services  </h5>
+
+                        <p> Details: A unified database of the civil number for all the population in the Sultanate - Best national e-project  </p>
+                        <hr />
+                        <h4>2015</h4>
+                        <h5>The 20th Middle East Award for Excellence in Intelligent Electronic Services - Dubai </h5>
+
+                        <p>Details: Electronic connectivity with the UAE - Best integrated electronic service </p>
+                        <hr />
+                        <h4>2014</h4>
+                        <h5>Sultan Qaboos Award for Excellence in eGovernment Services</h5>
+
+                        <p>Details:  The project of automatic linking with the governmental institutions inside the Sultanate and the external link with the UAE - Best electronic service provided to the government sector </p>
+                        <hr />
+                        <h4>2014</h4>
+                        <h5>Sultan Qaboos Award for Excellence in eGovernment Services </h5>
+
+                        <p>Details:  ROP readiness for electronic transformation -  Best electronically developed institution </p>
+                        <hr />
+                        <h4>2012</h4>
+                        <h5> Sultan Qaboos Award for Excellence in eGovernment Services  </h5>
+
+                        <p>Details:  Civil Status System - Second Edition - The best e-government service provided by a government institution for private sector </p>
+                        <hr />
+                        <h4>2012</h4>
+                        <h5> Sultan Qaboos Award for Excellence in eGovernment Services </h5>
+
+                        <p>Details: System of computerization of police stations -  Best Electronic Content Award Category </p>
+
+                        <hr />
+                        <h4>2010</h4>
+                        <h5> Sultan Qaboos Award for Excellence in eGovernment Services - Muscat </h5>
+
+                        <p>Details: Electronic Payment System - Best eGovernment service offered to citizens </p>
+                        <hr />
+                        <h4>2009</h4>
+                        <h5>Sultan Qaboos Award for Excellence in eGovernment Services </h5>
+
+                        <p>Details: Royal Oman Police website -  Best Website Award category: First place  </p>
+                        <hr />
+                        <h4>2009</h4>
+                        <h5>Sultan Qaboos Award for Excellence in eGovernment Services </h5>
+
+                        <p>Details: Civil Registry Project -  E-Government Project Award: First place </p>
+                        <hr />
+                        <h4>2009</h4>
+                        <h5>Sultan Qaboos Award for Excellence in eGovernment Services</h5>
+
+                        <p>Details:  Service of electronic traffic Fines -  Best Electronic Service Award Category: Second Place  </p>
+                        <hr />
+
+
+
+                        <h4>2009</h4>
+                        <h5> United Nations Public Services Award </h5>
+
+                        <p>
+                            Details:  Civil Status System -Improving Service Delivery
+
+                        </p>
+                        <hr />
+
+                    }
                 </div>
+            </div>
+
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item"> <a href="../../../AboutROP/GeneralInfo">@Resource.about1  </a></li>
+                    <li class="list-group-item"> <a href="../../../AboutROP/Vision_Mission">@Resource.v_m  </a></li>
+                    <li class="list-group-item "><a href="../../../AboutROP/Organization">@Resource.about2 </a></li>
+                    <li class="list-group-item activelist"><a href="../../../AboutROP/Achivachievements">@Resource.achivment </a></li>
+
+
+                </ul>
+
             </div>
 
 

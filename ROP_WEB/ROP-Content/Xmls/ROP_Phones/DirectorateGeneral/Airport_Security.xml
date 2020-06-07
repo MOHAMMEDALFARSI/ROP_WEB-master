@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RegionStation>
+  <Station>
+    <StationId>1</StationId>
+    <StationEn>DG of Airport Security</StationEn>
+    <StationAr>الإدارة العامة لأمن المطارات</StationAr>
+    <StationPhone>24510099</StationPhone>
+  </Station>
+    <Station>
+    <StationId>2</StationId>
+    <StationEn>Muscat International Airport Security</StationEn>
+    <StationAr>أمن مطار مسقط الدولي</StationAr>
+    <StationPhone>24519217</StationPhone>
+  </Station>
+
+  <Station>
+    <StationId>3</StationId>
+    <StationEn>Salalah Airport Security</StationEn>
+    <StationAr>أمن مطار صلالة</StationAr>
+    <StationPhone>23204277</StationPhone>
+  </Station>
+
+
+ 
+</RegionStation>

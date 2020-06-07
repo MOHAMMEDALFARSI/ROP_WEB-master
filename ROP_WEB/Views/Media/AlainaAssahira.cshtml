@@ -3,21 +3,41 @@
     @Resource.md7
 }
 @section arurl{
-    <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view="AlainaAssahira",cont="Media"}  )">
+    <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view = "AlainaAssahira", cont = "Media" })">
         <i class="fa fa-globe"></i> عربي
     </a>
 }
 
 @section enurl{
-    <a href="@Url.Action("GetLang", "Home", new { lang = "en-US",view="AlainaAssahira",cont="Media" } )">
+    <a href="@Url.Action("GetLang", "Home", new { lang = "en-US", view = "AlainaAssahira", cont = "Media" })">
         <i class="fa fa-globe"></i> En
     </a>
 }
 @using ROP_WEB.Res
-<link href="~/Content/styles/audio.css" rel="stylesheet" />
 
 
-<div class="container TopicStyle">
+@section audioplayer{
+    <script>
+        function myfun(x) {
+            var audio = document.getElementById('audiotrack');
+
+            var source = document.getElementById('audioSource');
+            source.src = x;
+
+            audio.load(); //call this to just preload the audio without playing
+            audio.play(); //call this to play the song right away
+        }
+        /***********************************************/
+
+     
+
+    </script>
+}
+@{ 
+
+        var url = Request.Url.ToString();
+}
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
@@ -28,13 +48,13 @@
                     <li class="breadcrumb-item active">@Resource.md7  </li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
                         </div>
                     </li>
-                  
+
                 </ol>
             </nav>
         </div>
@@ -42,24 +62,14 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item"> <a href="#">@Resource.md3  </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.md1 </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.md4</a></li>
-                    <li class="list-group-item "><a href="#">@Resource.md6</a></li>
-                    <li class="list-group-item activelist"><a href="#">@Resource.md7</a></li>
 
-                </ul>
-
-            </div>
             <div class="col-md-8">
 
-                <div class="jumbotron" style="padding:25px;">
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3>  @Resource.md7 </h3>
 
                     <figure id="audioplayer" itemprop="track" itemscope itemtype="http://schema.org/MusicRecording" dir="ltr">
@@ -69,86 +79,293 @@
                         </audio><br />
                     </figure>
 
-                    <div id="accordion" role="tablist" aria-multiselectable="true">
-
-
-
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
-                                <h5 class="mb-0">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        حلقات 2010
+                    <div class="accordion" id="accordion12">
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingOne">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12One" aria-expanded="true" aria-controls="collapse12One">
+                                        حلقات 2020
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
+                            <div id="collapse12One" class="collapse show" aria-labelledby="collapse12HeadingOne" data-parent="#accordion12">
+                                <div class="card-body">
 
-                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-                                <div class="card-block">
-                                    <a href="#" onclick="myfun('https://thenewcode.com/assets/audio/24-ghosts-III.mp3')">content</a>
+                                    <ol>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio09012020.mp3')"> حلقة عن يوم شرطة عمان السلطانية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio05012020.mp3')">  حلقة عن الخامس من يناير </a></li>
+                                       
+                                    </ol>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        حلقات 2010
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingTwo">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Two" aria-expanded="false" aria-controls="collapse12Two">
+                                        حلقات 2019  
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Two" class="collapse" aria-labelledby="collapse12HeadingTwo" data-parent="#accordion12">
+                                <div class="card-body">
+                                    <ol>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio26122019.mp3')">  حلقة عن  جهود الإدارة العامة للسجون </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio12122019.mp3')">  حلقة عن  مراكز الخدمة </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio14112019.mp3')">  حلقة عن  بمناسبة العيد الوطني </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio31102019.mp3')">  حلقة عن  حسابات الشرطة في مواقع التواصل الاجتماعي </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio17102019.mp3')"> حلقة عن  مناسبة يوم السلامة المرورية  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio03102019.mp3')"> حلقة عن  الوقاية من طلاب المدارس من آفة المخدرات  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio19092019.mp3')"> حلقة عن  مسابقة السلامة المرورية  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio29082019.mp3')"> حلقة عن  العودة للمدارس  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio18082019.mp3')"> حلقة عن جهود قيادة شرطة خفر السواحل  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio01082019.mp3')"> حلقة عن السلامة في الجبل الاخضر  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio18072019.mp3')"> حلقة عن جهود شرطة عمان السلطانية في موسم الخريف  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio04072019.mp3')"> حلقة عن الوقاية من السرقات  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio20062019.mp3')"> حلقة عن حوادث الصيف أسبابها والوقاية منها  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio02052019.mp3')"> حلقة عن الوقاية من طرق الاحتيال  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio04042019.mp3')"> حلقة عن حلقة قضايا الشيكات  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio21032019.mp3')"> حلقة عن دور شرطة عمان في مكافحة المخدرات  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio01032019.mp3')"> حلقة عن اليوم العالمي للدفاع االمدني  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio27022019.mp3')"> حلقة عن اليوم العالمي للجمارك  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio21022019.mp3')"> حلقة عن جهود خفر السواحل </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio24012019.mp3')"> حلقة المهرجان الميدانية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio10012019.mp3')"> حلقة عن مهرجان مسقط </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio05012019.mp3')"> حلقة عن الخامس من يناير  </a></li>
+
+                                    </ol>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingThree">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        حلقات 2010
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingThree">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Three" aria-expanded="false" aria-controls="collapse12Three">
+                                        حلقات 2018
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Three" class="collapse" aria-labelledby="collapse12HeadingThree" data-parent="#accordion12">
+                                <div class="card-body">
+
+                                    <ol>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio27122018.mp3')">  حلقة عن أكاديمية السلطان قابوس </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio13122018.mp3')">  حلقة عن السجون </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio15112018.mp3')">  حلقة عن العيد الوطني 48 المجيد </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio01112018.mp3')">  حلقة عن تحديثات الشرطة</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio18102018.mp3')">  حلقة عن يوم المرآه </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio04102018.mp3')">   حلقة عن الجرائم الإلكتروني </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio20092018.mp3')">  حلقة عن ابراز الجهود الجمركية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio06092018.mp3')">  حلقة عن سلامة الطلبة </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio09082018.mp3')">  حلقة عن جرائم السرقات </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio26072018.mp3')">  حلقة عن خريف صلالة </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio28062018.mp3')">   حلقة عن المخدرات </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio10052018.mp3')">   حلقة عن إجراءات السلامة المرورية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio26042018.mp3')">   حلقة عن الطب الشرعي </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio11042018.mp3')">   حلقة عن ظاهرة التسول  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio29032018.mp3')">   حلقة عن منشأت النفط والغاز </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio13032018.mp3')">  حلقة عن التأشيرة الألكترونية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio01032018.mp3')">  حلقة عن الدفاع المدني </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio13022018.mp3')">  حلقة عن خفر السواحل  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio01022018.mp3')">  حلقة عن قوانين المرور الجديده  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio05012018.mp3')">  حلقة عن يوم الشرطة  </a></li>
+
+                                    </ol>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingFour">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                                        حلقات 2010
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingFour">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Four" aria-expanded="false" aria-controls="collapse12Four">
+                                        حلقات 2017
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="card-block">
-                                    <p>
-                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                    </p>
+                            <div id="collapse12Four" class="collapse" aria-labelledby="collapse12HeadingFour" data-parent="#accordion12">
+                                <div class="card-body">
+                                    <ol>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio28122017.mp3')"> حلقة عن المركز الوطني للمعلومات المالية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio14122017.mp3')">  حلقة عن قيادة خفر السواحل </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio30112017.mp3')">  حلقة عن الادارة العامة ل أمن المطارات </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio16112017.mp3')">  حلقة خاصة بمناسبة العيد الوطني ٤٧</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio02112017.mp3')">  حلقة عن جهود الادارة العامة لمكافحة المخدرات</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio19102017.mp3')">  حلقة عن يوم السلامة المرورية</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio05102017.mp3')">  حلقة عن دور الشرطة في مواقع التواصل الاجتماعي</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio14092017.mp3')">  حلقة عن جهود شرطة عمان السلطانية في التحول الألكتروني </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio24082017.mp3')">  حلقة عن سلامة طلاب المدارس </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio10082017.mp3')">  حلقة عن جهود شرطة عمان السلطانية في نشرالثقافة المرورية  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio27072017.mp3')">  حلقة عن الحديث عن الاحتيال الالكتروني  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio12072017.mp3')">  حلقة عن جهود شرطة عمان السلطانية في موسم الخريف  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio25052017.mp3')">  حلقة عن دور الإدارة العامة للجمارك في المنافذ الحدودية  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio27042017.mp3')">  حلقة عن السلوكيات الخاطئة لمستخدمي الطريق  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio13042017.mp3')">  حلقة عن جهود الادارة العامة لمكافحة المخدرات والمؤثرات العقلية  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio30032017.mp3')">  حلقة عن اسبوع حرس الحدود خفر السواحل  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio16032017.mp3')"> حلقة عن اسبوع المرور لدول الخليج  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio02032017.mp3')"> اليوم العالمي للدفاع المدني  </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio02022017.mp3')">  جهود شرطه عمان السلطانيه في مهرجان مسقط </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio19012017.mp3')">  حلقة عن استعدادات شرطة عمان السلطانية لمهرجان مسقط</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio05012017.mp3')"> حلقة عن الخامس من يناير</a></li>
+
+                                    </ol>
                                 </div>
                             </div>
+
                         </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingFive">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Five" aria-expanded="false" aria-controls="collapse12Five">
+                                        حلقات 2016
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse12Five" class="collapse" aria-labelledby="collapse12HeadingFive" data-parent="#accordion12">
+                                <div class="card-body">
+
+                                    <ol>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio01012014.mp3')"> حلقة عن سرقة المنازل </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio12052016.mp3')">  حلقة عن السلامة المرورية للمركبات </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio28042016.mp3')">  حلقة عن الادارة العامه للسجون </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio14042016.mp3')">  حلقة عن حملة سياقة بدون هاتف </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio31032016.mp3')">  حلقة عن الابتزاز الالكتروني </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio17032016.mp3')"> حلقة عن اسبوع المرور الخليجي </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio03032016.mp3')"> حلقة عن فريق البحث والانقاذ </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio18022016.mp3')">  حلقة عن الجائزة الإلكترونية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio04022016.mp3')">  حلقة عن مخاطر فصل الشتاء </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio14012016.mp3')">  حلقة عن مهرجان مسقط </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio07012016.mp3')">  حلقة عن منجزات شرطية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio05012016.mp3')">  حلقة عن الخامس من يناير </a></li>
+
+                                    </ol>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingSix">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Six" aria-expanded="false" aria-controls="collapse12Six">
+                                        حلقات 2015
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse12Six" class="collapse" aria-labelledby="collapse12HeadingSix" data-parent="#accordion12">
+                                <div class="card-body">
+                                    <ol>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio17122015.mp3')"> حلقة عن النزيل الخليجي </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio26112015.mp3')">  حلقة عن الجائزة المرورية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio12112015.mp3')">  حلقة عن وحدة شرطة الخيالة</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio29102015.mp3')">  حلقة عن المخدرات</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio15102015.mp3')">  حلقة عن يوم المرأة</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio10092015.mp3')">  حلقة عن التسول</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio27082015.mp3')">  حلقة عن العودة إلى المدارس</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio13082015.mp3')">  حلقة عن خريف صلالة</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio30072015.mp3')">  حلقة عن الابتزاز الالكتروني</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio21052015.mp3')"> حلقة عن الجمارك</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio07052015.mp3')">  حلقة عن الإدارة العامة للمخدرات</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio23042015.mp3')">  حلقة عن غسيل الأموال</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio25032015.mp3')">  حلقة عن التطوير</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio25032015_2.mp3')">  حلقة عن السلامة المرورية</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio11032015.mp3')">  حلقة عن أسبوع المرور</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio22012015.mp3')">   حلقة عن مهرجان مسقط</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio14012015.mp3')">   حلقة عن مهرجان مسقط</a></li>
+
+                                    </ol>
+                                </div>
+                            </div>
 
 
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingSeven">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Seven" aria-expanded="false" aria-controls="collapse12Seven">
+                                        حلقات 2014      
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse12Seven" class="collapse" aria-labelledby="collapse12HeadingSeven" data-parent="#accordion12">
+                                <div class="card-body">
+
+                                    <ol>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio21122014.mp3')"> حلقة عن يوم النزيل </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio17092014.mp3')">  حلقة عن جهود وحدة الاسعاف </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio13092014.mp3')"> حلقة عن الوضع المروري في السلطنة</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio05082014.mp3')"> حلقة عن دور الشرطة في خريف صلالة</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio16062014.mp3')"> حلقة عن سرقة عملاء البنوك</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio04062014.mp3')"> حلقة عن اليوم العالمي للدفاع المدني</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio21052014.mp3')"> حلقة عن دور العلاقات العامة بشرطة عمان السلطانية</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio23042014.mp3')"> حلقة عن تقنيات المعلومات</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio09042014.mp3')"> حلقة عن خفر السواحل</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio26032014.mp3')"> حلقة عن المختبر الجنائي</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio12032014.mp3')"> حلقة اسبوع المرور الخليجي</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio12022014.mp3')"> حلقة افتتاح حلبة الكارتينج</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio30012014.mp3')">  حلقة عن مهرجان مسقط</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio22012014.mp3')">  حلقة عن مهرجان مسقط</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio05012014.mp3')">  حلقة خاصة بيوم شرطة عمان السلطانية</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio01012014.mp3')">  حلقة عن الأكاديمية</a></li>
+
+                                    </ol>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingEight">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Eight" aria-expanded="false" aria-controls="collapse12Eight">
+                                        حلقات2013
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapse12Eight" class="collapse" aria-labelledby="collapse12HeadingEight" data-parent="#accordion12">
+                                <div class="card-body">
+
+                                    <ol>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio18122013.mp3')"> حلقة سرقة المركبات </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio04122013.mp3')"> يوم النزيل </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio18112013.mp3')"> انجازات شرطية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio06112013.mp3')">الحملة الإعلامية وقاية وامان </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio30102013.mp3')">سرقة المنازل </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio16102013.mp3')">تدشين الاقسام الجغرافية للادارة العامة لمكافحة المخدرات </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio02102013.mp3')">البطاقات الإلكترونية </a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio18092013_2.mp3')">حلقه الخريف</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio18092013.mp3')">إنجازات الشرطة</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio19062013.mp3')"> المخدرات</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio22052013.mp3')"> مجلة العين الساهرة</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio08052013.mp3')"> خفر السواحل</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio09042013.mp3')"> التأشيرات</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio13022013.mp3')"> الحركة المرورية</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio16012013.mp3')"> مكافحة المخدرات</a></li>
+                                        <li> <a href="#" onclick="myfun('../ROP-Content/audios/Alainassahira/audio02012013.mp3')">إنجازات الشرطة</a></li>
+
+                                    </ol>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
 
                 </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+          
+
+                    <li class="list-group-item"> <a href="../../../media/News">@Resource.md1  </a></li>
+                    <li class="list-group-item"><a href="../../../media/Articles">@Resource.md2 </a></li>
+                    <li class="list-group-item"><a href="../../../media/Ropmagazine">@Resource.md4</a></li>
+                    <li class="list-group-item"><a href="../../../media/Ads">@Resource.md5</a></li>
+                    <li class="list-group-item"><a href="../../../media/KidsMagazin">@Resource.md6</a></li>
+                    <li class="list-group-item activelist"><a href="../../../media/AlainaAssahira">@Resource.md7</a></li>
+
+                </ul>
+
             </div>
 
 
@@ -158,18 +375,4 @@
 </div>
 
 
-<script>
-    function myfun(x) {
-        var audio = document.getElementById('audiotrack');
 
-        var source = document.getElementById('audioSource');
-        source.src = x;
-
-        audio.load(); //call this to just preload the audio without playing
-        audio.play(); //call this to play the song right away
-    }
-        /***********************************************/
-
-
-
-</script>

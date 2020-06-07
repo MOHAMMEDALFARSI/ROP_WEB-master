@@ -13,19 +13,32 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
+
+    var url = Request.Url.ToString();
+}
+
 @using ROP_WEB.Res
-@using System.Threading;
 
 
-<div class="container TopicStyle">
+
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
-                    <li class="breadcrumb-item"><a href="#">@Resource.contact</a></li>
+                    <li class="breadcrumb-item">@Resource.contact</li>
                     <li class="breadcrumb-item active">@Resource.ropphones </li>
+                    <li class="readspeakercls">
+                        <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
+                                <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
+                                <span class="rsbtn_right rsimg rsplay rspart"></span>
+                            </a>
+                        </div>
+                    </li>
                 </ol>
             </nav>
         </div>
@@ -33,155 +46,142 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item"> <a href="#">@Resource.contact  </a></li>
-                    <li class="list-group-item activelist"><a href="#">@Resource.ropphones </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.worktime </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.faq </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.survey </a></li>
 
-
-                </ul>
-
-            </div>
             <div class="col-md-8">
 
-                <div class="jumbotron">
-                    <p>  </p>
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
+                    <h3>@Resource.ropphones</h3>
 
 
 
-                    <div id="accordion" role="tablist" aria-multiselectable="true">
-
-
-
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
-                                <h5 class="mb-0">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        للأستفسار عن خدمات الشرطة
+                    <div class="accordion" id="accordion12">
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingOne">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12One" aria-expanded="true" aria-controls="collapse12One">
+                                        @Resource.ropserv
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-
-                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-
-                                <div class="card-block">
-                                    <table class="table table-bordered">
+                            <div id="collapse12One" class="collapse show" aria-labelledby="collapse12HeadingOne" data-parent="#accordion12">
+                                <div class="card-body">
+                                    <table class="table table-bordered table-hover table-responsive-lg table-striped">
 
                                         <tbody>
                                             <tr>
 
                                                 <th>
-                                                    الإدارة
+                                                    @Resource.mngtname
                                                 </th>
                                                 <th>
-                                                    رقم الهاتف
+                                                    @Resource.phonenum
                                                 </th>
 
                                             </tr>
                                             <tr>
 
-                                                <td>GEnral dirictory of trafics trafics trafics</td>
+                                                <td>خدمات المرور</td>
                                                 <td> <a href="#">99999999</a></td>
                                             </tr>
                                             <tr>
 
-                                                <td> خدمات الادارة العامة للجوازات والإقامة</td>
+                                                <td> خدمات الجوازات والإقامة</td>
                                                 <td> <a href="#">99999999</a></td>
                                             </tr>
                                             <tr>
 
-                                                <td> مكافحة الجرائم الاقتصادية (الابتزاز و الاحتيال الإلكتروني)</td>
+                                                <td> الخط الساخن للتحريات والتحقيقات الجنائية</td>
+                                                <td> <a href="#">99999999</a></td>
+                                            </tr>
+                                            <tr>
+
+                                                <td> خدمات الأحوال المدنية للمواطنين</td>
+                                                <td> <a href="#">99999999</a></td>
+                                            </tr>
+
+                                            <tr>
+
+                                                <td> خدمات الأحوال المدنية للمقيمين</td>
+                                                <td> <a href="#">99999999</a></td>
+                                            </tr>
+                                            <tr>
+
+                                                <td> خدمات الجمارك</td>
+                                                <td> <a href="#">99999999</a></td>
+                                            </tr>
+                                            <tr>
+
+                                                <td> مكافحة الجرائم الأقتصادية</td>
                                                 <td> <a href="#">99999999</a></td>
                                             </tr>
 
                                         </tbody>
                                     </table>
-
-
-
                                 </div>
-
                             </div>
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <a onclick="getStationListdef()" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        القيادات الجغرافية
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingTwo">
+                                <h4 class="card-title m-0">
+                                    <a onclick="getStationListdef()" class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Two" aria-expanded="false" aria-controls="collapse12Two">
+                                        @Resource.RegionalPoliceHeadquarters
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="card-block">
+                            <div id="collapse12Two" class="collapse" aria-labelledby="collapse12HeadingTwo" data-parent="#accordion12">
+                                <div class="card-body">
                                     <div class="form-group">
-                                        <label for="sel1">إختر المحافظة : </label>
-                                        <select class="form-control" id="RegionsDropDown" onchange = "getStationList()"  >
-                                            <option value="RopPhones_MCT">RopPhones_MCT</option>
-                                            <option value="RopPhones_Buraimi">RopPhones_Buraimi</option>
-                                            <option value="RopPhones_Dahirah">RopPhones_Dahirah</option>
-                                            <option value="RopPhones_Dakiliyah">RopPhones_Dakiliyah</option>
-                                            <option value="RopPhones_Dhofar">RopPhones_Dhofar</option>
-                                            <option value="RopPhones_MCT">RopPhones_MCT</option>
-                                            <option value="RopPhones_Musandam">RopPhones_Musandam</option>
-                                            <option value="RopPhones_Sharqiyah_North">RopPhones_Sharqiyah_North</option>
-                                            <option value="RopPhones_Sharqiyah_South">RopPhones_Sharqiyah_South</option>
-                                            <option value="RopPhones_Wusta">RopPhones_Wusta</option>
+                                        <label for="sel1">@Resource.selectregion </label>
+                                        <select class="form-control" id="RegionsDropDown" onchange="getStationList()">
+                                            <option value="RopPhones_MCT">@Resource.mct</option>
+                                            <option value="RopPhones_Batinah_North">@Resource.btnn</option>
+                                            <option value="RopPhones_Batinah_South">@Resource.btns</option>
+                                            <option value="RopPhones_Buraimi">@Resource.brimi</option>
+                                            <option value="RopPhones_Dahirah">@Resource.dhira</option>
+                                            <option value="RopPhones_Dakiliyah">@Resource.dhk</option>
+                                            <option value="RopPhones_Dhofar">@Resource.dofr</option>
+                                            <option value="RopPhones_Musandam">@Resource.musndam</option>
+                                            <option value="RopPhones_Sharqiyah_North">@Resource.shrkian</option>
+                                            <option value="RopPhones_Sharqiyah_South">@Resource.shrkias</option>
+                                            <option value="RopPhones_Wusta">@Resource.wsta</option>
                                         </select>
                                     </div>
-                                    <table class="table table-bordered" id="stationstbl">
-
-                                        <tbody>
-                                           
-                                        </tbody>
+                                    <table class="table table-bordered table-striped" id="stationstbl">
+                                        <tbody></tbody>
+                                       
                                     </table>
                                 </div>
                             </div>
-
-
-
-
-
-
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingThree">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        القيادات التخصصية
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingThree">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Three" aria-expanded="false" aria-controls="collapse12Three">
+                                        @Resource.SpecializedDirectorates
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="card-block">
-
+                            <div id="collapse12Three" class="collapse" aria-labelledby="collapse12HeadingThree" data-parent="#accordion12">
+                                <div class="card-body">
                                     <table class="table table-bordered">
 
                                         <tbody>
                                             <tr>
-                                                
+
                                                 <th>
-                                                    المسمى
+                                                    @Resource.mngtname
                                                 </th>
                                                 <th>
-                                                    رقم الهاتف
+                                                    @Resource.phonenum
                                                 </th>
 
                                             </tr>
                                             <tr>
-                                                
+
                                                 <td> aaa</td>
                                                 <td> <a href="#">999</a></td>
                                             </tr>
@@ -190,71 +190,59 @@
                                     </table>
                                 </div>
                             </div>
-
-
-
-
-
-
                         </div>
 
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingFour">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        الإدارات العامة
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingFour">
+                                <h4 class="card-title m-0">
+                                    <a onclick="getDirectorateGenerallistdef()" class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Four" aria-expanded="false" aria-controls="collapse12Four">
+                                        @Resource.GeneralDirectorate
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="card-block">
+                            <div id="collapse12Four" class="collapse" aria-labelledby="collapse12HeadingFour" data-parent="#accordion12">
+                                <div class="card-body">
+
                                     <div class="form-group">
-                                        <label for="sel1">إختر الإدارة : </label>
-                                        <select class="form-control" id="sel1">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
+                                        <label for="sel1">@Resource.Choosedir </label>
+                                        <select class="form-control" id="GDDropDown" onchange="getDirectorateGenerallist()">
+                                            <option value="DirectorateGeneral/Traffic">@Resource.Traffic</option>
+                                            <option value="DirectorateGeneral/Airport_Security">@Resource.AirportSecurity</option>
+                                            <option value="DirectorateGeneral/Customs">@Resource.Customs</option>
+                                            <option value="DirectorateGeneral/Passport_and_Residence">@Resource.PassportandResidences</option>
+                                            <option value="DirectorateGeneral/General_of_Civil_Status">@Resource.CivilStatus</option>
+                                            <option value="DirectorateGeneral/Transport">@Resource.Transport</option>
+                                            <option value="DirectorateGeneral/Others">Others</option>
+
                                         </select>
                                     </div>
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered table-striped" id="GDstbl">
 
                                         <tbody>
-                                            <tr>
-                                               
-                                                <th>
-                                                    المسمى
-                                                </th>
-                                                <th>
-                                                    رقم الهاتف
-                                                </th>
-
-                                            </tr>
-                                            <tr>
-                                               
-                                                <td> aa</td>
-                                                <td> <a href="#">999</a></td>
-                                            </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-
-
-
-
-
-
                         </div>
-
                     </div>
+
 
 
                 </div>
             </div>
 
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item"> <a href="../../../contact/ContactUs">@Resource.contactuspage  </a></li>
+                    <li class="list-group-item activelist"><a href="../../../contact/ropphones">@Resource.ropphones </a></li>
+                    <li class="list-group-item"><a href="../../../contact/workTimes">@Resource.worktime </a></li>
+                    <li class="list-group-item"><a href="../../../contact/FAQ">@Resource.faq </a></li>
+                    <li class="list-group-item"><a href="../../../contact/Survey">@Resource.survey </a></li>
 
+
+                </ul>
+
+            </div>
 
         </div>
     </div>
@@ -264,7 +252,7 @@
 
     function getStationListdef() {
 
-      
+
         var region = "RopPhones_MCT";
 
 
@@ -278,12 +266,12 @@
                 region: region
             }),
             success: function (result) {
-                $("#stationstbl").html("");
-                $("#stationstbl").append("<tr><th>المسمى</th> <th>رقم الهاتف</th> </tr>");
-
+                $("#stationstbl tbody").html("");
+                $("#stationstbl tbody").append("<tr><th>@Resource.mngtname</th> <th>@Resource.phonenum</th> </tr>");
+              
                 $.each($.parseJSON(result), function (i, data) {
 
-                    $("#stationstbl").append("<tr><td>" + data.StationAr + "</td><td>" + data.StationPhone + "</td></tr>");
+                    $("#stationstbl tbody").append(" <tr><td>" + data.StationAr + "</td><td>" + data.StationPhone + "</td></tr>");
                 })
 
             },
@@ -293,11 +281,11 @@
         });
     }
     function getStationList() {
-       
+
 
             var region = $("#RegionsDropDown").val();
-       
-   
+
+
         $.ajax
         ({
             url: '/Contact/GetStations',
@@ -307,17 +295,80 @@
             data: JSON.stringify({
                 region:  region
             }),
-            
+
             success: function (result) {
-               $("#stationstbl").html("");
-               $("#stationstbl").append("<tr><th>المسمى</th> <th>رقم الهاتف</th> </tr>");
+               $("#stationstbl tbody").html("");
+               $("#stationstbl tbody").append("<tr><th>@Resource.mngtname</th> <th>@Resource.phonenum</th> </tr>");
+              
+               $.each($.parseJSON(result), function (i, data) {
+
+                    $("#stationstbl tbody").append(" <tr><td>" + data.StationAr + "</td><td>" + data.StationPhone + "</td></tr>");
+                 })
+
+
+            },
+            error: function () {
+                 // alert("Whooaaa! Something went wrong..")
+             },
+        });
+    }
+
+    function getDirectorateGenerallistdef() {
+
+
+        var region = "DirectorateGeneral/Traffic";
+
+
+        $.ajax
+        ({
+            url: '/Contact/GetStations',
+            type: 'POST',
+            datatype: 'application/json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                region: region
+            }),
+            success: function (result) {
+                $("#GDstbl tbody").html("");
+                $("#GDstbl tbody").append("<tr><th>@Resource.mngtname</th> <th>@Resource.phonenum</th> </tr>");
+
+                $.each($.parseJSON(result), function (i, data) {
+
+                    $("#GDstbl tbody").append("<tr><td>" + data.StationAr + "</td><td>" + data.StationPhone + "</td></tr>");
+                })
+
+            },
+            error: function () {
+                // alert("Whooaaa! Something went wrong..")
+            },
+        });
+    }
+    function getDirectorateGenerallist() {
+
+
+            var region = $("#GDDropDown").val();
+
+
+        $.ajax
+        ({
+            url: '/Contact/GetStations',
+            type: 'POST',
+            datatype: 'application/json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                region:  region
+            }),
+
+            success: function (result) {
+               $("#GDstbl tbody").html("");
+               $("#GDstbl tbody").append("<tr><th>@Resource.mngtname</th> <th>@Resource.phonenum</th> </tr>");
 
                $.each($.parseJSON(result), function (i, data) {
 
-                    $("#stationstbl").append("<tr><td>" + data.StationAr + "</td><td>" + data.StationPhone + "</td></tr>");
+                    $("#GDstbl tbody").append("<tr><td>" + data.StationAr + "</td><td>" + data.StationPhone + "</td></tr>");
                  })
- 
-            
+
+
             },
             error: function () {
                  // alert("Whooaaa! Something went wrong..")

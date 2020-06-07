@@ -13,11 +13,16 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
+
+    var url = Request.Url.ToString();
+}
+
 @using ROP_WEB.Res
 
 <script src="~/Content/plugins/gallery.js"></script>
 <link href="~/Content/plugins/gallery.css" rel="stylesheet" />
-<div class="container TopicStyle">
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
@@ -28,7 +33,7 @@
                     <li class="breadcrumb-item active">@Resource.md3  </li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -41,36 +46,26 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item activelist"> <a href="#">@Resource.md3  </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.md1 </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.md4</a></li>
-                    <li class="list-group-item"><a href="#">@Resource.md6</a></li>
-                    <li class="list-group-item"><a href="#">@Resource.md7</a></li>
 
-                </ul>
-
-            </div>
             <div class="col-md-8">
 
                 <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3>  @Resource.md3 </h3>
                     @*<div class="dropdownlist">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                إختر تصنيف الصورة
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">الإدارة العامة للمرور</a>
-                <a class="dropdown-item" href="#">إدارة طيران الشرطة</a>
-                <a class="dropdown-item" href="#">الإدارة العامة لتقنية المعلومات</a>
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                إختر تصنيف الصورة
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">الإدارة العامة للمرور</a>
+                                <a class="dropdown-item" href="#">إدارة طيران الشرطة</a>
+                                <a class="dropdown-item" href="#">الإدارة العامة لتقنية المعلومات</a>
 
-            </div>
-        </div>*@
+                            </div>
+                        </div>*@
 
                     <div class="form-group">
                         <label for="sel1"> @Resource.photoselect</label>
@@ -108,22 +103,33 @@
                         </ul>
 
                         @*<div class="fg-gallery ns">
-                <img src="~/Content/images/home_slider_1.jpg" />
+                                <img src="~/Content/images/home_slider_1.jpg" />
 
-                <img src="~/Content/images/index.png" />
-                <img src="~/Content/images/home_slider_1.jpg" />
+                                <img src="~/Content/images/index.png" />
+                                <img src="~/Content/images/home_slider_1.jpg" />
 
-                <img src="~/Content/images/index.png" />
-                <img src="~/Content/images/home_slider_1.jpg" />
+                                <img src="~/Content/images/index.png" />
+                                <img src="~/Content/images/home_slider_1.jpg" />
 
-                <img src="~/Content/images/index.png" />
-            </div>*@
+                                <img src="~/Content/images/index.png" />
+                            </div>*@
 
                     </div>
 
 
 
                 </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item activelist"> <a href="#">@Resource.md3  </a></li>
+                    <li class="list-group-item "><a href="#">@Resource.md1 </a></li>
+                    <li class="list-group-item"><a href="#">@Resource.md4</a></li>
+                    <li class="list-group-item"><a href="#">@Resource.md6</a></li>
+                    <li class="list-group-item"><a href="#">@Resource.md7</a></li>
+
+                </ul>
+
             </div>
 
 

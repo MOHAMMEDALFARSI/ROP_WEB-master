@@ -1,11 +1,16 @@
-﻿
+﻿@using ROP_WEB.Res
+@using ROP_WEB.Models
+@model ViewModel
 @section PageTitle {
     @Resource.title
 }
-@section styles {
-    <link href="@Url.Content("~/content/icons/styles.css")" rel="stylesheet" />
+<!-- Current Page CSS -->
+<link rel="stylesheet" href="~/Assets/vendor/rs-plugin/css/settings.css">
+<link rel="stylesheet" href="~/Assets/vendor/rs-plugin/css/layers.css">
+<link rel="stylesheet" href="~/Assets/vendor/rs-plugin/css/navigation.css">
 
-}
+<link rel="stylesheet" href="~/Assets/css/fonts/NewIcons/style.css">
+
 
 @section arurl{
     <a href="@Url.Action("GetLang", "Home", new { lang = "ar-OM", view="index"}  )">
@@ -19,656 +24,411 @@
     </a>
 }
 
-@section index{
-    <script>
+<div class="slider-container rev_slider_wrapper" style="height: 700px;">
+    <div id="revolutionSlider" class="slider rev_slider" data-version="5.4.8" data-plugin-revolution-slider data-plugin-options="{'delay': 5000, 'gridwidth': 1170, 'gridheight': 700, 'responsiveLevels': [4096,1200,992,500], 'navigation' : {'arrows': { 'enable': ture }, 'bullets': {'enable': false, 'style': 'bullets-style-1', 'h_align': 'center', 'v_align': 'bottom', 'space': 7, 'v_offset': 70, 'h_offset': 0}}}">
+        <ul>
+            <!-- <li data-transition="fade" class="slide-overlay slide-overlay-level-8">
+                <img src="img/slides/C8TfkQNXkAAd6th.jpg"
+                    alt=""
+                    data-bgposition="center center"
+                    data-bgfit="cover"
+                    data-bgrepeat="no-repeat"
+                    class="rev-slidebg">
+
+                <div class="tp-caption"
+                    data-x="center" data-hoffset="['-115','-115','-115','-185']"
+                    data-y="center" data-voffset="['-110','-110','-110','-135']"
+                    data-start="1000"
+                    data-transform_in="x:[-300%];opacity:0;s:500;"
+                    data-transform_idle="opacity:0.2;s:500;"><img src="img/slides/slide-title-border.png" alt=""></div>
+
+                <div class="tp-caption text-color-light font-weight-normal"
+                    data-x="center"
+                    data-y="center" data-voffset="['-110','-110','-110','-135']"
+                    data-start="700"
+                    data-fontsize="['22','22','22','40']"
+                    data-lineheight="['25','25','25','45']"
+                    data-transform_in="y:[-50%];opacity:0;s:500;">HELLO, THIS IS</div>
+
+                <div class="tp-caption"
+                    data-x="center" data-hoffset="['115','115','115','185']"
+                    data-y="center" data-voffset="['-110','-110','-110','-135']"
+                    data-start="1000"
+                    data-transform_in="x:[300%];opacity:0;s:500;"
+                    data-transform_idle="opacity:0.2;s:500;"><img src="img/slides/slide-title-border.png" alt=""></div>
+
+                <div class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+                    data-frames='[{"delay":1000,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                    data-x="center"
+                    data-y="center" data-voffset="['-60','-60','-60','-85']"
+                    data-fontsize="['50','50','50','90']"
+                    data-lineheight="['55','55','55','95']">PORTO HTML TEMPLATE</div>
+
+                <div class="tp-caption font-weight-light text-center"
+                    data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                    data-x="center"
+                    data-y="center" data-voffset="['-10','-10','-10','-25']"
+                    data-fontsize="['18','18','18','50']"
+                    data-lineheight="['29','29','29','40']"
+                    style="color: #b5b5b5;">Trusted by over <strong>30,000</strong> satisfied users.</div>
+
+                <a class="tp-caption btn btn-light-2 btn-outline font-weight-semibold"
+                    data-frames='[{"delay":2500,"speed":2000,"frame":"0","from":"opacity:0;y:50%;","to":"o:1;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                    data-hash
+                    data-hash-offset="85"
+                    href="#main"
+                    data-x="center" data-hoffset="0"
+                    data-y="center" data-voffset="['70','70','70','45']"
+                    data-whitespace="nowrap"
+                    data-fontsize="['15','15','15','33']"
+                    data-paddingtop="['15','15','15','40']"
+                    data-paddingright="['45','45','45','110']"
+                    data-paddingbottom="['15','15','15','40']"
+                    data-paddingleft="['45','45','45','110']">GET STARTED NOW!</a>
+
+            </li> -->
+            <li class="slide-overlay" data-transition="fade">
+                <img src="~/Assets/img/slides/C8TfkQNXkAAd6th.jpg"
+                     alt=""
+                     data-bgposition="center center"
+                     data-bgfit="cover"
+                     data-bgrepeat="no-repeat"
+                     class="rev-slidebg">
+
+                <h1 class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+                    data-frames='[{"delay":500,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                    data-x="center"
+                    data-y="center" data-voffset="['-55','-55','-55','-55']"
+                    data-fontsize="['50','50','50','90']"
+                    data-lineheight="['55','55','55','95']"
+                    data-letterspacing="-1">
+                    ROP Mobile Service App
+                </h1>
+
+                <div class="tp-caption font-weight-light text-center"
+                     data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                     data-x="center"
+                     data-y="center" data-voffset="['-5','-5','-5','15']"
+                     data-fontsize="['20','20','20','20']"
+                     data-lineheight="['20','20','20','40']"
+                     style="color: #b5b5b5;">New Interface with New Features</div>
+
+                <a class="tp-caption btn btn-light-2 btn-outline font-weight-semibold"
+                   data-frames='[{"delay":2500,"speed":2000,"frame":"0","from":"opacity:0;y:50%;","to":"o:1;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                   data-hash
+                   data-hash-offset="85"
+                   href="#main"
+                   data-x="center" data-hoffset="0"
+                   data-y="center" data-voffset="['65','65','65','105']"
+                   data-whitespace="nowrap"
+                   data-fontsize="['18','18','18','35']"
+                   data-paddingtop="['15','15','15','40']"
+                   data-paddingright="['45','45','45','110']"
+                   data-paddingbottom="['15','15','15','40']"
+                   data-paddingleft="['45','45','45','110']">Downlaod Page </a>
 
 
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            navText: [
-                "<i class='fa fa-caret-left'></i>",
-                "<i class='fa fa-caret-right'></i>"
-            ],
-            autoplay: true,
-            autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 2
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
-                }
+            </li>
+            <li class="slide-overlay" data-transition="fade">
+                <img src="~/Assets/img/slides/video_en_1.jpg"
+                     alt=""
+                     data-bgposition="center center"
+                     data-bgfit="cover"
+                     data-bgrepeat="no-repeat"
+                     class="rev-slidebg">
+
+                <h1 class="tp-caption font-weight-extra-bold text-color-light negative-ls-2"
+                    data-frames='[{"delay":500,"speed":2000,"frame":"0","from":"sX:1.5;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                    data-x="center"
+                    data-y="center" data-voffset="['-55','-55','-55','-55']"
+                    data-fontsize="['50','50','50','60']"
+                    data-lineheight="['55','55','55','95']"
+                    data-letterspacing="-1">
+                    خدمة إستيفاء الغرامات عند مغادرة السلطنة
+                </h1>
+
+                <div class="tp-caption font-weight-light text-center"
+                     data-frames='[{"from":"opacity:0;","speed":300,"to":"o:1;","delay":2000,"split":"chars","splitdelay":0.05,"ease":"Power2.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                     data-x="center"
+                     data-y="center" data-voffset="['-5','-5','-5','15']"
+                     data-fontsize="['18','18','18','35']"
+                     data-lineheight="['20','20','20','40']"
+                     style="color: #b5b5b5;"></div>
+
+                <a class="tp-caption btn btn-light-2 btn-outline font-weight-semibold"
+                   data-frames='[{"delay":2500,"speed":2000,"frame":"0","from":"opacity:0;y:50%;","to":"o:1;y:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"}]'
+                   data-hash
+                   data-hash-offset="85"
+                   href="#main"
+                   data-x="center" data-hoffset="0"
+                   data-y="center" data-voffset="['65','65','65','105']"
+                   data-whitespace="nowrap"
+                   data-fontsize="['18','18','18','35']"
+                   data-paddingtop="['15','15','15','40']"
+                   data-paddingright="['45','45','45','110']"
+                   data-paddingbottom="['15','15','15','40']"
+                   data-paddingleft="['45','45','45','110']">Use Service </a>
+
+
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row py-2 my-2">
+
+        <div class="col-lg-12 mt-5 mt-lg-0">
+            <h2 class="font-weight-normal text-6 pb-2 mb-4"><strong class="font-weight-extra-bold">@Resource.tabcom </strong></h2>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+                    <div class="feature-box feature-box-style-2">
+                        <span style="font-size:50px; " class="icon-payfine text-color-primary"></span>
+
+                        <div class="feature-box-info">
+                            <a href="https://www.rop.gov.om/OnlineServices/eTraffic/@Resource.arabicenglish/default.aspx">
+                                <h4 class="font-weight-bold mb-2">  @Resource.trafficfines</h4>
+                                <p class="mb-0">@Resource.descfine  </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4 mb-lg-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400">
+                    <div class="feature-box feature-box-style-2">
+                        <span style="font-size:50px; " class="icon-renew text-color-primary"></span>
+
+                        <div class="feature-box-info">
+                            <a href="https://www.rop.gov.om/OnlineServices/eTraffic/@Resource.arabicenglish/RenewVehicleRegistration.aspx">
+                                <h4 class="font-weight-bold mb-2"> @Resource.vehicleregistration</h4>
+                                <p class="mb-0">@Resource.descrenw</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+                    <div class="feature-box feature-box-style-2">
+                        <span style="font-size:50px; " class="icon-elecvisa text-color-primary"></span>
+
+                        <div class="feature-box-info">
+                            <a href="https://www.rop.gov.om/onlineservices/evisa/@Resource.aren/default.aspx">
+                                <h4 class="font-weight-bold mb-2">@Resource.visa</h4>
+                                <p class="mb-0">@Resource.descvisa</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4 mb-lg-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400">
+                    <div class="feature-box feature-box-style-2">
+                        <span style="font-size:50px; " class="icon-finalexit text-color-primary"></span>
+                        <div class="feature-box-info">
+                            <a href="https://www.rop.gov.om/onlineservices/ExitPenaltyPayment/@Resource.aren/">
+                                <h4 class="font-weight-bold mb-2">@Resource.finalexit</h4>
+                                <p class="mb-0">@Resource.descfinalexit</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200">
+                    <div class="feature-box feature-box-style-2">
+                        <span style="font-size:50px; " class="icon-evisa text-color-primary"></span>
+                        <div class="feature-box-info">
+                            <a href="https://evisa.rop.gov.om/@Resource.aren/home">
+                                <h4 class="font-weight-bold mb-2"> @Resource.evisa</h4>
+                                <p class="mb-0"> @Resource.descevisa</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4 mb-lg-5 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="400">
+                    <div class="feature-box feature-box-style-2">
+                        <span style="font-size:50px; " class="icon-chkvisastatus text-color-primary"></span>
+                        <div class="feature-box-info">
+                            <a href="https://www.rop.gov.om/VisaAppStatus/@Resource.arabicenglish/">
+                                <h4 class="font-weight-bold mb-2">   @Resource.visastatus</h4>
+                                <p class="mb-0">@Resource.desvvisastatus</p>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
+                        <span style="font-size:50px; " class="icon-profileupdate text-color-primary"></span>
+                        <div class="feature-box-info">
+                            <a href="https://idpsp.rop.gov.om/login.jsp?app=ROP_eServices_@Resource.aren">
+                                <h4 class="font-weight-bold mb-2"> @Resource.updatecivil</h4>
+                                <p class="mb-0"> @Resource.desccsup</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="600">
+                        
+                           <span style="font-size:50px; " class="icon-edoc text-color-primary"></span>
+                      
+                        <div class="feature-box-info">
+                            <a href="https://www.rop.gov.om/onlineservices/verify/@Resource.arabicenglish/default.aspx">
+                                <h4 class="font-weight-bold mb-2">@Resource.ecs</h4>
+                                <p class="mb-0">@Resource.descecs</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+@if (Model.News.Count() >= 1)
+{
+
+    <div class="container">
+        <div class="row pt-5 mt-4">
+            <div class="col">
+                <h2 class="font-weight-normal text-6 mb-4"><strong class="font-weight-extra-bold">@Resource.newh</strong> </h2>
+            </div>
+        </div>
+        <div class="row recent-posts pb-5 mb-4">
+            @foreach (var item in Model.News)
+            {
+
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <article>
+                        <div class="row">
+                            <div class="col-auto pr-0">
+                                <div class="date">
+                                    @{
+
+                                        DateTime datevalue = item.NewsDate.Value;
+
+                                        String dy = datevalue.Day.ToString();
+                                        String mn = datevalue.Month.ToString();
+
+                                        int month = Int32.Parse(mn);
+
+                                        string strMonth = new DateTime(2002, month, 01).ToString("MMM", new System.Globalization.CultureInfo("en")).ToUpper();
+                                    }
+                                    <span class="day text-color-dark font-weight-extra-bold">@dy</span>
+                                    <span class="month text-1">@strMonth</span>
+                                </div>
+                            </div>
+                            <div class="col pl-1">
+                                <h4 class="line-height-3 text-4"><a href="blog-post.html" class="text-dark">@item.Title</a></h4>
+                                <p class="line-height-5 pr-4 mb-1">@item.Synopsis</p>
+                                <a href="@Url.Action("NewsDetails", "Media", new { cat = @item.NewsCategory.CategoryE.Replace(" ", "-"), id = @item.NewsID })" class="read-more text-color-dark font-weight-bold text-2">@Resource.readmore <i class="fas fa-chevron-@Resource.alig text-1 ml-1"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
             }
-        })
-    </script>
+
+        </div>
+    </div>
 }
 
 
+@if (Model.Ads.Count() >= 1)
+{
 
-@using ROP_WEB.Res
+    <section class="section section-height-0 section-text-light bg-color-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn">
 
-@model IEnumerable<ROP_WEB.Models.Slider>
+        <div class="container">
 
-<div class="container sectionA wow fadeInDown animated" data-wow-duration="900ms" data-wow-delay="100ms">
+            <div class="row">
+                <div class="col-lg-12 mt-0 mt-lg-0">
 
-    <div class="row">
+                    <div class="col appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+                        <h2><strong>@Resource.adsrop</strong></h2>
+                        <div class="owl-carousel owl-theme nav-bottom rounded-nav mb-0" data-plugin-options="{'items': 1, 'loop': false, 'autoHeight': true}">
 
-        <div class="col-sm-8 sliderstyle">
-            <!-- Home -->
-            <div id="carouselExampleControls" class="carousel slide caroide" data-ride="carousel">
-                <div class="carousel-inner">
+                            @foreach (var item in Model.Ads)
+                            {
 
-                    @foreach (var item in Model)
-                    {
-                        if (item.SlideId == 1)
-                        {
-                            <div class="carousel-item active">
-
-                                <a href="@item.SlideUrl"><img class="d-block w-100" src="~/ROP-Content/images/@item.SlideImg" alt="@item.SlideAlt"></a>
-
-
-
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="carousel-item">
-
-                                <a href="@item.SlideUrl"><img class="d-block w-100" src="~/ROP-Content/images/@item.SlideImg" alt="@item.SlideAlt"></a>
-
-
-
-                            </div>
-                        }
-
-                    }
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-
-
-
-        </div>
-        <div class="col" id="news">
-
-            <div class="row bor">
-
-                <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            @*<div class="grident"> </div>*@
-                            <img class="d-block w-100" src="~/Content/images/news0.jpg" alt="First slide">
-                            <div class="carousel-caption">
-
-                                <p>انطلاق بطولة شرطة عمان السلطانية لكرة اليد لعام 2019م</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-
-                            <div class="grident"> </div>
-                            <img class="d-block w-100" src="~/Content/images/news0.jpg" alt="second slide">
-                            <div class="carousel-caption">
-
-                                <p>انطلاق بطولة شرطة عمان السلطانية لكرة اليد لعام 2019م</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            @*<div class="grident"> </div>*@
-                            <img class="d-block w-100" src="~/Content/images/news0.jpg" alt="third slide">
-                            <div class="carousel-caption">
-
-                                <p>انطلاق بطولة شرطة عمان السلطانية لكرة اليد لعام 2019م</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                    <div style=" padding-top:5px">   <p><i class="fa fa-arrow-@Resource.rightleft"></i>  @Resource.morenews</p></div>
-                </div>
-
-            </div>
-            <div class="row bor" style="margin-top:2px;">
-
-                <div id="carouselExampleControls3" class="carousel slide" data-ride="carousel" style="width:100%">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="grident"> </div>
-                            <img class="d-block w-100" src="~/Content/images/news0.jpg" alt="First slide">
-                            <div class="carousel-caption">
-
-                                <p>االنسخة الرابعة من مسابقة السلامة المرورية... التفاصيل</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="grident"> </div>
-                            <img class="d-block w-100" src="~/Content/images/news0.jpg" alt="second slide">
-                            <div class="carousel-caption">
-
-                                <p>انطلاق بطولة شرطة عمان السلطانية لكرة اليد لعام 2019م</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="grident"> </div>
-                            <img class="d-block w-100" src="~/Content/images/news0.jpg" alt="third slide">
-                            <div class="carousel-caption">
-
-                                <p>انطلاق بطولة شرطة عمان السلطانية لكرة اليد لعام 2019م</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls3" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls3" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                    <div style="padding-top:9px">  <p> <i class="fa fa-arrow-@Resource.rightleft"></i> @Resource.moreads</p>  </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="carousel-wrap fadeInDown animated tabcon" data-wow-duration="900ms" data-wow-delay="100ms">
-    <h4>أكثر الخدمات إستخداما    </h4>
-    <div class="owl-carousel">
-        <div class="item">
-
-            <div class="square-service-block">
-                <a href="#">
-                    <div class="ssb-icon">
-                        <i class="iconf fa icon-pay"
-                           aria-hidden="true"></i>
-                    </div>
-                    <h2 class="ssb-title">دفع المخالفات المرورية</h2>
-                    <p>
-
-                    </p>
-
-                </a>
-            </div>
-
-        </div>
-        <div class="item">
-
-            <div class="square-service-block">
-                <a href="#">
-                    <div class="ssb-icon">
-                        <i class="iconf fa icon-carreg"
-                           aria-hidden="true"></i>
-                    </div>
-                    <h2 class="ssb-title">تجديد سجل مركبة</h2>
-                    <p>
-
-                    </p>
-
-                </a>
-            </div>
-
-        </div>
-        <div class="item">
-
-            <div class="square-service-block">
-                <a href="#">
-                    <div class="ssb-icon">
-                        <i class="iconf fa icon-carreg"
-                           aria-hidden="true"></i>
-                    </div>
-                    <h2 class="ssb-title">تتبع حالة طلب التأشيرة</h2>
-                    <p>
-
-                    </p>
-
-                </a>
-            </div>
-
-        </div>
-        <div class="item">
-
-            <div class="square-service-block">
-                <a href="#">
-                    <div class="ssb-icon">
-                        <i class="iconf fa icon-certificate"
-                           aria-hidden="true"></i>
-                    </div>
-                    <h2 class="ssb-title">تحقق من صحة بيانات شهادة عدم المحكومية</h2>
-                    <p>
-
-                    </p>
-
-                </a>
-            </div>
-
-        </div>
-        <div class="item">
-
-            <div class="square-service-block">
-                <a href="#">
-                    <div class="ssb-icon">
-                        <i class="iconf fa icon-certificate"
-                           aria-hidden="true"></i>
-                    </div>
-                    <h2 class="ssb-title">تتبع حالة طلب التأشيرة</h2>
-                    <p>
-
-                    </p>
-
-                </a>
-            </div>
-
-        </div>
-        <div class="item">
-
-            <div class="square-service-block">
-                <a href="#">
-                    <div class="ssb-icon">
-                        <i class="iconf fa fa-circle"
-                           aria-hidden="true"></i>
-                    </div>
-                    <h2 class="ssb-title"> الخدمات الجمركية</h2>
-                    <p>
-
-                    </p>
-
-                </a>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="row TabSec wow zoomIn animated" data-wow-duration="900ms" data-wow-delay="600ms">
-
-
-    <div class="col">
-
-
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="services" role="tabpanel"
-                 aria-labelledby="tab1-tab" style="width: 100%;">
-                <div class="container-fluid">
-
-                    <div class="my-5 text-center container" style="background:#ffff">
-                        <h4 style="text-align:@Resource.right"> @Resource.tabcom</h4>
-                        <div class="row d-flex align-items-center">
-
-                            <div class="col-1 d-flex align-items-center justify-content-center">
-                                <a href="#carouselExampleIndicators" role="button" data-slide="prev" dir="ltr">
-                                    <div class="carousel-nav-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <path fill="#004B8F" d="m88.6,121.3c0.8,0.8 1.8,1.2 2.9,1.2s2.1-0.4 2.9-1.2c1.6-1.6 1.6-4.2 0-5.8l-51-51 51-51c1.6-1.6 1.6-4.2 0-5.8s-4.2-1.6-5.8,0l-54,53.9c-1.6,1.6-1.6,4.2 0,5.8l54,53.9z" />
-                                        </svg>
+                                <div class="testimonial testimonial-style-2 mb-0">
+                                    <div class="testimonial-author">
+                                        <img src="~/ROP-Content/images/Ads/@item.AdLang/@item.Adimg" class="img-fluid" alt="">
                                     </div>
-                                </a>
-                            </div>
-                            <div class="col-10">
-
-                                <!--Start carousel-->
-                                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <div class="row">
-
-                                                <div class="square-service-block col-12 col-md d-flex align-items-center justify-content-center">
-                                                    <a href="#">
-                                                        <div class="ssb-icon">
-                                                            <i class="iconf fa icon-pay"
-                                                               aria-hidden="true"></i>
-                                                        </div>
-                                                        <h2 class="ssb-title">دفع المخالفات المرورية</h2>
-                                                        <p>
-
-                                                        </p>
-
-                                                    </a>
-
-
-                                                </div>
-                                                <div class="square-service-block col-12 col-md d-flex align-items-center justify-content-center">
-                                                    <a href="#">
-                                                        <div class="ssb-icon">
-                                                            <i class="iconf fa icon-pay"
-                                                               aria-hidden="true"></i>
-                                                        </div>
-                                                        <h2 class="ssb-title">دفع المخالفات المرورية</h2>
-                                                        <p>
-
-                                                        </p>
-
-                                                    </a>
-
-
-                                                </div>
-                                                <div class="square-service-block col-12 col-md d-flex align-items-center justify-content-center">
-                                                    <a href="#">
-                                                        <div class="ssb-icon">
-                                                            <i class="iconf fa icon-pay"
-                                                               aria-hidden="true"></i>
-                                                        </div>
-                                                        <h2 class="ssb-title">دفع المخالفات المرورية</h2>
-                                                        <p>
-
-                                                        </p>
-
-                                                    </a>
-
-
-                                                </div>
-                                                <div class="square-service-block col-12 col-md d-flex align-items-center justify-content-center">
-                                                    <a href="#">
-                                                        <div class="ssb-icon">
-                                                            <i class="iconf fa icon-pay"
-                                                               aria-hidden="true"></i>
-                                                        </div>
-                                                        <h2 class="ssb-title">دفع المخالفات المرورية</h2>
-                                                        <p>
-
-                                                        </p>
-
-                                                    </a>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <div class="row">
-                                                <div class="square-service-block col-12 col-md d-flex align-items-center justify-content-center">
-                                                    <a href="#">
-                                                        <div class="ssb-icon">
-                                                            <i class="iconf fa icon-pay"
-                                                               aria-hidden="true"></i>
-                                                        </div>
-                                                        <h2 class="ssb-title">دفع المخالفات المرورية</h2>
-                                                        <p>
-
-                                                        </p>
-
-                                                    </a>
-
-
-                                                </div>
-                                                <div class="square-service-block col-12 col-md d-flex align-items-center justify-content-center">
-                                                    <a href="#">
-                                                        <div class="ssb-icon">
-                                                            <i class="iconf fa icon-pay"
-                                                               aria-hidden="true"></i>
-                                                        </div>
-                                                        <h2 class="ssb-title">دفع المخالفات المرورية</h2>
-                                                        <p>
-
-                                                        </p>
-
-                                                    </a>
-
-
-                                                </div>
-                                                <div class="square-service-block col-12 col-md d-flex align-items-center justify-content-center">
-                                                    <a href="#">
-                                                        <div class="ssb-icon">
-                                                            <i class="iconf fa icon-pay"
-                                                               aria-hidden="true"></i>
-                                                        </div>
-                                                        <h2 class="ssb-title">دفع المخالفات المرورية</h2>
-                                                        <p>
-
-                                                        </p>
-
-                                                    </a>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <blockquote>
+                                        <p class="text-5 line-height-5 mb-0">@item.AdTitle</p>
+                                    </blockquote>
+                                    <div class="testimonial-author">
+                                        <a href="~/ROP-Content/pdfs/ads/@item.AdLang/@item.Adfile"><p><strong class="font-weight-bold text-2 opacity-10">@Resource.readmore</strong></p></a>
                                     </div>
                                 </div>
-                                <!--End carousel-->
-                            </div>
-                            <div class="col-1 d-flex align-items-center justify-content-center">
-                                <a href="#carouselExampleIndicators" data-slide="next" dir="rtl">
-                                    <div class="carousel-nav-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <path fill="#004B8F" d="m40.4,121.3c-0.8,0.8-1.8,1.2-2.9,1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2 0-5.8l51-51-51-51c-1.6-1.6-1.6-4.2 0-5.8 1.6-1.6 4.2-1.6 5.8,0l53.9,53.9c1.6,1.6 1.6,4.2 0,5.8l-53.9,53.9z" />
-                                        </svg>
-                                    </div>
-                                </a>
-                            </div>
+
+                            }
+
+
                         </div>
+
                     </div>
-                    @*<div class="row">
-
-                            <div class="col-md-4 wow  zoomIn animated" data-wow-duration="900ms" data-wow-delay="200ms">
-                                <div class="square-service-block ">
-                                    <a href="#">
-                                        <div class="ssb-icon">
-                                            <i class="iconf fa icon-pay"
-                                               aria-hidden="true"></i>
-                                        </div>
-                                        <h2 class="ssb-title">دفع المخالفات المرورية</h2>
-
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 wow  zoomIn animated" data-wow-duration="900ms" data-wow-delay="200ms">
-                                <div class="square-service-block">
-                                    <a href="#">
-                                        <div class="ssb-icon">
-                                            <i class="iconf fa icon-carreg"
-                                               aria-hidden="true"></i>
-                                        </div>
-                                        <h2 class="ssb-title">تجديد سجل مركبة</h2>
-
-
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 wow  zoomIn animated" data-wow-duration="900ms" data-wow-delay="200ms">
-                                <div class="square-service-block">
-                                    <a href="#">
-                                        <div class="ssb-icon">
-                                            <i class="iconf fa icon-pay"
-                                               aria-hidden="true"></i>
-                                        </div>
-                                        <h2 class="ssb-title">الإستماره الإلكترونية للتأشيرات و الإقامة</h2>
-
-
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 wow  zoomIn animated" data-wow-duration="900ms" data-wow-delay="200ms">
-                                <div class="square-service-block">
-                                    <a href="#">
-                                        <div class="ssb-icon">
-                                            <i class="iconf fa icon-pay"
-                                               aria-hidden="true"></i>
-                                        </div>
-                                        <h2 class="ssb-title">تتبع حالة طلب التأشيرة</h2>
-
-
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 wow  zoomIn animated" data-wow-duration="900ms" data-wow-delay="200ms">
-                                <div class="square-service-block">
-                                    <a href="#">
-                                        <div class="ssb-icon">
-                                            <i class="iconf fa icon-certificate"
-                                               aria-hidden="true"></i>
-                                        </div>
-                                        <h2 class="ssb-title">تحقق من صحة بيانات شهادة عدم المحكومية</h2>
-
-
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 wow  zoomIn animated" data-wow-duration="900ms" data-wow-delay="200ms">
-                                <div class="square-service-block">
-                                    <a href="#">
-                                        <div class="ssb-icon">
-                                            <i class="iconf fa fa-circle"
-                                               aria-hidden="true"></i>
-                                        </div>
-                                        <h2 class="ssb-title"> الخدمات الجمركية</h2>
-
-
-                                    </a>
-                                </div>
-                            </div>
-
-
-
-
-                        </div>*@
                 </div>
             </div>
 
-
-
-
         </div>
-    </div>
 
 
-</div>
+    </section>
+}
+<div class="container">
+    <div class="row py-2 my-2">
 
-<div class="container Map-social wow fadeInDown animated" data-wow-duration="900ms" data-wow-delay="600ms">
-
-    <div class="row">
-        <div class="col-md-8">
-            <!-- map -->
-
-            <h4>@Resource.locationh</h4>
+        <div class="col-lg-12 mt-5 mt-lg-0">
+            <h2 class="font-weight-normal text-6 pb-2 mb-4"><strong class="font-weight-extra-bold">@Resource.locationh </strong></h2>
 
             <iframe width="100%" height="335" frameborder="0" scrolling="no" marginheight="0"
                     marginwidth="0"
                     src="https://maps.google.com/maps?q=Oman+Police+Station&amp;&amp;output=embed"></iframe>
-
-
         </div>
-        <div class="col-md-4">
-            <!--socalmedia feeds -->
-            <h4>@Resource.socialh</h4>
+    </div>
+</div>
 
-            <nav>
-                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="tab1-tab" data-toggle="tab" href="#nav-home"
-                       role="tab" aria-controls="tab1" aria-selected="true">
-                        <i class="fa fa-twitter"></i> @Resource.twitter
-                    </a>
+<div class="container">
+    <div class="row py-0 my-5">
+        <div class="col">
+            <h2 class="font-weight-normal text-6 mb-4"><strong class="font-weight-extra-bold">@Resource.rlinksh</strong> </h2>
 
-
-                    <a class="nav-item nav-link" id="youtube-tab" data-toggle="tab" href="#youtube"
-                       role="tab" aria-controls="nav-profile" aria-selected="false"><i class="fa fa-youtube"></i> @Resource.youtube</a>
-
-
-
-                </div>
-            </nav>
-            <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
-                     aria-labelledby="tab1-tab" style="width: 100%;">
-                    <div class="container">
-                        <div class="row">
-                            <div class="embed-responsive embed-responsive-4by3" style=" font-size:20px;">
-                                <div class="embed-responsive-item">
-                                    <a class="twitter-timeline" data-width="100%" data-height="100%"
-                                       href="https://twitter.com/RoyalOmanPolice?ref_src=twsrc%5Etfw">
-                                        Tweets
-                                        by RoyalOmanPolice
-                                    </a>
-                                    <script async src="https://platform.twitter.com/widgets.js"
-                                            charset="utf-8"></script>
-                                </div>
-                            </div>
-
-                        </div>
+            <div class="owl-carousel owl-theme mb-0" data-plugin-options="{'responsive': {'0': {'items': 4}, '476': {'items': 1}, '768': {'items': 5}, '992': {'items': 7}, '1200': {'items': 7}}, 'autoplay': true, 'autoplayTimeout': 3000, 'dots': false}">
+                <a href="#">
+                    <div>
+                        <img class="img-fluid opacity-2" src="~/Assets/img/REL/ISS.png" alt="">
                     </div>
+                </a>
+                <div>
+                    <img class="img-fluid opacity-2" src="~/Assets/img/REL/NCCD.png" alt="">
                 </div>
-
-
-                <div class="tab-pane fade" id="youtube" role="tabpanel" aria-labelledby="youtube-tab">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <iframe src="https://www.youtube.com/embed/videoseries?list=PLlssg3t2Bjprww57IpXvDwdYNRQ_py8T6"
-                                    frameborder="0" allowfullscreen width="100%" height="290"></iframe>
-
-                        </div>
-                    </div>
-
-
+                <div>
+                    <img class="img-fluid opacity-2" src="~/Assets/img/REL/nccht.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid opacity-2" src="~/Assets/img/REL/ropca.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid opacity-2" src="~/Assets/img/REL/Traffic.png" alt="">
+                </div>
+                <div>
+                    <img class="img-fluid opacity-2" src="~/Assets/img/REL/NCCD.png" alt="">
                 </div>
 
             </div>
 
         </div>
-
-    </div>
-
-</div>
-<div class="container RelatedLinks wow fadeInDown animated" data-wow-duration="900ms" data-wow-delay="600ms">
-
-    <h4>@Resource.rlinksh</h4>
-
-
-
-
-    <div class="row justify-content-md-center">
-        <div class="col-xs-12">
-            <a href="#">
-                <img src="~/Content/images/ropca.png" class="img-fluid" alt="1 slide" height="106"
-                     width="115" style="margin-right: 20px">
-            </a>
-
-            <img src="~/Content/images/ropca.png" class="img-fluid" alt="2 slide" height="106" width="115"
-                 style="margin-right: 20px">
-
-            <img src="~/Content/images/NCCD.png" class="img-fluid" alt="2 slide" height="106" width="115"
-                 style="margin-right: 20px">
-            <img src="~/Content/images/nccht.png" class="img-fluid" alt="2 slide" height="106" width="115"
-                 style="margin-right: 20px">
-
-
-
-
-
-            <img src="~/Content/images/texed ISS.png" class="img-fluid" alt="2 slide" height="106" width="115"
-                 style="margin-right: 20px">
-            <img src="~/Content/images/Eoman.png" class="img-fluid" alt="2 slide" height="106" width="115">
-
-        </div>
-
     </div>
 </div>
 
 
 
 
-
-
-
-<!-- Footer -->
-<!-- Footer Links -->

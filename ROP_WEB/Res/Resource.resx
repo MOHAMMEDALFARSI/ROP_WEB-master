@@ -130,10 +130,10 @@
     <value>Achievements</value>
   </data>
   <data name="alig" xml:space="preserve">
-    <value>left</value>
+    <value>right</value>
   </data>
   <data name="alig2" xml:space="preserve">
-    <value>right</value>
+    <value>left</value>
   </data>
   <data name="AlWustaGovernoratePoliceHeadquarter" xml:space="preserve">
     <value>Al Wusta Governorate Police Headquarter</value>
@@ -641,5 +641,221 @@
   </data>
   <data name="Transport" xml:space="preserve">
     <value>Directorate General of Transport</value>
+  </data>
+  <data name="dir" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="rtlltr" xml:space="preserve">
+    <value>EN.css</value>
+  </data>
+  <data name="accessserv" xml:space="preserve">
+    <value>Access Service</value>
+  </data>
+  <data name="applicable" xml:space="preserve">
+    <value>Applicable Law and Jurisdiction</value>
+  </data>
+  <data name="crimestat" xml:space="preserve">
+    <value>Number of Crimes</value>
+  </data>
+  <data name="deathratecar" xml:space="preserve">
+    <value>Death rate due to road accidents</value>
+  </data>
+  <data name="deathrategender" xml:space="preserve">
+    <value>Number of Registered Deaths by gender</value>
+  </data>
+  <data name="deathratestate" xml:space="preserve">
+    <value>Number of Registered Deaths by Region</value>
+  </data>
+  <data name="disclaimer" xml:space="preserve">
+    <value>Disclaimer</value>
+  </data>
+  <data name="drivingmanners" xml:space="preserve">
+    <value>Driving Manners</value>
+  </data>
+  <data name="fair" xml:space="preserve">
+    <value>Fair Usage Policy</value>
+  </data>
+  <data name="farmfires" xml:space="preserve">
+    <value>Farm Fires</value>
+  </data>
+  <data name="fireextinguishers" xml:space="preserve">
+    <value>Fire extinguishers in vehicles</value>
+  </data>
+  <data name="guidelines" xml:space="preserve">
+    <value>Guide lines</value>
+  </data>
+  <data name="limitation" xml:space="preserve">
+    <value>Limitation of Liability</value>
+  </data>
+  <data name="linksother" xml:space="preserve">
+    <value>Links to other portals</value>
+  </data>
+  <data name="mngtname" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="modifications" xml:space="preserve">
+    <value>Modifications</value>
+  </data>
+  <data name="norepresentation" xml:space="preserve">
+    <value>No Representation</value>
+  </data>
+  <data name="phonenum" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="publicsafety" xml:space="preserve">
+    <value>Public Safety</value>
+  </data>
+  <data name="restrictions" xml:space="preserve">
+    <value>Restrictions on Use of Materials</value>
+  </data>
+  <data name="Roadacc" xml:space="preserve">
+    <value>Road Accidents</value>
+  </data>
+  <data name="servchannel" xml:space="preserve">
+    <value>Service Channels</value>
+  </data>
+  <data name="servfees" xml:space="preserve">
+    <value>Service Fees</value>
+  </data>
+  <data name="servprocedure" xml:space="preserve">
+    <value>Service procedure</value>
+  </data>
+  <data name="servreqdoc" xml:space="preserve">
+    <value>Required Documents</value>
+  </data>
+  <data name="servterm" xml:space="preserve">
+    <value>Service Terms</value>
+  </data>
+  <data name="suggestions" xml:space="preserve">
+    <value>Suggestions, Comments and Feedback</value>
+  </data>
+  <data name="templetes" xml:space="preserve">
+    <value>Templetes</value>
+  </data>
+  <data name="traveltips" xml:space="preserve">
+    <value>Travel Tips</value>
+  </data>
+  <data name="vehiclefires" xml:space="preserve">
+    <value>Vehicle Fires</value>
+  </data>
+  <data name="Choosedir" xml:space="preserve">
+    <value>Select Directorate:</value>
+  </data>
+  <data name="copyrighttxt" xml:space="preserve">
+    <value>The Royal Oman Police logo may only be used with the prior consent of the Royal Oman Police which has delegated authority to authorise its reproduction. All requests to reproduce the Royal Oman Police logo can be forwarded to Royal Oman Police - Directorate of Public Relation .</value>
+  </data>
+  <data name="disclamer" xml:space="preserve">
+    <value>The Royal Oman Police makes every effort to ensure that the information contained in the pages of its Website is accurate and up to date. However, it will not be liable for any loss, financial or otherwise, arising from the use of the information in these Web pages. The Royal Oman Police reserves the right to make any changes in these pages without notice.</value>
+  </data>
+  <data name="selectregion" xml:space="preserve">
+    <value>Select Region:</value>
+  </data>
+  <data name="adsrop" xml:space="preserve">
+    <value>ROP Ads</value>
+  </data>
+  <data name="miss" xml:space="preserve">
+    <value>Mission</value>
+  </data>
+  <data name="notepdf" xml:space="preserve">
+    <value>*You can downlaod PDF Program from</value>
+  </data>
+  <data name="privicy" xml:space="preserve">
+    <value>privacy</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="viss" xml:space="preserve">
+    <value>Vission</value>
+  </data>
+  <data name="vissionmsg" xml:space="preserve">
+    <value>The Royal Oman Police is a professional police force with outstanding superior capabilities, working in active with society and in cooperation with other institutions, to achieve a safe, stable and prosperous society.</value>
+  </data>
+  <data name="brimi" xml:space="preserve">
+    <value>Buraimi Region</value>
+  </data>
+  <data name="btnn" xml:space="preserve">
+    <value>Batinah North</value>
+  </data>
+  <data name="btns" xml:space="preserve">
+    <value>Batinah South</value>
+  </data>
+  <data name="dhira" xml:space="preserve">
+    <value>Dahirah Region</value>
+  </data>
+  <data name="dhk" xml:space="preserve">
+    <value>Dakiliyah Region</value>
+  </data>
+  <data name="dofr" xml:space="preserve">
+    <value>Dhofar Region</value>
+  </data>
+  <data name="mct" xml:space="preserve">
+    <value>Muscat Region</value>
+  </data>
+  <data name="musndam" xml:space="preserve">
+    <value>Musandam Region</value>
+  </data>
+  <data name="shrkian" xml:space="preserve">
+    <value>Sharqiyah North</value>
+  </data>
+  <data name="shrkias" xml:space="preserve">
+    <value>Sharqiyah South</value>
+  </data>
+  <data name="wsta" xml:space="preserve">
+    <value>Wusta Region</value>
+  </data>
+  <data name="csupdate" xml:space="preserve">
+    <value>Civil status Update</value>
+  </data>
+  <data name="DLrenew" xml:space="preserve">
+    <value>Driver License renewal</value>
+  </data>
+  <data name="escort" xml:space="preserve">
+    <value>Traffic Escort Security application service</value>
+  </data>
+  <data name="desccsup" xml:space="preserve">
+    <value>Click here to update</value>
+  </data>
+  <data name="descecs" xml:space="preserve">
+    <value>Check Police Clearance Certificate Validity</value>
+  </data>
+  <data name="descevisa" xml:space="preserve">
+    <value>On-Arrival Tourist visa, Express visa and Entry visa for foreign residents in GCC states</value>
+  </data>
+  <data name="descfinalexit" xml:space="preserve">
+    <value>Inquiry and pay penalties and fines</value>
+  </data>
+  <data name="descfine" xml:space="preserve">
+    <value>Inquiry and pay traffic fine</value>
+  </data>
+  <data name="descrenw" xml:space="preserve">
+    <value>Renew your vehicle easly</value>
+  </data>
+  <data name="descvisa" xml:space="preserve">
+    <value>Apply online</value>
+  </data>
+  <data name="desvvisastatus" xml:space="preserve">
+    <value>Visa Application Status</value>
+  </data>
+  <data name="ecs" xml:space="preserve">
+    <value>Electronic certificate service</value>
+  </data>
+  <data name="finalexit" xml:space="preserve">
+    <value>Online Exit Penalty Payment services</value>
+  </data>
+  <data name="arabicenglish" xml:space="preserve">
+    <value>english</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="smsservice" xml:space="preserve">
+    <value>ROP SMS Services</value>
+  </data>
+  <data name="ropmobile" xml:space="preserve">
+    <value>ROP Mobile APP</value>
+  </data>
+  <data name="kiosk" xml:space="preserve">
+    <value>Kiosks</value>
   </data>
 </root>

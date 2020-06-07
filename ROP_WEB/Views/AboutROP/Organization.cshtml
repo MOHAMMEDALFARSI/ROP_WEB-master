@@ -14,43 +14,28 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
 
-@section orgnization{
-
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="popover"]').popover();
-        });
-
-        $("[data-toggle=popover]")
-            .popover({ html: true })
-
-        $('body').on('click', function (e) {
-            //did not click a popover toggle or popover
-            if ($(e.target).data('toggle') !== 'popover'
-                && $(e.target).parents('.popover.in').length === 0) {
-                $('[data-toggle="popover"]').popover('hide');
-            }
-        });
-    </script>
+    var url = Request.Url.ToString();
 }
+
 @using ROP_WEB.Res
 
 
-<div class="container TopicStyle">
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
             <nav>
                 <ol class="breadcrumb">
-                   <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
+                    <li class="breadcrumb-item"><a href="../../home/index">@Resource.home</a></li>
                     <li class="breadcrumb-item">@Resource.about</li>
 
                     <li class="breadcrumb-item active">@Resource.about2  </li>
 
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -63,123 +48,102 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item"> <a href="#">@Resource.about1  </a></li>
-                    <li class="list-group-item"> <a href="#">@Resource.v_m  </a></li>
-                    <li class="list-group-item activelist"><a href="#">@Resource.about2 </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.achivment </a></li>
 
-
-                </ul>
-
-            </div>
             <div class="col-md-8">
 
-                <div class="jumbotron">
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3>  @Resource.about2 </h3>
 
-                    <div id="accordion" role="tablist" aria-multiselectable="true">
-
-
-
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingOne">
-                                <h5 class="mb-0">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="accordion" id="accordion12">
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingOne">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12One" aria-expanded="true" aria-controls="collapse12One">
                                         @Resource.RegionalPoliceHeadquarters
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
+                            <div id="collapse12One" class="collapse show" aria-labelledby="collapse12HeadingOne" data-parent="#accordion12">
+                                <div class="card-body">
 
-                            <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
-
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                           @Resource.Muscat
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.Muscat
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                            @Resource.Dhofar
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.Dhofar
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                            @Resource.Musandam
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.Musandam
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                            @Resource.AlBatinah
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.AlBatinah
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                            @Resource.AlBatinah1
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.AlBatinah1
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                            @Resource.ADakiliyah
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.ADakiliyah
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                            @Resource.ASharqiyah
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.ASharqiyah
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                            @Resource.ASharqiyahG
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.ASharqiyahG
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                            @Resource.ADahirah
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.ADahirah
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                            @Resource.AlWusta
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.AlWusta
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6 col-sm-6">
-                                        <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                            @Resource.AlBuraimi
+                                        <div class="col-lg-4 col-md-6 col-sm-6">
+                                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                                @Resource.AlBuraimi
+                                            </div>
                                         </div>
-                                    </div>
-
-
 
 
+
+
+                                    </div>
                                 </div>
-
-
-
                             </div>
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingTwo">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingTwo">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Two" aria-expanded="false" aria-controls="collapse12Two">
                                         @Resource.GeneralDirectorate
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                <div class="card-block">
-
-
+                            <div id="collapse12Two" class="collapse" aria-labelledby="collapse12HeadingTwo" data-parent="#accordion12">
+                                <div class="card-body">
 
                                     <div class="row">
                                         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -284,18 +248,17 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingThree">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse12HeadingThree">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse12Three" aria-expanded="false" aria-controls="collapse12Three">
                                         @Resource.SpecializedDirectorates
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                <div class="card-block">
+                            <div id="collapse12Three" class="collapse" aria-labelledby="collapse12HeadingThree" data-parent="#accordion12">
+                                <div class="card-body">
+
                                     <div class="row">
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
@@ -337,27 +300,26 @@
                                                 @Resource.NationalCommittee
                                             </div>
                                         </div>
-                            
+
 
 
 
 
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-
-                        <div class="card">
-                            <div class="card-header" role="tab" id="headingFour">
-                                <h5 class="mb-0">
-                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                        <div class="card card-default">
+                            <div class="card-header" id="collapse14HeadingFour">
+                                <h4 class="card-title m-0">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse14HeadingFour" aria-expanded="false" aria-controls="collapse14HeadingFour">
                                         @Resource.PoliceSpecialized
                                     </a>
-                                </h5>
+                                </h4>
                             </div>
-                            <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
-                                <div class="card-block">
+                            <div id="collapse14HeadingFour" class="collapse" aria-labelledby="collapse14HeadingFour" data-parent="#accordion12">
+                                <div class="card-body">
+
                                     <div class="row">
                                         <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
@@ -384,28 +346,40 @@
                                                 @Resource.FinancialInquiries
                                             </div>
                                         </div>
-                                       
+
 
 
 
 
                                     </div>
-
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
-
-
-
                 </div>
+            </div>
 
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item"> <a href="../../../AboutROP/GeneralInfo">@Resource.about1  </a></li>
+                    <li class="list-group-item"> <a href="../../../AboutROP/Vision_Mission">@Resource.v_m  </a></li>
+                    <li class="list-group-item activelist"><a href="../../../AboutROP/Organization">@Resource.about2 </a></li>
+                    <li class="list-group-item "><a href="../../../AboutROP/Achivachievements">@Resource.achivment </a></li>
+
+
+                </ul>
 
             </div>
+
+
+
+
+
         </div>
+
+
+    </div>
+</div>
 
 
 

@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?t3cipv');
+  src:  url('fonts/icomoon.eot?t3cipv#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?t3cipv') format('truetype'),
+    url('fonts/icomoon.woff?t3cipv') format('woff'),
+    url('fonts/icomoon.svg?t3cipv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chkvisastatus:before {
+  content: "\e900";
+}
+.icon-edoc:before {
+  content: "\e901";
+}
+.icon-elecvisa:before {
+  content: "\e902";
+}
+.icon-evisa:before {
+  content: "\e903";
+}
+.icon-finalexit:before {
+  content: "\e904";
+}
+.icon-payfine:before {
+  content: "\e905";
+}
+.icon-profileupdate:before {
+  content: "\e906";
+}
+.icon-renew:before {
+  content: "\e907";
+}

@@ -46,7 +46,7 @@ namespace ROP_WEB.Controllers
 
             List<Station> stationLIST = new List<Station>();
           
-            XElement xelement = XElement.Load(HttpContext.Server.MapPath("~/Res/ROP_Phones/"+Region+".xml"));
+            XElement xelement = XElement.Load(HttpContext.Server.MapPath("~/ROP-Content/Xmls/ROP_Phones/" + Region+".xml"));
             var Stations = xelement.Elements();
             // lstWilaya = (db.Wilayas.Where(x => x.Region_Id == Region_Idd)).ToList<Wilaya>();
             CultureInfo currentInfo = Thread.CurrentThread.CurrentCulture;

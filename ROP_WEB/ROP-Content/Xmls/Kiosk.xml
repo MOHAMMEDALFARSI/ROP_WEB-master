@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<kiosks>
+
+
+  <kiosk>
+  
+    <kioskLocationAr>المكتب الرئيسي الخوير</kioskLocationAr>
+    <kioskLocationEn>Al-Khuwair head office</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/b5uN2HjzKgYwWaP89</kioskLocationUrl>
+    <region>MCT</region>
+  </kiosk>
+
+  <kiosk>
+  
+    <kioskLocationAr>لولو العامرات</kioskLocationAr>
+    <kioskLocationEn>Lulu Al-Amerat</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/qLAdEER1fqpit4RT8</kioskLocationUrl>
+    <region>MCT</region>
+  </kiosk>
+
+  <kiosk>
+  
+    <kioskLocationAr>لولو وادي اللوامي</kioskLocationAr>
+    <kioskLocationEn>Lulu Wadi Al-Luwami</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/ccmHNLd17voixkj87</kioskLocationUrl>
+    <region>MCT</region>
+  </kiosk>
+
+  <kiosk>
+  
+    <kioskLocationAr>لولو المعبيله</kioskLocationAr>
+    <kioskLocationEn>Lulu Almubailah</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/TfgfCDWjqJUwSXvt7</kioskLocationUrl>
+    <region>MCT</region>
+  </kiosk>
+
+  <kiosk>
+  
+    <kioskLocationAr>‎لولو بركاء</kioskLocationAr>
+    <kioskLocationEn>Lulu Barka</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/4EZH6P9UzXTKgvRv9</kioskLocationUrl>
+    <region>BATS</region>
+  </kiosk>
+
+  <kiosk>
+   
+    <kioskLocationAr>لولو الخابورة</kioskLocationAr>
+    <kioskLocationEn>Lulu Bandar</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/FW35Wgw379Ytc3xP6</kioskLocationUrl>
+    <region>BATN</region>
+  </kiosk>
+
+  <kiosk>
+  
+    <kioskLocationAr>لولو البندر</kioskLocationAr>
+    <kioskLocationEn>Lulu Bandar</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/7Eti24X2Crod515eA</kioskLocationUrl>
+    <region>MCT</region>
+  </kiosk>
+
+  <kiosk>
+  
+    <kioskLocationAr>لولو صحار</kioskLocationAr>
+    <kioskLocationEn>Lulu Sohar</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/UfBRnGSLqfksKCnS7</kioskLocationUrl>
+    <region>BATN</region>
+  </kiosk>
+
+  <kiosk>
+   
+    <kioskLocationAr>لولو دارسيت</kioskLocationAr>
+    <kioskLocationEn>Lolo Darsett</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/uNjYBhvcfinhWSpW9</kioskLocationUrl>
+    <region>MCT</region>
+  </kiosk>
+
+
+  <kiosk>
+  
+    <kioskLocationAr>سندان</kioskLocationAr>
+    <kioskLocationEn>sandan</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/idLg8cz6bRouVpey5</kioskLocationUrl>
+    <region>MCT</region>
+  </kiosk>
+
+  <kiosk>
+
+    <kioskLocationAr>لولو الرستاق</kioskLocationAr>
+    <kioskLocationEn>Lulu Rustaq</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/cTYoiiqokDVGDou18</kioskLocationUrl>
+    <region>BATN</region>
+  </kiosk>
+
+
+  <kiosk>
+  
+    <kioskLocationAr>لولو صلاله</kioskLocationAr>
+    <kioskLocationEn>Lulu Salalah</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/cd5n3VXwRiPymjjM6</kioskLocationUrl>
+    <region>DHO</region>
+  </kiosk>
+
+
+  <kiosk>
+   
+    <kioskLocationAr>لولو السويق</kioskLocationAr>
+    <kioskLocationEn>Lulu Al Suwaiq</kioskLocationEn>
+    <kioskLocationUrl>https://maps.app.goo.gl/795NXuhmERpnn1sg6</kioskLocationUrl>
+    <region>BATN</region>
+  </kiosk>
+
+
+  <kiosk>
+   
+    <kioskLocationAr>لولو البريمي</kioskLocationAr>
+    <kioskLocationEn>Lulu Al Buraimi</kioskLocationEn>
+    <kioskLocationUrl>https://maps.app.goo.gl/wzvm2Vr5PJrUUbgP8</kioskLocationUrl>
+    <region>BUR</region>
+  </kiosk>
+
+
+  <kiosk>
+   
+    <kioskLocationAr>لولو ابراء</kioskLocationAr>
+    <kioskLocationEn>Lulu Al Buraimi</kioskLocationEn>
+    <kioskLocationUrl>https://maps.app.goo.gl/As2h3THRAYZdcZbU8</kioskLocationUrl>
+    <region>SHAN</region>
+  </kiosk>
+
+  <kiosk>
+   
+    <kioskLocationAr>ستي سنتر القرم</kioskLocationAr>
+    <kioskLocationEn>Qurm CityCenter</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/2Bv2Gi9ANPuNfg1Q6</kioskLocationUrl>
+    <region>MCT</region>
+  </kiosk>
+
+  <kiosk>
+    
+    <kioskLocationAr>صالة عمانتل </kioskLocationAr>
+    <kioskLocationEn>Omantel Outlet</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/99oszTA3KdE886N9A</kioskLocationUrl>
+    <region>MCT</region>
+  </kiosk>
+
+  <kiosk>
+   
+    <kioskLocationAr>صالة عمانتل </kioskLocationAr>
+    <kioskLocationEn>Omantel Outlet</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/kVnq21U1ArS5Tj8d8</kioskLocationUrl>
+    <region>MCT</region>
+  </kiosk>
+
+  <kiosk>
+    
+    <kioskLocationAr>صالة عمانتل </kioskLocationAr>
+    <kioskLocationEn>Omantel Outlet</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/q8XNszm5G4Xjax136</kioskLocationUrl>
+    <region>DHO</region>
+  </kiosk>
+
+  <kiosk>
+  
+    <kioskLocationAr>صالة عمانتل </kioskLocationAr>
+    <kioskLocationEn>Omantel Outlet</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/HVRGzmb2PNGkFs1H6</kioskLocationUrl>
+    <region>ALD</region>
+  </kiosk>
+  <kiosk>
+    
+    <kioskLocationAr>صالة عمانتل </kioskLocationAr>
+    <kioskLocationEn>Omantel Outlet</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/fZGEq7vL1pyDnpbk6</kioskLocationUrl>
+    <region>SHAN</region>
+  </kiosk>
+
+  <kiosk>
+  
+    <kioskLocationAr>صالة عمانتل </kioskLocationAr>
+    <kioskLocationEn>Omantel Outlet</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/xUe1J1UbrojfA8feA</kioskLocationUrl>
+    <region>SHAS</region>
+  </kiosk>
+
+  <kiosk>
+  
+    <kioskLocationAr>صالة عمانتل </kioskLocationAr>
+    <kioskLocationEn>Omantel Outlet</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/xUe1J1UbrojfA8feA</kioskLocationUrl>
+    <region>BATN</region>
+  </kiosk>
+  <kiosk>
+    <kioskLocationAr>صالة عمانتل </kioskLocationAr>
+    <kioskLocationEn>Al Buraimi</kioskLocationEn>
+    <kioskLocationUrl>https://goo.gl/maps/hLQgrAbMBgPmSiWx5</kioskLocationUrl>
+    <region>BUR</region>
+    </kiosk>
+  <kiosk>
+      <kioskId>24</kioskId>
+      <kioskLocationAr>صالة عمانتل </kioskLocationAr>
+      <kioskLocationEn>Omantel Outlet</kioskLocationEn>
+      <kioskLocationUrl>https://goo.gl/maps/eU4jURM7Ru73epcz7</kioskLocationUrl>
+      <region>ALZ</region>
+    </kiosk>
+
+  </kiosks>

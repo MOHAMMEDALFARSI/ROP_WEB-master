@@ -12,10 +12,14 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
+
+    var url = Request.Url.ToString();
+}
 @using ROP_WEB.Res
 
 
-<div class="container TopicStyle">
+<div class="container">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
@@ -27,7 +31,7 @@
                     <li class="breadcrumb-item active">@Resource.stat  </li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -42,26 +46,15 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item"> <a href="#">@Resource.about1  </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.about2 </a></li>
-                    <li class="list-group-item "><a href="#">@Resource.achivment </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.Locations </a></li>
-                    <li class="list-group-item activelist"><a href="#">@Resource.stat </a></li>
 
-                </ul>
-
-            </div>
             <div class="col-md-8">
 
-                <div class="jumbotron">
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3>  @Resource.stat </h3>
-                    <p>  البيانات المفتوحة إيماناً بمبدأ الشفافية وإتاحة المعلومات والإحصائيات ذات العلاقة</p>
 
 
 
@@ -70,44 +63,52 @@
 
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                إحصائيات الحوادث
+                                <a href="https://www.ncsi.gov.om/Pages/IndicatorDetails.aspx?ItemID=I%2fO8yiy831hzYkZviFdfPw%3d%3d" target="_blank">  @Resource.Roadacc </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                <a href="https://www.ncsi.gov.om/Pages/IndicatorDetails.aspx?ItemID=xWPuF3bZujWYx0XK9qcUkQ%3d%3d" target="_blank">      @Resource.deathratecar</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                <a href="http://data.gov.om/gdbmhlb/%D8%A7%D9%84%D8%AC%D8%B1%D9%8A%D9%85%D8%A9?regions=1000720&indicators=1000010&nationality=1000000&gender=1000020&age-group=1000000&types-of-crimes=1000000&lang=ar" target="_blank"> @Resource.crimestat</a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                               إحصائيات الجرائم 
+                                <a href="http://data.gov.om/OMPOP2016/%D8%A7%D9%84%D8%B3%D9%83%D8%A7%D9%86?region=1000010&indicator=1000030&nationality=1000000&sex=1000020&age-group=1000000&lang=ar" target="_blank"> @Resource.deathrategender</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
+                                <a href="http://data.gov.om/gdbmhlb/the-crime?regions=1000000&indicators=1000000&nationality=1000000&gender=1000000&age-group=1000000&types-of-crimes=1000210"> @Resource.deathratestate</a>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                عدد الوفيات المسجلة حسب الجنس
-                            </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                معدل وفيات حوادث الطرق
-                            </div>
-                        </div>
 
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                معدل وفيات حوادث الطرق
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="servicesboxtitle wow fadeIn" data-wow-delay="0">
-                                معدل وفيات حوادث الطرق
-                            </div>
-                        </div>
 
                     </div>
 
 
 
                 </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+                 
+
+                    <li class="list-group-item"> <a href="../../../OpenData/Roplaws">@Resource.laws  </a></li>
+                    <li class="list-group-item "><a href="../../../OpenData/TrafficFines">@Resource.trafficfinespoint </a></li>
+                    <li class="list-group-item activelist"><a href="../../../OpenData/Statistics">@Resource.stat </a></li>
+                    <li class="list-group-item"><a href="../../../OpenData/Saftytips">@Resource.dlil </a></li>
+
+
+                </ul>
+
             </div>
 
 

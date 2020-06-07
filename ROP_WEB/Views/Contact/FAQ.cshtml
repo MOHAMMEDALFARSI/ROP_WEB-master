@@ -14,10 +14,15 @@
         <i class="fa fa-globe"></i> En
     </a>
 }
+@{
+
+    var url = Request.Url.ToString();
+}
+
 @using ROP_WEB.Res
 
 @model IEnumerable<ROP_WEB.Models.FAQMain>
-        <div class="container TopicStyle">
+<div class="container TopicStyle">
     <div class="row">
 
         <div class="col breadcrumbstyle" style="padding:0">
@@ -29,7 +34,7 @@
                     <li class="breadcrumb-item active">@Resource.faq  </li>
                     <li class="readspeakercls">
                         <div id="readspeaker_button1" class="rs_skip rsbtn rs_preserve" style="margin-bottom:0;">
-                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=www%2Erop%2Egov%2Eom%2Farabic%2Fe-readiness%2Ehtml">
+                            <a rel="nofollow" class="rsbtn_play" accesskey="L" title="@Resource.listen2" href="https://app-as.readspeaker.com/cgi-bin/rsent?customerid=5953&amp;lang=@Resource.listen3lang&amp;readid=item1&amp;url=@url">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>@Resource.listen</span></span></span>
                                 <span class="rsbtn_right rsimg rsplay rspart"></span>
                             </a>
@@ -42,67 +47,60 @@
 
 
 
-    <div class="container topiccontiner">
+    <div class="container ">
 
         <div class="row">
 
-            <div class="col-md-4 d-none d-sm-block">
-                <ul class="list-group">
-                    <li class="list-group-item"> <a href="#">@Resource.contact  </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.ropphones </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.worktime </a></li>
-                    <li class="list-group-item activelist"><a href="#">@Resource.faq </a></li>
-                    <li class="list-group-item"><a href="#">@Resource.survey </a></li>
 
-
-                </ul>
-
-            </div>
             <div class="col-md-8">
 
-                <div class="jumbotron">
+                <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3>@Resource.faq </h3>
-                
-
-                    <div id="accordion" role="tablist" aria-multiselectable="true">
-    @foreach (var item in Model)
-  {
-    <div class="card">
-        <div class="card-header" role="tab" id="headingOne">
-            <h5 class="mb-0">
-                <a data-toggle="collapse" data-parent="#accordion" href="#@item.FAQID" aria-expanded="true" aria-controls="collapseOne">
-                    @item.Question
-                </a>
-            </h5>
-        </div>
-
-        <div id="@item.FAQID" class="collapse" role="tabpanel" aria-labelledby="headingOne">
-            <div class="card-block">
-                <p>
 
 
-@item.Answer        
-                        </p>
-            </div>
-        </div>
-    </div>
+                    <div class="accordion" id="accordion12">
+                        @foreach (var item in Model)
+                        {
+                            <div class="card card-default">
+                                <div class="card-header" id="collapse12HeadingOne">
+                                    <h4 class="card-title m-0">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-target="#@item.FAQID" aria-expanded="true" aria-controls="collapse12One">
+                                            @item.Question
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="@item.FAQID" class="collapse show" aria-labelledby="collapse12HeadingOne" data-parent="#accordion12">
+                                    <div class="card-body">
+                                        <p class="mb-0">  @item.Answer</p>
+                                    </div>
+                                </div>
+                            </div>
 
-}
+                        </div>
+
+                    }
 
 
                     </div>
 
-                    
-
 
                 </div>
+                <div class="col-md-4">
+                    <ul class="list-group">
+                        <li class="list-group-item"> <a href="../../../contact/ContactUs">@Resource.contactuspage  </a></li>
+                        <li class="list-group-item"><a href="../../../contact/ropphones">@Resource.ropphones </a></li>
+                        <li class="list-group-item"><a href="../../../contact/workTimes">@Resource.worktime </a></li>
+                        <li class="list-group-item activelist"><a href="../../../contact/FAQ">@Resource.faq </a></li>
+                        <li class="list-group-item"><a href="../../../contact/Survey">@Resource.survey </a></li>
 
 
+                    </ul>
+
+                </div>
             </div>
+
+
+
         </div>
-
-
-
     </div>
-</div>
 
