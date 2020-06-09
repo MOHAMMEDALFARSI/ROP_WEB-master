@@ -15,50 +15,31 @@ namespace ROP_WEB.Controllers
         // GET: Services
         public ActionResult PersonalServices()
         {
-            var personalServices = db.SERVICEs.Where(x => x.Service_Cat_Id == 1 && x.services_Status_Id == 2).ToList();
-            CultureInfo currentInfo = Thread.CurrentThread.CurrentCulture;
 
-            if (currentInfo.IetfLanguageTag.ToString().Equals("ar-OM") || (currentInfo.IetfLanguageTag.ToString().Equals("ar")))
-            {
+
+            var personalServices = db.SERVICEs.Where(x => x.Service_Cat_Id == 1 && x.services_Status_Id == 2).ToList();
                 var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 1 && x.services_Status_Id == 2).Select(m => m.Service_Provider_Id).Distinct();
                 var spname = db.SERVICE_PROVIDER.Where(x => ServiceProviders.Contains(x.Service_Provider_Id));
-                
                 ViewBag.ServiceProviders = spname;
-            }
-            else
-            {
-                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 1 && x.services_Status_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_En).Distinct();
-                ViewBag.ServiceProviders = ServiceProviders;
-            }
+           
 
-
-            
-          
-
-
-            
             return View(personalServices);
         }
         public ActionResult GovServices()
         {
 
-            CultureInfo currentInfo = Thread.CurrentThread.CurrentCulture;
-
-            if (currentInfo.IetfLanguageTag.ToString().Equals("ar-OM") || (currentInfo.IetfLanguageTag.ToString().Equals("ar")))
-            {
-                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 2 && x.services_Status_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_Ar).Distinct();
-                ViewBag.ServiceProviders = ServiceProviders;
-
-            }
-            else
-            {
-                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 2 && x.services_Status_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_En).Distinct();
-                ViewBag.ServiceProviders = ServiceProviders;
-            }
-
 
 
             var puplicSecServices = db.SERVICEs.Where(x => x.Service_Cat_Id == 2 && x.services_Status_Id == 2).ToList();
+            var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 2 && x.services_Status_Id == 2).Select(m => m.Service_Provider_Id).Distinct();
+            var spname = db.SERVICE_PROVIDER.Where(x => ServiceProviders.Contains(x.Service_Provider_Id));
+            ViewBag.ServiceProviders = spname;
+
+
+
+
+
+
 
             return View(puplicSecServices);
 
@@ -67,23 +48,18 @@ namespace ROP_WEB.Controllers
         public ActionResult CompaniesServices()
         {
 
-            CultureInfo currentInfo = Thread.CurrentThread.CurrentCulture;
-
-            if (currentInfo.IetfLanguageTag.ToString().Equals("ar-OM") || (currentInfo.IetfLanguageTag.ToString().Equals("ar")))
-            {
-                var ServiceProviders = db.SERVICEs.Where(x=>x.Service_Cat_Id==3 && x.services_Status_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_Ar).Distinct();
-                ViewBag.ServiceProviders = ServiceProviders;
-
-            }
-            else
-            {
-                var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 3 && x.services_Status_Id == 2).Select(m => m.SERVICE_PROVIDER.Service_Provider_Name_En).Distinct();
-                ViewBag.ServiceProviders = ServiceProviders;
-            }
-
-
-
             var ComServices = db.SERVICEs.Where(x => x.Service_Cat_Id == 3 && x.services_Status_Id == 2).ToList();
+            var ServiceProviders = db.SERVICEs.Where(x => x.Service_Cat_Id == 3 && x.services_Status_Id == 2).Select(m => m.Service_Provider_Id).Distinct();
+            var spname = db.SERVICE_PROVIDER.Where(x => ServiceProviders.Contains(x.Service_Provider_Id));
+            ViewBag.ServiceProviders = spname;
+
+
+
+
+
+
+
+
 
             return View(ComServices);
 

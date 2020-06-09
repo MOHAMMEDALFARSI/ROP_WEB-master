@@ -2026,7 +2026,7 @@ window.theme.fn = {
 			keyboardNavigation: 'off',
 			keyboard_direction: 'horizontal',
 			mouseScrollNavigation: 'off',
-			onHoverStop: 'off',
+			onHoverStop: 'on',
 			touch: {
 				touchenabled: 'on',
 				swipe_threshold: 75,

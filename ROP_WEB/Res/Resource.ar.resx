@@ -857,4 +857,7 @@
   <data name="kiosk" xml:space="preserve">
     <value>أجهزة الخدمة الذاتية</value>
   </data>
+  <data name="sort" xml:space="preserve">
+    <value>فرز حسب الإدارة</value>
+  </data>
 </root>

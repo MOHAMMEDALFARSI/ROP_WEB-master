@@ -1933,6 +1933,15 @@ namespace ROP_WEB.Res {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sort By Dircatoriey.
+        /// </summary>
+        public static string sort {
+            get {
+                return ResourceManager.GetString("sort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Specialized Directorates.
         /// </summary>
         public static string SpecializedDirectorates {

@@ -84,16 +84,29 @@
         </form>*@
                     <input type="text" name="name" value="" class="form-control servicefind" id="findserv" placeholder="@Resource.search" />
                 
-                    <a href="#" id="advanceser" class="primary" data-toggle="modal" data-target="#smallModal">    <i class="fa fa-filter"></i> فرز حسب الإدارة </a>
+                    <a href="#" id="advanceser" class="primary" data-toggle="modal" data-target="#smallModal">    <i class="fa fa-filter"></i> @Resource.sort  </a>
                     <div class="modal fade show" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel"  aria-modal="true">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content">
                               
                                 <div class="modal-body">
                                     <div id="grpChkBox">
+
                                         @foreach (var sp in  ViewBag.ServiceProviders as IQueryable<ROP_WEB.Models.SERVICE_PROVIDER>)
                                         {
-                                        <p><input type="checkbox" name="@sp.Service_Provider_Id" /> @sp.Service_Provider_Name_Ar</p>
+                                        <p>
+                                            <input type="checkbox" name="@sp.Service_Provider_Id" />
+
+                                            @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                            {
+                                                @sp.Service_Provider_Name_Ar
+                                            }
+                                            else
+                                            {
+                                                @sp.Service_Provider_Name_En
+                                            }
+
+                                        </p>
                                         }
 
                                     </div>                                </div>
@@ -113,7 +126,14 @@
 
                                 <tr>
                                     <th colspan="2" style="text-align:center; background-color:#e9ecef">
-                                      @sp.Service_Provider_Name_Ar
+                                        @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                        {
+                                            @sp.Service_Provider_Name_Ar
+                                        }
+                                        else
+                                        {
+                                            @sp.Service_Provider_Name_En
+                                        }
                                     </th>
 
 

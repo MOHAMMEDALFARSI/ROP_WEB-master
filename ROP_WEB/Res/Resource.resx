@@ -858,4 +858,7 @@
   <data name="kiosk" xml:space="preserve">
     <value>Kiosks</value>
   </data>
+  <data name="sort" xml:space="preserve">
+    <value>Sort By Dircatoriey</value>
+  </data>
 </root>
