@@ -1,4 +1,7 @@
 ﻿<link rel="stylesheet" href="~/Assets/css/fonts/serviceChannels/style.css">
+<link href="~/Assets/css/floating-social-share.css" rel="stylesheet" />
+
+
 @model ROP_WEB.Models.SERVICE
 
 @section PageTitle {
@@ -68,8 +71,10 @@
             <div class="col-md-8">
 
                 <div class="jumbotron" style="padding:25px; padding-bottom:0;">
+
                     @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
                     {
+
                         <h3> @Model.Service_Name_Ar</h3>
 
                         <p>@Html.Raw(@Model.Service_Desc_Ar)</p>
@@ -253,7 +258,7 @@
                                     }
                                     else
                                     {
-                                        <table class="table table-bordered table-hover table-responsive-lg table-striped" >
+                                        <table class="table table-bordered table-hover table-responsive-lg table-striped">
                                             <thead>
 
                                                 <tr>
@@ -337,4 +342,16 @@
 
     </div>
 </div>
-
+@section sharebtns{
+    <script src="~/Assets/js/social-share.min.js"></script>
+    <script>
+        $("body").floatingSocialShare({
+            buttons: [
+                "facebook",
+                "twitter", "whatsapp"
+            ],
+            text: "share with: ",
+            url: "https://github.com/ozdemirburak/jquery-floating-social-share"
+        });
+    </script>
+}

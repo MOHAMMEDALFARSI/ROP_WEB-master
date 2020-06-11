@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\css\custom-AR.css" />
+    <Content Include="Assets\css\floating-social-share.css" />
     <Content Include="Assets\css\fonts\NewIcons\fonts\icomoon.svg" />
     <Content Include="Assets\css\fonts\NewIcons\style.css" />
     <Content Include="Assets\css\fonts\serviceChannels\fonts\icomoon.svg" />
@@ -114,6 +115,7 @@
     <Content Include="Assets\css\theme-AR.css" />
     <Content Include="Assets\img\logoAR.png" />
     <Content Include="Assets\img\RopIDshape.png" />
+    <Content Include="Assets\js\social-share.min.js" />
     <Content Include="Connected Services\ServiceReference1\ROP_WEB.ServiceReference1.SLIDER.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

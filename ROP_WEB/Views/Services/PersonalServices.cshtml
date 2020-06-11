@@ -74,6 +74,7 @@
 
                 <div class="jumbotron" style="padding:25px; padding-bottom:0;">
                     <h3>  @Resource.personalserv </h3>
+                  
                     @*<form class="form-inline">
             <div class="form-group mx-sm-3 mb-2">
 
@@ -83,44 +84,45 @@
             <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
         </form>*@
                     <input type="text" name="name" value="" class="form-control servicefind" id="findserv" placeholder="@Resource.search" />
-                
+
                     <a href="#" id="advanceser" class="primary" data-toggle="modal" data-target="#smallModal">    <i class="fa fa-filter"></i> @Resource.sort  </a>
-                    <div class="modal fade show" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel"  aria-modal="true">
+                    <div class="modal fade show" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" aria-modal="true">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content">
-                              
+
                                 <div class="modal-body">
                                     <div id="grpChkBox">
 
-                                        @foreach (var sp in  ViewBag.ServiceProviders as IQueryable<ROP_WEB.Models.SERVICE_PROVIDER>)
+                                        @foreach (var sp in ViewBag.ServiceProviders as IQueryable<ROP_WEB.Models.SERVICE_PROVIDER>)
                                         {
-                                        <p>
-                                            <input type="checkbox" name="@sp.Service_Provider_Id" />
+                                            <p>
+                                                <input type="checkbox" name="@sp.Service_Provider_Id" />
 
-                                            @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
-                                            {
-                                                @sp.Service_Provider_Name_Ar
-                                            }
-                                            else
-                                            {
-                                                @sp.Service_Provider_Name_En
-                                            }
+                                                @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
+                                                {
+                                                    @sp.Service_Provider_Name_Ar
+                                                }
+                                                else
+                                                {
+                                                    @sp.Service_Provider_Name_En
+                                                }
 
-                                        </p>
+                                            </p>
                                         }
 
-                                    </div>                                </div>
+                                    </div>
+                                </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-light" data-dismiss="modal">OK</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @foreach (var sp in ViewBag.ServiceProviders as IQueryable<ROP_WEB.Models.SERVICE_PROVIDER> )
+                    @foreach (var sp in ViewBag.ServiceProviders as IQueryable<ROP_WEB.Models.SERVICE_PROVIDER>)
                     {
 
 
-                        <table class="@sp.Service_Provider_Id table table-bordered" >
+                        <table class="@sp.Service_Provider_Id table table-bordered">
 
                             <tbody class="servicecontent">
 
@@ -145,30 +147,30 @@
 
 
                                             @if (Thread.CurrentThread.CurrentUICulture.IetfLanguageTag.ToString().Contains("ar"))
-                          {
+                                            {
 
 
-                              foreach (var item in Model.Where(x => x.SERVICE_PROVIDER.Service_Provider_Name_Ar == sp.Service_Provider_Name_Ar))
-                              {
+                                                foreach (var item in Model.Where(x => x.SERVICE_PROVIDER.Service_Provider_Name_Ar == sp.Service_Provider_Name_Ar))
+                                                {
                                                     <div class="col-lg-4 col-md-6 col-sm-6 ">
                                                         <div class="servicesboxtitle">
                                                             <a href="@Url.Action("ServicesDetails", "Services", new { cat = @item.SERVICE_CAT.Service_Cat_Name_En.Replace(" ", "-"), id = @item.Service_Id })">@item.Service_Name_Ar</a>
                                                         </div>
                                                     </div>
 
-                              }
-                          }
-                          else
-                          {
-                              foreach (var item in Model.Where(x => x.SERVICE_PROVIDER.Service_Provider_Name_En == sp.Service_Provider_Name_En))
-                              {
+                                                }
+                                            }
+                                            else
+                                            {
+                                                foreach (var item in Model.Where(x => x.SERVICE_PROVIDER.Service_Provider_Name_En == sp.Service_Provider_Name_En))
+                                                {
                                                     <div class="col-lg-4 col-md-6 col-sm-6">
                                                         <div class="servicesboxtitle">
                                                             <a href="@Url.Action("ServicesDetails", "Services", new { cat = @item.SERVICE_CAT.Service_Cat_Name_En.Replace(" ", "-"), id = @item.Service_Id })">@item.Service_Name_En</a>
                                                         </div>
                                                     </div>
-                              }
-                          }
+                                                }
+                                            }
                                         </div>
                                     </td>
 
@@ -182,9 +184,9 @@
                             </tbody>
 
                         </table>
-                            
 
-                          }
+
+                    }
 
 
 
